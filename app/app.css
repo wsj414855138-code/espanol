@@ -1,0 +1,252 @@
+/* 西班牙语陪练 · 练习页样式（移动端优先） */
+:root {
+  --bg: #faf7f2;
+  --card: #ffffff;
+  --ink: #2b2320;
+  --muted: #8a7d75;
+  --accent: #e8590c;
+  --accent-soft: #ffe8d6;
+  --ok: #2f9e44;
+  --bad: #e03131;
+  --line: #ede5dc;
+  --radius: 16px;
+  --shadow: 0 2px 10px rgba(60, 40, 20, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1714;
+    --card: #2a221d;
+    --ink: #f3ece4;
+    --muted: #a89a8e;
+    --accent: #ff922b;
+    --accent-soft: #3d2c1d;
+    --line: #3d332b;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Noto Sans", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* 顶栏 */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px 6px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.brand h1 { font-size: 17px; margin: 0; white-space: nowrap; }
+.brand select {
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+  max-width: 46vw;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 6px 14px 10px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.tab {
+  flex: 1;
+  font-size: 14px;
+  padding: 8px 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.tab.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* 内容 */
+.content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 14px 40px;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 20px;
+  text-align: center;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.vocab-es { font-size: 34px; font-weight: 700; letter-spacing: 0.5px; }
+.zh-text { font-size: 22px; }
+.example {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 12px;
+  font-size: 15px;
+  position: relative;
+  width: 100%;
+}
+.example-es { font-style: italic; }
+.example-zh { color: var(--muted); font-size: 13px; }
+.example .sound-btn { position: absolute; top: 8px; right: 8px; }
+
+/* 按钮 */
+.btn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 15px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+.btn:disabled { opacity: 0.4; }
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.controls .btn { flex: 1; }
+.progress { text-align: center; color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+.sound-btn {
+  border: none;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+.sound-btn.big { width: 72px; height: 72px; font-size: 30px; }
+.play-big { display: block; margin: 8px auto 18px; }
+
+/* 听辨 */
+.listen-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.score { color: var(--muted); font-size: 14px; }
+.listen-options { display: flex; gap: 10px; }
+.listen-options .btn {
+  flex: 1;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 18px 8px;
+}
+.btn.correct { background: var(--ok); border-color: var(--ok); color: #fff; }
+.btn.wrong { background: var(--bad); border-color: var(--bad); color: #fff; }
+.feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  background: var(--accent-soft);
+}
+.feedback.ok { background: rgba(47, 158, 68, 0.12); }
+.feedback.no { background: rgba(224, 49, 49, 0.12); }
+.feedback .btn { margin-top: 10px; }
+
+/* 列表（跟读/听写） */
+.item-list { display: flex; flex-direction: column; gap: 10px; }
+.item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.item .es { font-size: 19px; font-weight: 600; }
+.item .zh { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.item .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; align-items: center; }
+.item .actions .btn { padding: 8px 12px; font-size: 14px; }
+.item.recording { border-color: var(--bad); }
+.rec-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--bad); margin-right: 6px; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0.2; } }
+
+.dict-input {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 17px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+}
+.dict-result { margin-top: 8px; font-size: 15px; }
+.dict-result.ok { color: var(--ok); }
+.dict-result.no { color: var(--bad); }
+.dict-answer { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+.hint { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.notice {
+  background: var(--accent-soft);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.hidden { display: none !important; }
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 20px 0 30px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>西班牙语陪练</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>🇪🇸 西班牙语陪练</h1>
+      <select id="packSelect" aria-label="选择课程"></select>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="vocab">词汇卡</button>
+      <button class="tab" data-tab="listening">听辨</button>
+      <button class="tab" data-tab="shadow">跟读</button>
+      <button class="tab" data-tab="dictation">听写</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div id="loadError" class="notice hidden">
+      <p>⚠️ 数据加载失败。</p>
+      <p>请先用 <code>node scripts/serve.mjs</code> 启动服务，再访问 <code>http://localhost:8000/app/</code>。</p>
+    </div>
+
+    <!-- 词汇卡 -->
+    <section id="tab-vocab" class="tab-panel active">
+      <div class="card" id="vocabCard">
+        <button class="sound-btn big" id="vocabPlay" title="播放发音">🔊</button>
+        <div class="vocab-es" id="vocabEs">—</div>
+        <div class="vocab-zh hidden" id="vocabZh">
+          <div class="zh-text" id="vocabZhText"></div>
+          <div class="example">
+            <div class="example-es" id="vocabExEs"></div>
+            <div class="example-zh" id="vocabExZh"></div>
+            <button class="sound-btn" id="vocabExPlay" title="播放例句">🔊</button>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="vocabPrev" class="btn">← 上一个</button>
+        <button id="vocabFlip" class="btn primary">翻面</button>
+        <button id="vocabNext" class="btn">下一个 →</button>
+      </div>
+      <div class="progress" id="vocabProgress">0 / 0</div>
+    </section>
+
+    <!-- 听辨 -->
+    <section id="tab-listening" class="tab-panel">
+      <div class="listen-head">
+        <span class="badge" id="listenCategory">—</span>
+        <span class="score" id="listenScore">✓ 0 / 0</span>
+      </div>
+      <button class="sound-btn big play-big" id="listenPlay">🔊 听</button>
+      <div class="listen-options" id="listenOptions"></div>
+      <div class="feedback hidden" id="listenFeedback"></div>
+      <button class="btn primary hidden" id="listenNext">下一题 →</button>
+      <p class="hint">提示：先听再选。发音相同的字母，西语里可能完全不是一个音。</p>
+    </section>
+
+    <!-- 跟读 -->
+    <section id="tab-shadow" class="tab-panel">
+      <p class="hint">先听，再跟读录音，然后回放对比。录音只在你的设备上，不会上传。</p>
+      <div id="shadowList" class="item-list"></div>
+    </section>
+
+    <!-- 听写 -->
+    <section id="tab-dictation" class="tab-panel">
+      <p class="hint">听句子，把你听到的打出来（可以忽略大小写、重音和标点）。</p>
+      <div id="dictationList" class="item-list"></div>
+    </section>
+  </main>
+
+  <footer class="foot">v0.1 · 内容随培训班进度更新 · 练习进度暂不保存</footer>
+  <script src="app.js"></script>
+</body>
+</html>
