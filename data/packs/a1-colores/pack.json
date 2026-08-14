@@ -7,6 +7,12 @@
     "audio": {
       "engine": "edge-tts",
       "voice": "es-ES-ElviraNeural"
+    },
+    "cognates": {
+      "engine": "deepseek",
+      "model": "deepseek-chat",
+      "date": "2026-08-14",
+      "annotated": 12
     }
   },
   "vocab": [
@@ -19,7 +25,8 @@
         "zh": "你的车是什么颜色？"
       },
       "audio": "audio/v1.m4a",
-      "exampleAudio": "audio/v1-ex.m4a"
+      "exampleAudio": "audio/v1-ex.m4a",
+      "cognate": "color"
     },
     {
       "id": "v2",
@@ -30,7 +37,8 @@
         "zh": "我有一辆红色的车。"
       },
       "audio": "audio/v2.m4a",
-      "exampleAudio": "audio/v2-ex.m4a"
+      "exampleAudio": "audio/v2-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v3",
@@ -41,7 +49,8 @@
         "zh": "天空是蓝色的。"
       },
       "audio": "audio/v3.m4a",
-      "exampleAudio": "audio/v3-ex.m4a"
+      "exampleAudio": "audio/v3-ex.m4a",
+      "cognate": "azure"
     },
     {
       "id": "v4",
@@ -52,7 +61,8 @@
         "zh": "我喜欢绿茶。"
       },
       "audio": "audio/v4.m4a",
-      "exampleAudio": "audio/v4-ex.m4a"
+      "exampleAudio": "audio/v4-ex.m4a",
+      "cognate": "green"
     },
     {
       "id": "v5",
@@ -63,7 +73,8 @@
         "zh": "太阳是黄色的。"
       },
       "audio": "audio/v5.m4a",
-      "exampleAudio": "audio/v5-ex.m4a"
+      "exampleAudio": "audio/v5-ex.m4a",
+      "cognate": "yellow"
     },
     {
       "id": "v6",
@@ -74,7 +85,8 @@
         "zh": "雪是白色的。"
       },
       "audio": "audio/v6.m4a",
-      "exampleAudio": "audio/v6-ex.m4a"
+      "exampleAudio": "audio/v6-ex.m4a",
+      "cognate": "blank"
     },
     {
       "id": "v7",
@@ -85,7 +97,8 @@
         "zh": "我喜欢黑咖啡。"
       },
       "audio": "audio/v7.m4a",
-      "exampleAudio": "audio/v7-ex.m4a"
+      "exampleAudio": "audio/v7-ex.m4a",
+      "cognate": "negro"
     },
     {
       "id": "v8",
@@ -96,7 +109,8 @@
         "zh": "橙子是橙色的。"
       },
       "audio": "audio/v8.m4a",
-      "exampleAudio": "audio/v8-ex.m4a"
+      "exampleAudio": "audio/v8-ex.m4a",
+      "cognate": "orange"
     },
     {
       "id": "v9",
@@ -107,7 +121,8 @@
         "zh": "玫瑰是粉红色的。"
       },
       "audio": "audio/v9.m4a",
-      "exampleAudio": "audio/v9-ex.m4a"
+      "exampleAudio": "audio/v9-ex.m4a",
+      "cognate": "rose"
     },
     {
       "id": "v10",
@@ -118,7 +133,8 @@
         "zh": "我有棕色的眼睛。"
       },
       "audio": "audio/v10.m4a",
-      "exampleAudio": "audio/v10-ex.m4a"
+      "exampleAudio": "audio/v10-ex.m4a",
+      "cognate": "maroon"
     },
     {
       "id": "v11",
@@ -129,7 +145,8 @@
         "zh": "这只猫是灰色的。"
       },
       "audio": "audio/v11.m4a",
-      "exampleAudio": "audio/v11-ex.m4a"
+      "exampleAudio": "audio/v11-ex.m4a",
+      "cognate": "gray"
     },
     {
       "id": "v12",
@@ -140,7 +157,8 @@
         "zh": "我喜欢这条紫色的裙子。"
       },
       "audio": "audio/v12.m4a",
-      "exampleAudio": "audio/v12-ex.m4a"
+      "exampleAudio": "audio/v12-ex.m4a",
+      "cognate": "morado"
     }
   ],
   "listening": [

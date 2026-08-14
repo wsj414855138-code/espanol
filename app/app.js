@@ -175,6 +175,9 @@ function renderReview() {
   const item = state.reviewList[state.reviewIdx];
   $('vocabEs').textContent = item.es;
   $('vocabZhText').textContent = item.zh;
+  const cog1 = item.cognate;
+  $('vocabCognate').textContent = cog1 ? `💡 英语同源：${cog1}` : '';
+  $('vocabCognate').classList.toggle('hidden', !cog1);
   $('vocabExEs').textContent = item.example ? item.example.es : '';
   $('vocabExZh').textContent = item.example ? item.example.zh : '';
   $('vocabExPlay').style.display = item.example ? '' : 'none';
@@ -282,6 +285,9 @@ function renderVocab() {
   if (!item) return;
   $('vocabEs').textContent = item.es;
   $('vocabZhText').textContent = item.zh;
+  const cog = item.cognate;
+  $('vocabCognate').textContent = cog ? `💡 英语同源：${cog}` : '';
+  $('vocabCognate').classList.toggle('hidden', !cog);
   $('vocabExEs').textContent = item.example ? item.example.es : '';
   $('vocabExZh').textContent = item.example ? item.example.zh : '';
   $('vocabExPlay').style.display = item.example ? '' : 'none';

@@ -7,6 +7,12 @@
     "audio": {
       "engine": "edge-tts",
       "voice": "es-ES-ElviraNeural"
+    },
+    "cognates": {
+      "engine": "deepseek",
+      "model": "deepseek-chat",
+      "date": "2026-08-14",
+      "annotated": 12
     }
   },
   "vocab": [
@@ -19,7 +25,8 @@
         "zh": "我的家庭很大。"
       },
       "audio": "audio/v1.m4a",
-      "exampleAudio": "audio/v1-ex.m4a"
+      "exampleAudio": "audio/v1-ex.m4a",
+      "cognate": "family"
     },
     {
       "id": "v2",
@@ -30,7 +37,8 @@
         "zh": "我父亲在医院工作。"
       },
       "audio": "audio/v2.m4a",
-      "exampleAudio": "audio/v2-ex.m4a"
+      "exampleAudio": "audio/v2-ex.m4a",
+      "cognate": "father"
     },
     {
       "id": "v3",
@@ -41,7 +49,8 @@
         "zh": "我母亲是老师。"
       },
       "audio": "audio/v3.m4a",
-      "exampleAudio": "audio/v3-ex.m4a"
+      "exampleAudio": "audio/v3-ex.m4a",
+      "cognate": "mother"
     },
     {
       "id": "v4",
@@ -52,7 +61,8 @@
         "zh": "我有一个哥哥。"
       },
       "audio": "audio/v4.m4a",
-      "exampleAudio": "audio/v4-ex.m4a"
+      "exampleAudio": "audio/v4-ex.m4a",
+      "cognate": "brother"
     },
     {
       "id": "v5",
@@ -63,7 +73,8 @@
         "zh": "我妹妹十岁。"
       },
       "audio": "audio/v5.m4a",
-      "exampleAudio": "audio/v5-ex.m4a"
+      "exampleAudio": "audio/v5-ex.m4a",
+      "cognate": "sister"
     },
     {
       "id": "v6",
@@ -74,7 +85,8 @@
         "zh": "他儿子在中国学习。"
       },
       "audio": "audio/v6.m4a",
-      "exampleAudio": "audio/v6-ex.m4a"
+      "exampleAudio": "audio/v6-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v7",
@@ -85,7 +97,8 @@
         "zh": "我女儿叫安娜。"
       },
       "audio": "audio/v7.m4a",
-      "exampleAudio": "audio/v7-ex.m4a"
+      "exampleAudio": "audio/v7-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v8",
@@ -96,7 +109,8 @@
         "zh": "我祖父八十岁。"
       },
       "audio": "audio/v8.m4a",
-      "exampleAudio": "audio/v8-ex.m4a"
+      "exampleAudio": "audio/v8-ex.m4a",
+      "cognate": "grandfather"
     },
     {
       "id": "v9",
@@ -107,7 +121,8 @@
         "zh": "我祖母做饭做得很好。"
       },
       "audio": "audio/v9.m4a",
-      "exampleAudio": "audio/v9-ex.m4a"
+      "exampleAudio": "audio/v9-ex.m4a",
+      "cognate": "grandmother"
     },
     {
       "id": "v10",
@@ -118,7 +133,8 @@
         "zh": "她丈夫是医生。"
       },
       "audio": "audio/v10.m4a",
-      "exampleAudio": "audio/v10-ex.m4a"
+      "exampleAudio": "audio/v10-ex.m4a",
+      "cognate": "spouse"
     },
     {
       "id": "v11",
@@ -129,7 +145,8 @@
         "zh": "我妻子是中国人。"
       },
       "audio": "audio/v11.m4a",
-      "exampleAudio": "audio/v11-ex.m4a"
+      "exampleAudio": "audio/v11-ex.m4a",
+      "cognate": "spouse"
     },
     {
       "id": "v12",
@@ -140,7 +157,8 @@
         "zh": "我父母住在北京。"
       },
       "audio": "audio/v12.m4a",
-      "exampleAudio": "audio/v12-ex.m4a"
+      "exampleAudio": "audio/v12-ex.m4a",
+      "cognate": "parents"
     }
   ],
   "listening": [

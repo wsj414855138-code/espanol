@@ -7,6 +7,12 @@
     "audio": {
       "engine": "edge-tts",
       "voice": "es-ES-ElviraNeural"
+    },
+    "cognates": {
+      "engine": "deepseek",
+      "model": "deepseek-chat",
+      "date": "2026-08-14",
+      "annotated": 12
     }
   },
   "vocab": [
@@ -19,7 +25,8 @@
         "zh": "温度是零度。"
       },
       "audio": "audio/v1.m4a",
-      "exampleAudio": "audio/v1-ex.m4a"
+      "exampleAudio": "audio/v1-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v2",
@@ -30,7 +37,8 @@
         "zh": "一加一等于二。"
       },
       "audio": "audio/v2.m4a",
-      "exampleAudio": "audio/v2-ex.m4a"
+      "exampleAudio": "audio/v2-ex.m4a",
+      "cognate": "one"
     },
     {
       "id": "v3",
@@ -41,7 +49,8 @@
         "zh": "我有两个兄弟。"
       },
       "audio": "audio/v3.m4a",
-      "exampleAudio": "audio/v3-ex.m4a"
+      "exampleAudio": "audio/v3-ex.m4a",
+      "cognate": "two"
     },
     {
       "id": "v4",
@@ -52,7 +61,8 @@
         "zh": "现在三点。"
       },
       "audio": "audio/v4.m4a",
-      "exampleAudio": "audio/v4-ex.m4a"
+      "exampleAudio": "audio/v4-ex.m4a",
+      "cognate": "three"
     },
     {
       "id": "v5",
@@ -63,7 +73,8 @@
         "zh": "我妹妹四岁。"
       },
       "audio": "audio/v5.m4a",
-      "exampleAudio": "audio/v5-ex.m4a"
+      "exampleAudio": "audio/v5-ex.m4a",
+      "cognate": "four"
     },
     {
       "id": "v6",
@@ -74,7 +85,8 @@
         "zh": "现在五点。"
       },
       "audio": "audio/v6.m4a",
-      "exampleAudio": "audio/v6-ex.m4a"
+      "exampleAudio": "audio/v6-ex.m4a",
+      "cognate": "five"
     },
     {
       "id": "v7",
@@ -85,7 +97,8 @@
         "zh": "这碗汤六欧元。"
       },
       "audio": "audio/v7.m4a",
-      "exampleAudio": "audio/v7-ex.m4a"
+      "exampleAudio": "audio/v7-ex.m4a",
+      "cognate": "six"
     },
     {
       "id": "v8",
@@ -96,7 +109,8 @@
         "zh": "一周有七天。"
       },
       "audio": "audio/v8.m4a",
-      "exampleAudio": "audio/v8-ex.m4a"
+      "exampleAudio": "audio/v8-ex.m4a",
+      "cognate": "seven"
     },
     {
       "id": "v9",
@@ -107,7 +121,8 @@
         "zh": "我每天工作八小时。"
       },
       "audio": "audio/v9.m4a",
-      "exampleAudio": "audio/v9-ex.m4a"
+      "exampleAudio": "audio/v9-ex.m4a",
+      "cognate": "eight"
     },
     {
       "id": "v10",
@@ -118,7 +133,8 @@
         "zh": "火车九点出发。"
       },
       "audio": "audio/v10.m4a",
-      "exampleAudio": "audio/v10-ex.m4a"
+      "exampleAudio": "audio/v10-ex.m4a",
+      "cognate": "nine"
     },
     {
       "id": "v11",
@@ -129,7 +145,8 @@
         "zh": "我十岁。"
       },
       "audio": "audio/v11.m4a",
-      "exampleAudio": "audio/v11-ex.m4a"
+      "exampleAudio": "audio/v11-ex.m4a",
+      "cognate": "ten"
     },
     {
       "id": "v12",
@@ -140,7 +157,8 @@
         "zh": "现在是晚上十一点。"
       },
       "audio": "audio/v12.m4a",
-      "exampleAudio": "audio/v12-ex.m4a"
+      "exampleAudio": "audio/v12-ex.m4a",
+      "cognate": null
     }
   ],
   "listening": [

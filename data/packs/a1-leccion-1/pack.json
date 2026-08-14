@@ -7,6 +7,12 @@
     "audio": {
       "engine": "edge-tts",
       "voice": "es-ES-ElviraNeural"
+    },
+    "cognates": {
+      "engine": "deepseek",
+      "model": "deepseek-chat",
+      "date": "2026-08-14",
+      "annotated": 10
     }
   },
   "vocab": [
@@ -19,7 +25,8 @@
         "zh": "你好！你好吗？"
       },
       "audio": "audio/v1.m4a",
-      "exampleAudio": "audio/v1-ex.m4a"
+      "exampleAudio": "audio/v1-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v2",
@@ -30,7 +37,8 @@
         "zh": "早上好，加西亚先生。"
       },
       "audio": "audio/v2.m4a",
-      "exampleAudio": "audio/v2-ex.m4a"
+      "exampleAudio": "audio/v2-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v3",
@@ -41,7 +49,8 @@
         "zh": "下午好，女士。"
       },
       "audio": "audio/v3.m4a",
-      "exampleAudio": "audio/v3-ex.m4a"
+      "exampleAudio": "audio/v3-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v4",
@@ -52,7 +61,8 @@
         "zh": "晚安，明天见。"
       },
       "audio": "audio/v4.m4a",
-      "exampleAudio": "audio/v4-ex.m4a"
+      "exampleAudio": "audio/v4-ex.m4a",
+      "cognate": "good night"
     },
     {
       "id": "v5",
@@ -63,7 +73,8 @@
         "zh": "非常感谢。"
       },
       "audio": "audio/v5.m4a",
-      "exampleAudio": "audio/v5-ex.m4a"
+      "exampleAudio": "audio/v5-ex.m4a",
+      "cognate": "thanks"
     },
     {
       "id": "v6",
@@ -74,7 +85,8 @@
         "zh": "——不客气。"
       },
       "audio": "audio/v6.m4a",
-      "exampleAudio": "audio/v6-ex.m4a"
+      "exampleAudio": "audio/v6-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v7",
@@ -85,7 +97,8 @@
         "zh": "是的，我是学生。"
       },
       "audio": "audio/v7.m4a",
-      "exampleAudio": "audio/v7-ex.m4a"
+      "exampleAudio": "audio/v7-ex.m4a",
+      "cognate": null
     },
     {
       "id": "v8",
@@ -96,7 +109,8 @@
         "zh": "不，我不会说西班牙语。"
       },
       "audio": "audio/v8.m4a",
-      "exampleAudio": "audio/v8-ex.m4a"
+      "exampleAudio": "audio/v8-ex.m4a",
+      "cognate": "no"
     },
     {
       "id": "v9",
@@ -107,7 +121,8 @@
         "zh": "再见，朋友们！"
       },
       "audio": "audio/v9.m4a",
-      "exampleAudio": "audio/v9-ex.m4a"
+      "exampleAudio": "audio/v9-ex.m4a",
+      "cognate": "adios"
     },
     {
       "id": "v10",
@@ -118,7 +133,8 @@
         "zh": "回头见，我们再见。"
       },
       "audio": "audio/v10.m4a",
-      "exampleAudio": "audio/v10-ex.m4a"
+      "exampleAudio": "audio/v10-ex.m4a",
+      "cognate": null
     }
   ],
   "listening": [

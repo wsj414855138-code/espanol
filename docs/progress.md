@@ -1,5 +1,11 @@
 # 进度日志
 
+## 2025-08-14 · v0.4.1：同源词桥（DeepSeek API）+ API Key 清单
+
+- **同源词桥落地**：`scripts/annotate-cognates.mjs` 用 DeepSeek Chat API 批量标注全部 5 包词汇的英语同源词（58 词命中 40 个，如 agua→water、café→café、color→color；无同源的正确拒绝，如 pan→null、leche→null）；词汇卡翻面显示 "💡 英语同源：xxx"。Key 自动发现：env → 项目 .env → ~/.pi/agent/auth.json，**不落 git**。
+- **API Key 策略（用户定）**：能用 DeepSeek key 的先用；待申请项（SpeechSuper 发音评测等）列入 [docs/api-keys.md](api-keys.md)，统一后办。
+- 练习页已用系统浏览器打开预览。
+
 ## 2025-08-14 · v0.4：TTS 升级 edge-tts + 发音评测调研
 
 - **TTS 升级（用户拍板）**：edge-tts `es-ES-ElviraNeural`（微软在线神经语音）→ `generate-audio.mjs` 支持 `--engine auto|edge|say`，mp3 经 afconvert 转 m4a 保持格式兼容，慢速 -25%，edge 失败自动回退 macOS Mónica；项目 `.venv` 装 edge-tts（已 gitignore）。全量音频重生成中。
