@@ -104,8 +104,10 @@ Learning Espanish/
 │           └── audio/*.m4a
 ├── scripts/             ← Node 脚本（零依赖，node >= 18）
 │   ├── build-pack.mjs   ← 原料 → pack.json
-│   ├── generate-audio.mjs ← pack.json → 音频（macOS `say`，Mónica es_ES）
+│   ├── generate-audio.mjs ← pack.json → 音频（edge-tts 优先 / macOS say 兜底）
 │   ├── export-anki.mjs  ← pack → Anki 卡组 TSV + 音频（间隔重复复习）
+│   ├── annotate-cognates.mjs ← DeepSeek API 标注英语同源词（同源词桥）
+│   ├── vision-review.mjs ← Kimi K2.7 视觉复核（看图回答，UI 走查/截图复核用）
 │   ├── ocr.mjs          ← 教材拍照 OCR 的 Node 包装（打印 / 写文件 / 生成 source.md 模板）
 │   ├── ocr.swift        ← OCR 本体：macOS Vision 框架，默认 zh-Hans + es-ES 双通道合并
 │   └── serve.mjs        ← 静态练习页服务器

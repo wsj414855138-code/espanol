@@ -1,5 +1,15 @@
 # 进度日志
 
+## 2025-08-14 · v0.4.2：视觉复核能力固化（Kimi K2.7）
+
+- **视觉方案定版（用户定）**：优先 Kimi **K2.7**（`kimi-coding/kimi-for-coding`，本机 pi 可用模型中无 K2.6，K2.7 为最高可用）。
+- **三层可复用形态**：
+  1. **DSH 动态插件 `visi-5`（视觉复核工具）**：注册 `vision_review` 模型工具（参数 images/question/model，output schema 校验，180s 超时），会话内可直接调用看图——UI 走查/截图复核不再依赖 bash 拼命令；
+  2. **项目脚本 `scripts/vision-review.mjs`**：pi 封装，任何 AI（Codex 也可）和人都能用同一命令看图；
+  3. 原 vision 技能保留，默认模型改为 K2.7。
+- 实测：K2.7 识别截图内西语单词、按钮、布局问题均准确。
+- 插件开发踩坑记录：value schema DSL 要求 output 根显式 `additionalProperties`、参数根必须开放（省略）、不支持 `required`。
+
 ## 2025-08-14 · v0.4.1：同源词桥（DeepSeek API）+ API Key 清单
 
 - **同源词桥落地**：`scripts/annotate-cognates.mjs` 用 DeepSeek Chat API 批量标注全部 5 包词汇的英语同源词（58 词命中 40 个，如 agua→water、café→café、color→color；无同源的正确拒绝，如 pan→null、leche→null）；词汇卡翻面显示 "💡 英语同源：xxx"。Key 自动发现：env → 项目 .env → ~/.pi/agent/auth.json，**不落 git**。
