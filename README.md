@@ -40,6 +40,27 @@ node scripts/serve.mjs          # 默认 http://localhost:8000/app/
 | **你（喂料者）** | 把教材/课件内容整理成 `data/raw/<课程>/source.md`（格式见下），跑两步命令即可上线 |
 | **AI（DeepSeek / Codex）** | 按 `docs/` 里的约定帮忙生成内容、修 bug、加功能 |
 
+## 课本同步工作流（拍照 → OCR → 整理，v0.3 新增）
+
+不懂西语也不怕：给教材页面拍张照，让电脑帮你把文字提取出来，再人工校对整理成 source.md。
+
+```bash
+# 1. 拍照：手机拍教材页，AirDrop/微信传到电脑（png/jpg/heic 都行）
+
+# 2. OCR：把照片里的文字识别出来（macOS 自带 Vision 框架，无需联网/装包）
+node scripts/ocr.mjs 照片.png --out out.txt --to-source
+#   生成：
+#     out.txt              ← OCR 识别出的原文（逐行，"行号: 文本"）
+#     out.source.md        ← 课程原料模板（三张表表头 + 底部附 OCR 原文，方便边看边整理）
+
+# 3. 整理：打开 out.source.md，把 OCR 原文逐行搬进三张表（西语 + 中文翻译），
+#    删掉底部"OCR 原文"小节，改名为 source.md 放进 data/raw/<课程>/
+```
+
+> ⚠️ OCR 不是 100% 准确，尤其教材排版复杂（表格、加粗、栏间距）时容易串行或漏字，**必须人工校对**再入库；西语重音符号（é/í/á/ñ/¿¡）也会偶尔识别错，以教材原书为准。
+>
+> 默认同时识别中文 + 西语（自动双通道合并，中文注释和西语重音都能兼顾）；也可用 `--lang es-ES` 只识别西语。依赖 Xcode Command Line Tools（`xcode-select --install` 可装）。
+
 ## 内容原料格式（data/raw/<课程>/source.md）
 
 一个 Markdown 文件，三个小节，全是表格，**任何人（包括 AI）都能写**：
@@ -85,6 +106,8 @@ Learning Espanish/
 │   ├── build-pack.mjs   ← 原料 → pack.json
 │   ├── generate-audio.mjs ← pack.json → 音频（macOS `say`，Mónica es_ES）
 │   ├── export-anki.mjs  ← pack → Anki 卡组 TSV + 音频（间隔重复复习）
+│   ├── ocr.mjs          ← 教材拍照 OCR 的 Node 包装（打印 / 写文件 / 生成 source.md 模板）
+│   ├── ocr.swift        ← OCR 本体：macOS Vision 框架，默认 zh-Hans + es-ES 双通道合并
 │   └── serve.mjs        ← 静态练习页服务器
 └── app/                 ← 练习页（纯 HTML/CSS/JS，无构建步骤）
     ├── index.html

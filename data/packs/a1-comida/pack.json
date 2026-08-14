@@ -1,0 +1,297 @@
+{
+  "id": "a1-comida",
+  "title": "A1 第 5 课：食物与饮料",
+  "meta": {
+    "level": "A1",
+    "source": "通用 A1 示例（待替换为教材内容）",
+    "audio": {
+      "voice": "Mónica",
+      "engine": "macos-say"
+    }
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "comida",
+      "zh": "食物；餐",
+      "example": {
+        "es": "La comida china es muy rica.",
+        "zh": "中国菜很好吃。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "pan",
+      "zh": "面包",
+      "example": {
+        "es": "Como pan todos los días.",
+        "zh": "我每天吃面包。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "agua",
+      "zh": "水",
+      "example": {
+        "es": "Bebo mucha agua.",
+        "zh": "我喝很多水。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "café",
+      "zh": "咖啡",
+      "example": {
+        "es": "Me gusta el café con leche.",
+        "zh": "我喜欢加奶的咖啡。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "leche",
+      "zh": "牛奶",
+      "example": {
+        "es": "Tomo leche por la mañana.",
+        "zh": "我早上喝牛奶。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "fruta",
+      "zh": "水果",
+      "example": {
+        "es": "Me gusta la fruta.",
+        "zh": "我喜欢水果。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "arroz",
+      "zh": "米饭",
+      "example": {
+        "es": "El arroz con pollo es mi favorito.",
+        "zh": "鸡肉米饭是我最喜欢的。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "pollo",
+      "zh": "鸡肉",
+      "example": {
+        "es": "El pollo está muy rico.",
+        "zh": "这鸡肉很好吃。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    },
+    {
+      "id": "v9",
+      "es": "pescado",
+      "zh": "鱼肉",
+      "example": {
+        "es": "El pescado es muy sano.",
+        "zh": "鱼肉很健康。"
+      },
+      "audio": "audio/v9.m4a",
+      "exampleAudio": "audio/v9-ex.m4a"
+    },
+    {
+      "id": "v10",
+      "es": "huevo",
+      "zh": "鸡蛋",
+      "example": {
+        "es": "Desayuno dos huevos.",
+        "zh": "我早餐吃两个鸡蛋。"
+      },
+      "audio": "audio/v10.m4a",
+      "exampleAudio": "audio/v10-ex.m4a"
+    },
+    {
+      "id": "v11",
+      "es": "ensalada",
+      "zh": "沙拉",
+      "example": {
+        "es": "Quiero una ensalada.",
+        "zh": "我想要一份沙拉。"
+      },
+      "audio": "audio/v11.m4a",
+      "exampleAudio": "audio/v11-ex.m4a"
+    },
+    {
+      "id": "v12",
+      "es": "verdura",
+      "zh": "蔬菜",
+      "example": {
+        "es": "Como mucha verdura.",
+        "zh": "我吃很多蔬菜。"
+      },
+      "audio": "audio/v12.m4a",
+      "exampleAudio": "audio/v12-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "p/b",
+      "pair": [
+        "pollo",
+        "bollo"
+      ],
+      "zh": "鸡肉 / 面包卷",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "t/d",
+      "pair": [
+        "pato",
+        "dato"
+      ],
+      "zh": "鸭子 / 数据",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "l/r",
+      "pair": [
+        "pala",
+        "para"
+      ],
+      "zh": "铲子 / 为了（介词）",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "r/rr",
+      "pair": [
+        "pera",
+        "perra"
+      ],
+      "zh": "梨 / 母狗",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "元音",
+      "pair": [
+        "queso",
+        "caso"
+      ],
+      "zh": "奶酪 / 情况",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "重音",
+      "pair": [
+        "té",
+        "te"
+      ],
+      "zh": "茶 / 你（宾格代词）",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "b/v",
+      "pair": [
+        "baca",
+        "vaca"
+      ],
+      "zh": "车顶架 / 奶牛",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "¿Qué quieres comer?",
+      "zh": "你想吃什么？",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "Quiero comer arroz con pollo.",
+      "zh": "我想吃鸡肉米饭。",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "¿Qué quieres beber?",
+      "zh": "你想喝什么？",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "Quiero beber un café con leche.",
+      "zh": "我想喝一杯加奶咖啡。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "Desayuno pan y café.",
+      "zh": "我早餐吃面包、喝咖啡。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "La ensalada de tomate es muy rica.",
+      "zh": "番茄沙拉很好吃。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "Bebo agua todos los días.",
+      "zh": "我每天喝水。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "El pescado con arroz es mi plato favorito.",
+      "zh": "鱼配米饭是我最喜欢的菜。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    }
+  ]
+}

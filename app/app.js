@@ -10,6 +10,10 @@ const state = {
   // 词汇卡
   vocabIdx: 0,
   vocabRevealed: false,
+  // 复习模式（SRS）
+  reviewOn: false,
+  reviewList: [],   // 当前到期的词汇
+  reviewIdx: 0,
   // 听辨
   listenQueue: [],   // 打乱的题目
   listenPos: 0,
@@ -53,8 +57,167 @@ function normalizeText(s) {
     .trim();
 }
 
+/* ---------- 学习统计（localStorage，跨天自动重置） ---------- */
+const STATS_KEY = 'ls_stats';
+
+function dateStr(d) {
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+function todayStr() { return dateStr(new Date()); }
+
+function loadStats() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STATS_KEY));
+    if (raw && typeof raw === 'object' && raw.date) return raw;
+  } catch { /* localStorage 不可用或数据损坏时按无统计处理 */ }
+  return null;
+}
+
+function saveStats(s) {
+  try { localStorage.setItem(STATS_KEY, JSON.stringify(s)); } catch { /* 隐私模式等场景忽略写入失败 */ }
+}
+
+/** 累计今日统计；type: listening(ok=对错) / dictation / review */
+function statsAdd(type, ok) {
+  const today = todayStr();
+  const s = loadStats() || { date: today, listeningDone: 0, listeningRight: 0, dictationDone: 0, reviewCards: 0 };
+  if (s.date !== today) {
+    // 跨天：重置为新的一天
+    s.date = today; s.listeningDone = 0; s.listeningRight = 0; s.dictationDone = 0; s.reviewCards = 0;
+  }
+  if (type === 'listening') {
+    s.listeningDone++;
+    if (ok) s.listeningRight++;
+  } else if (type === 'dictation') {
+    s.dictationDone++;
+  } else if (type === 'review') {
+    s.reviewCards++;
+  }
+  saveStats(s);
+  renderStats();
+}
+
+function renderStats() {
+  const bar = $('statsBar');
+  const s = loadStats();
+  if (!s || s.date !== todayStr()) {
+    bar.textContent = '开始练习后这里会出现今日统计';
+    return;
+  }
+  bar.innerHTML =
+    `<span class="badge">今日：听辨 ${s.listeningRight}/${s.listeningDone} ✓ · 听写 ${s.dictationDone} 句 · 复习 ${s.reviewCards} 卡</span>`;
+}
+
+/* ---------- 间隔重复复习（简化 SM-2，localStorage） ---------- */
+const SRS_KEY = 'ls_srs_v1';
+const SRS_MAX_INTERVAL = 30;   // 成功间隔翻倍的上限（天）
+
+function loadSRS() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(SRS_KEY));
+    return raw && typeof raw === 'object' ? raw : {};
+  } catch { return {}; }
+}
+
+function saveSRS(map) {
+  try { localStorage.setItem(SRS_KEY, JSON.stringify(map)); } catch { /* 忽略写入失败 */ }
+}
+
+function srsKey(item) { return `${state.pack.id || 'pack'}/${item.id}`; }
+
+/** 到期判定：没复习过（无记录）或到期日 <= 今天 */
+function isDue(rec) {
+  return !rec || !rec.due || rec.due <= todayStr();
+}
+
+/** 当前课程中所有到期词汇 */
+function dueVocab() {
+  const map = loadSRS();
+  return (state.pack.vocab || []).filter((item) => isDue(map[srsKey(item)]));
+}
+
+/** 进入 / 退出复习模式 */
+function setReviewMode(on) {
+  state.reviewOn = on;
+  $('vocabReviewToggle').checked = on;
+  state.reviewList = on ? dueVocab() : [];
+  state.reviewIdx = 0;
+  state.vocabRevealed = false;
+  $('vocabZh').classList.add('hidden');
+  if (on) renderReview(); else renderVocab();
+}
+
+/** 渲染复习卡片：只显示到期词，底部两个按钮作答 */
+function renderReview() {
+  const empty = $('vocabReviewEmpty');
+  const card = $('vocabCard');
+  const normalCtl = $('vocabControls');
+  const reviewCtl = $('vocabReviewControls');
+  const progress = $('vocabProgress');
+
+  if (!state.reviewList.length) {
+    // 今天没有到期的单词
+    empty.classList.remove('hidden');
+    card.classList.add('hidden');
+    normalCtl.classList.add('hidden');
+    reviewCtl.classList.add('hidden');
+    progress.textContent = '0 / 0';
+    return;
+  }
+  empty.classList.add('hidden');
+  card.classList.remove('hidden');
+  normalCtl.classList.add('hidden');
+  reviewCtl.classList.remove('hidden');
+  progress.textContent = `剩余 ${state.reviewList.length - state.reviewIdx} 张`;
+
+  const item = state.reviewList[state.reviewIdx];
+  $('vocabEs').textContent = item.es;
+  $('vocabZhText').textContent = item.zh;
+  $('vocabExEs').textContent = item.example ? item.example.es : '';
+  $('vocabExZh').textContent = item.example ? item.example.zh : '';
+  $('vocabExPlay').style.display = item.example ? '' : 'none';
+  state.vocabRevealed = false;
+  $('vocabZh').classList.add('hidden');
+}
+
+/** 复习作答：remember=true 记得，false 忘了；按简化 SM-2 更新排期 */
+function answerReview(remember) {
+  if (!state.reviewOn || !state.reviewList.length) return;
+  const item = state.reviewList[state.reviewIdx];
+  const map = loadSRS();
+  const key = srsKey(item);
+  const rec = map[key] || { ease: 2.5, interval: 0, due: todayStr(), reps: 0, lapses: 0 };
+  if (remember) {
+    // 成功：首次间隔 1 天，之后翻倍（上限 30 天）
+    rec.reps++;
+    rec.interval = rec.interval <= 0 ? 1 : Math.min(rec.interval * 2, SRS_MAX_INTERVAL);
+  } else {
+    // 失败：间隔重置为 1 天，lapses + 1
+    rec.lapses++;
+    rec.reps = 0;
+    rec.interval = 1;
+  }
+  const due = new Date();
+  due.setDate(due.getDate() + rec.interval);
+  rec.due = dateStr(due);
+  map[key] = rec;
+  saveSRS(map);
+  statsAdd('review');   // 只有点 ✓ / ✗ 才算一次复习，普通浏览不算
+
+  // 跳到下一张到期卡；答完今天的就重新取一遍（一般会空 → 显示 🎉）
+  state.reviewIdx++;
+  if (state.reviewIdx >= state.reviewList.length) {
+    state.reviewList = dueVocab();
+    state.reviewIdx = 0;
+  }
+  renderReview();
+}
+
 /* ---------- 数据加载 ---------- */
 async function init() {
+  renderStats();   // 打开页面即显示今日统计（无数据时显示占位提示）
   try {
     const res = await fetch(`${BASE}/index.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -84,10 +247,10 @@ async function loadPack(id) {
   }
   $('loadError').classList.add('hidden');
 
-  // 词汇卡
+  // 词汇卡（复习模式随课程切换重置为关闭）
   state.vocabIdx = 0;
   state.vocabRevealed = false;
-  renderVocab();
+  setReviewMode(false);
   // 听辨
   state.listenQueue = shuffle(state.pack.listening);
   state.listenPos = 0;
@@ -108,6 +271,11 @@ async function loadPack(id) {
 
 /* ---------- 词汇卡 ---------- */
 function renderVocab() {
+  // 普通浏览模式：显示卡片与 上一个/翻面/下一个，隐藏复习控件
+  $('vocabReviewEmpty').classList.add('hidden');
+  $('vocabCard').classList.remove('hidden');
+  $('vocabReviewControls').classList.add('hidden');
+  $('vocabControls').classList.remove('hidden');
   const list = state.pack.vocab;
   const item = list[state.vocabIdx];
   $('vocabProgress').textContent = `${state.vocabIdx + 1} / ${list.length}`;
@@ -122,19 +290,37 @@ function renderVocab() {
   $('vocabFlip').textContent = '翻面';
 }
 
-$('vocabPlay').addEventListener('click', () => {
-  const item = state.pack.vocab[state.vocabIdx];
-  if (item) playAudio(item.audio);
-});
-$('vocabExPlay').addEventListener('click', () => {
-  const item = state.pack.vocab[state.vocabIdx];
-  if (item && item.exampleAudio) playAudio(item.exampleAudio);
-});
-$('vocabFlip').addEventListener('click', () => {
+/** 当前词汇卡数据：复习模式下取到期卡，否则取普通浏览卡 */
+function currentVocabItem() {
+  if (state.reviewOn) return state.reviewList[state.reviewIdx];
+  return state.pack.vocab[state.vocabIdx];
+}
+
+/** 翻面（普通模式按钮 / 复习模式点卡片） */
+function flipVocab() {
   state.vocabRevealed = !state.vocabRevealed;
   $('vocabZh').classList.toggle('hidden', !state.vocabRevealed);
   $('vocabFlip').textContent = state.vocabRevealed ? '再遮住' : '翻面';
+}
+
+$('vocabPlay').addEventListener('click', (e) => {
+  e.stopPropagation();   // 复习模式下点卡片会翻面，播放按钮不触发
+  const item = currentVocabItem();
+  if (item) playAudio(item.audio);
 });
+$('vocabExPlay').addEventListener('click', (e) => {
+  e.stopPropagation();
+  const item = currentVocabItem();
+  if (item && item.exampleAudio) playAudio(item.exampleAudio);
+});
+$('vocabFlip').addEventListener('click', flipVocab);
+$('vocabCard').addEventListener('click', () => {
+  // 复习模式隐藏了「翻面」按钮，改点卡片翻面看中文
+  if (state.reviewOn) flipVocab();
+});
+$('vocabReviewToggle').addEventListener('change', (e) => setReviewMode(e.target.checked));
+$('vocabRemember').addEventListener('click', () => answerReview(true));
+$('vocabForget').addEventListener('click', () => answerReview(false));
 $('vocabPrev').addEventListener('click', () => {
   if (state.vocabIdx > 0) { state.vocabIdx--; renderVocab(); }
 });
@@ -180,6 +366,7 @@ function answerListening(i, btn) {
   state.listenRight = right;
   state.listenDone++;
   if (right) state.listenScore++;
+  statsAdd('listening', right);   // 每答一题记一次统计（对错分别累计）
 
   const buttons = $('listenOptions').querySelectorAll('.btn');
   buttons.forEach((b, idx) => {
@@ -226,7 +413,9 @@ function renderShadow() {
         <button class="btn" data-act="toggleZh">📖 中文</button>
         <button class="btn" data-act="record">🎤 跟读</button>
         <button class="btn hidden" data-act="playMine">▶ 我的录音</button>
-      </div>`;
+        <button class="btn hidden" data-act="score">🎯 评分</button>
+      </div>
+      <div class="score-result hidden" data-role="score"></div>`;
     div.querySelector('[data-act="play"]').addEventListener('click', () => playAudio(s.audio));
     div.querySelector('[data-act="playSlow"]').addEventListener('click', () => playAudio(s.audioSlow));
     div.querySelector('[data-act="toggleZh"]').addEventListener('click', (e) => {
@@ -234,6 +423,18 @@ function renderShadow() {
       e.currentTarget.textContent = div.querySelector('.zh').classList.contains('hidden') ? '📖 中文' : '🙈 遮住';
     });
     div.querySelector('[data-act="record"]').addEventListener('click', () => toggleRecord(div, s, i));
+    // 发音评分：浏览器不支持语音识别时按钮常驻显示「评分不可用」
+    const scoreBtn = div.querySelector('[data-act="score"]');
+    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+      scoreBtn.addEventListener('click', () => scorePronunciation(div, s));
+    } else {
+      scoreBtn.classList.remove('hidden');
+      scoreBtn.textContent = '评分不可用';
+      scoreBtn.classList.add('score-na');
+      scoreBtn.addEventListener('click', () => {
+        alert('当前浏览器不支持语音识别评分，建议用 Chrome/Edge/Safari。');
+      });
+    }
     box.appendChild(div);
   });
 }
@@ -244,9 +445,7 @@ async function toggleRecord(div, sentence, idx) {
 
   if (state.recorder && state.recorder.state === 'recording') {
     // 停止当前录音
-    state.recorder.stop();
-    recordBtn.textContent = '🎤 跟读';
-    div.classList.remove('recording');
+    stopRecording();
     return;
   }
   if (!navigator.mediaDevices || !window.MediaRecorder) {
@@ -265,6 +464,11 @@ async function toggleRecord(div, sentence, idx) {
       const url = URL.createObjectURL(new Blob(chunks, { type: 'audio/webm' }));
       mineBtn.classList.remove('hidden');
       mineBtn.onclick = () => playAudio(url);
+      // 录完音后显示「评分」按钮（浏览器支持语音识别时）
+      if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const scoreBtn = div.querySelector('[data-act="score"]');
+        if (scoreBtn) scoreBtn.classList.remove('hidden');
+      }
     };
     div.classList.add('recording');
     recordBtn.textContent = '⏹ 停止';
@@ -272,6 +476,87 @@ async function toggleRecord(div, sentence, idx) {
   } catch {
     alert('无法访问麦克风，请检查权限设置。');
   }
+}
+
+/* ---------- 发音评分（Web Speech API） ---------- */
+/** 停止当前录音（跟读停止 / 评分互斥共用） */
+function stopRecording() {
+  if (!state.recorder || state.recorder.state !== 'recording') return;
+  const row = state.recorderRow || {};
+  state.recorder.stop();
+  if (row.recordBtn) row.recordBtn.textContent = '🎤 跟读';
+  if (row.div) row.div.classList.remove('recording');
+}
+
+/** 把语音识别错误码转成用户能看懂的中文提示 */
+function recErrorText(code) {
+  const map = {
+    'no-speech': '没有听到声音，请靠近麦克风再说一遍。',
+    'audio-capture': '没检测到麦克风，请检查设备或权限。',
+    'not-allowed': '麦克风权限被拒绝，请在浏览器设置里允许。',
+    'network': '语音识别网络请求失败，请检查网络后重试。',
+  };
+  return map[code] || `语音识别失败（${code}）。`;
+}
+
+/** 发音评分：转写为西语文本，与句子原文逐词比对出命中率 */
+function scorePronunciation(div, sentence) {
+  const scoreBtn = div.querySelector('[data-act="score"]');
+  const box = div.querySelector('[data-role="score"]');
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    alert('当前浏览器不支持语音识别评分，建议用 Chrome/Edge/Safari。');
+    return;
+  }
+  // 互斥：评分前先停掉正在进行的录音
+  if (state.recorder && state.recorder.state === 'recording') stopRecording();
+
+  const rec = new SR();
+  rec.lang = 'es-ES';
+  rec.continuous = false;
+  rec.interimResults = false;
+
+  scoreBtn.disabled = true;
+  scoreBtn.textContent = '⏳ 正在听…';
+  box.classList.remove('hidden');
+  box.className = 'score-result';
+  box.innerHTML = '<span class="rec-text">🎙 请对着麦克风朗读这句话…</span>';
+
+  rec.onresult = (e) => {
+    const text = e.results[0][0].transcript || '';
+    showScoreResult(box, sentence, text);
+    scoreBtn.disabled = false;
+    scoreBtn.textContent = '🎯 再评一次';
+  };
+  rec.onerror = (e) => {
+    box.classList.remove('hidden');
+    box.className = 'score-result';
+    box.innerHTML = `<span class="rec-text">⚠️ ${recErrorText(e.error)}</span>`;
+    scoreBtn.disabled = false;
+    scoreBtn.textContent = '🎯 再评一次';
+  };
+  rec.onend = () => { scoreBtn.disabled = false; };
+  rec.start();
+}
+
+/** 逐词比对：以句子原文为准，统计识别文本命中了几个词 */
+function showScoreResult(box, sentence, text) {
+  const refWords = normalizeText(sentence.es).split(' ').filter(Boolean);
+  const recWords = normalizeText(text).split(' ').filter(Boolean);
+  const recSet = new Set(recWords);
+  const hit = refWords.filter((w) => recSet.has(w)).length;
+  const pct = refWords.length ? Math.round((hit / refWords.length) * 100) : 0;
+
+  let verdict, cls;
+  if (pct >= 80) { verdict = '很棒！'; cls = 'good'; }
+  else if (pct >= 50) { verdict = '再试试'; cls = 'mid'; }
+  else { verdict = '建议先慢速跟读'; cls = 'bad'; }
+
+  box.classList.remove('hidden');
+  box.className = `score-result ${cls}`;
+  box.innerHTML =
+    `<div>识别结果：${text || '（没识别到内容）'}</div>` +
+    `<div class="rec-text">词命中 ${pct}%（${hit}/${refWords.length}）· ${verdict}</div>`;
 }
 
 /* ---------- 听写 ---------- */
@@ -316,6 +601,11 @@ function checkDictation(div, s) {
     ? `<span class="dict-result ok">✓ 全对！</span>`
     : `<span class="dict-result no">✗ 再听听，正确答案：</span>
        <span class="dict-answer">${s.es}<br>${s.zh}</span>`;
+  // 统计「判一次」：Enter 判完紧接着 blur 触发的 change 在 1.5 秒内不重复计数
+  const lastJudge = Number(div.dataset.lastJudge) || 0;
+  const now = Date.now();
+  if (now - lastJudge > 1500) statsAdd('dictation');
+  div.dataset.lastJudge = now;
 }
 
 /* ---------- 页签切换（支持 #hash 深链接） ---------- */

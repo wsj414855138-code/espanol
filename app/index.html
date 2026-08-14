@@ -28,6 +28,14 @@
 
     <!-- 词汇卡 -->
     <section id="tab-vocab" class="tab-panel active">
+      <div class="vocab-head">
+        <label class="srs-toggle" for="vocabReviewToggle">
+          <input type="checkbox" id="vocabReviewToggle" />
+          <span>复习模式</span>
+        </label>
+        <span class="srs-hint">只显示今天到期的单词，点记得/忘了按间隔排期</span>
+      </div>
+      <div id="vocabReviewEmpty" class="review-empty hidden">今天没有到期的单词 🎉</div>
       <div class="card" id="vocabCard">
         <button class="sound-btn big" id="vocabPlay" title="播放发音">🔊</button>
         <div class="vocab-es" id="vocabEs">—</div>
@@ -40,10 +48,14 @@
           </div>
         </div>
       </div>
-      <div class="controls">
+      <div class="controls" id="vocabControls">
         <button id="vocabPrev" class="btn">← 上一个</button>
         <button id="vocabFlip" class="btn primary">翻面</button>
         <button id="vocabNext" class="btn">下一个 →</button>
+      </div>
+      <div class="controls hidden" id="vocabReviewControls">
+        <button id="vocabRemember" class="btn primary">记得（✓）</button>
+        <button id="vocabForget" class="btn">忘了（✗）</button>
       </div>
       <div class="progress" id="vocabProgress">0 / 0</div>
     </section>
@@ -74,7 +86,8 @@
     </section>
   </main>
 
-  <footer class="foot">v0.1 · 内容随培训班进度更新 · 练习进度暂不保存</footer>
+  <div id="statsBar" class="stats-bar" role="status"></div>
+  <footer class="foot">v0.3 · 内容随培训班进度更新 · 复习与今日统计保存在本机</footer>
   <script src="app.js"></script>
 </body>
 </html>

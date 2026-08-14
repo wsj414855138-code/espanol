@@ -263,3 +263,88 @@ body {
   font-size: 12px;
   padding: 20px 0 30px;
 }
+
+/* 词汇卡顶部：复习模式开关 */
+.vocab-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.srs-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+.srs-toggle input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--line);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.srs-toggle input::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: left 0.2s;
+}
+.srs-toggle input:checked { background: var(--accent); }
+.srs-toggle input:checked::after { left: 20px; }
+.srs-hint { color: var(--muted); font-size: 12px; text-align: right; white-space: normal; overflow-wrap: break-word; }
+.review-empty {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 30px 14px;
+  margin-bottom: 12px;
+}
+
+/* 今日统计条（footer 上方） */
+.stats-bar {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4px 14px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.stats-bar .badge { display: inline-block; }
+
+/* 发音评分结果 */
+.score-result {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+.score-result.good { background: rgba(47, 158, 68, 0.12); color: var(--ok); }
+.score-result.mid { background: var(--accent-soft); color: var(--accent); }
+.score-result.bad { background: rgba(224, 49, 49, 0.12); color: var(--bad); }
+.score-result .rec-text { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.btn.score-na { opacity: 0.55; }

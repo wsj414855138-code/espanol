@@ -46,7 +46,7 @@
 - [x] **SRS 间隔重复（v0.2 已完成）**：`export-anki.mjs` 一键导出 Anki 卡组（词汇卡 + 句型卡 + 音频），利用 Anki 成熟的 SRS 算法。内置 SRS（localStorage + SM-2）列为后续增强
 - [ ] **发音评分**：候选方案 [SpeechSuper-API-Samples](https://github.com/speechsuper/SpeechSuper-API-Samples)（深度学习发音评估，覆盖 8 种语言，中文团队，有西语）；或浏览器 Web Speech API es-ES 转写对比（零成本粗反馈）
 - [ ] **同源词桥**：标出与英语同源的词（restaurante→restaurant），白送词汇量
-- [ ] **课本同步工作流**：拍照教材 → OCR → 自动整理成 source.md（配合喂料者）
+- [x] **课本同步工作流（v0.3 已完成）**：拍照教材 → OCR → 自动整理成 source.md（配合喂料者）。实现：`scripts/ocr.swift`（macOS Vision 框架 VNRecognizeTextRequest，默认 zh-Hans + es-ES 双通道合并——中文注释 + 西语重音兼顾，支持 HEIC）+ `scripts/ocr.mjs`（Node 包装：直接打印 / `--out` 写文本 / `--to-source` 生成 source.md 模板骨架）；OCR 结果需人工校对后再进 `data/raw/`
 - [ ] **AI 对话陪练**：参考 [OpenLingo](https://github.com/pretzelai/openlingo)（开源 AI 语言学习平台：AI 导师 + SRS + 9 类练习，内容即 Markdown + YAML，与我们架构同源）与 [anki-mcp-server](https://www.npmjs.com/package/@ankimcp/anki-mcp-server)（MCP 驱动 Anki）的交互设计
 - [ ] **学习统计**：每日练习量、正确率趋势（localStorage）
 
