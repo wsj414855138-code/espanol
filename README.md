@@ -15,9 +15,20 @@ node scripts/build-pack.mjs a1-leccion-1
 # 2. 生成西语音频（macOS 自带语音，无需联网/密钥）
 node scripts/generate-audio.mjs a1-leccion-1
 
-# 3. 启动练习页（手机和电脑在同一局域网内即可访问）
+# 3.（可选）导出 Anki 卡组：词汇卡 + 句型卡 + 音频（配合 Anki 间隔重复复习）
+node scripts/export-anki.mjs a1-leccion-1
+
+# 4. 启动练习页（手机和电脑在同一局域网内即可访问）
 node scripts/serve.mjs          # 默认 http://localhost:8000/app/
 ```
+
+### Anki 导入（3 步，约 2 分钟）
+
+1. Anki 桌面版：工具 → 管理笔记类型 → 添加 → 基础（正反卡片）→ 重命名「西语」，把字段改为：`西语 | 中文 | 例句 | 例句中文 | 音频`
+2. 文件 → 导入 → 选 `data/packs/<课程>/anki-vocab.tsv`（字段分隔符选"制表符"，允许 HTML 关）
+3. 工具 → 打开媒体文件夹 → 把 `data/packs/<课程>/anki-media/` 里的文件拷进去（卡片的发音就有了）
+
+> 听写卡：再导入一次 `anki-sentences.tsv`（同样 3 步）。Anki 的间隔重复（SRS）算法会安排每天的复习时间。
 
 > 手机访问：在电脑上先 `ipconfig getifaddr en0` 拿到局域网 IP，手机浏览器打开 `http://<IP>:8000/app/`。
 
@@ -73,6 +84,7 @@ Learning Espanish/
 ├── scripts/             ← Node 脚本（零依赖，node >= 18）
 │   ├── build-pack.mjs   ← 原料 → pack.json
 │   ├── generate-audio.mjs ← pack.json → 音频（macOS `say`，Mónica es_ES）
+│   ├── export-anki.mjs  ← pack → Anki 卡组 TSV + 音频（间隔重复复习）
 │   └── serve.mjs        ← 静态练习页服务器
 └── app/                 ← 练习页（纯 HTML/CSS/JS，无构建步骤）
     ├── index.html

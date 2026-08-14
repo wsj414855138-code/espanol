@@ -43,12 +43,20 @@
 听（慢速/常速）→ 打字 → 自动判对（忽略大小写、重音、标点）。
 
 ### 4.5 路线图（未做，按优先级）
-- [ ] **间隔重复（SRS）**：词汇卡按 SM-2 风格排期；导出 Anki 兼容 CSV 作为过渡方案
+- [x] **SRS 间隔重复（v0.2 已完成）**：`export-anki.mjs` 一键导出 Anki 卡组（词汇卡 + 句型卡 + 音频），利用 Anki 成熟的 SRS 算法。内置 SRS（localStorage + SM-2）列为后续增强
+- [ ] **发音评分**：候选方案 [SpeechSuper-API-Samples](https://github.com/speechsuper/SpeechSuper-API-Samples)（深度学习发音评估，覆盖 8 种语言，中文团队，有西语）；或浏览器 Web Speech API es-ES 转写对比（零成本粗反馈）
 - [ ] **同源词桥**：标出与英语同源的词（restaurante→restaurant），白送词汇量
-- [ ] **发音评分**：接入本地/云 ASR 评分（如 Web Speech API es-ES 转写对比），给出"哪个音不对"的粗粒度反馈
 - [ ] **课本同步工作流**：拍照教材 → OCR → 自动整理成 source.md（配合喂料者）
-- [ ] **AI 对话陪练**：按课文场景做角色扮演（离线 LLM 或 API，另行评估）
-- [ ] **学习统计**：每日练习量、正确率趋势
+- [ ] **AI 对话陪练**：参考 [OpenLingo](https://github.com/pretzelai/openlingo)（开源 AI 语言学习平台：AI 导师 + SRS + 9 类练习，内容即 Markdown + YAML，与我们架构同源）与 [anki-mcp-server](https://www.npmjs.com/package/@ankimcp/anki-mcp-server)（MCP 驱动 Anki）的交互设计
+- [ ] **学习统计**：每日练习量、正确率趋势（localStorage）
+
+### 4.6 可借鉴的开源参考（GitHub 调研 2025-08-14）
+- [the-learning-skill](https://github.com/toddward/the-learning-skill)：通用"学习教练"Agent Skill（SKILL.md 规范），产出 notes/flashcards/quiz/**anki.tsv**/复习日程。我们吸收了它的 anki.tsv 思路（见 export-anki.mjs）
+- [OpenLingo](https://github.com/pretzelai/openlingo)：开源 AI 语言学习平台，内容即 Markdown、AI 生成单元、SRS + TTS/STT 练习——长期架构参照
+- [anki-mcp-server](https://www.npmjs.com/package/@ankimcp/anki-mcp-server)：让 AI 通过 MCP 直接读写 Anki——将来 AI 可自动把新词塞进她的卡组
+- [SpeechSuper-API-Samples](https://github.com/speechsuper/SpeechSuper-API-Samples)：发音评估 API 示例（多语言）——发音评分模块的候选引擎
+- [VocaSpanish](https://github.com/chase-west/VocaSpanish)：Python TTS + 语音识别背单词——小工具思路参考
+- [awesome-language-learning](https://github.com/Vuizur/awesome-language-learning)：语言学习资源清单，可挖西语播客/听力素材
 
 ## 5. 数据模型
 

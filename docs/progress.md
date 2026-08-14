@@ -1,5 +1,13 @@
 # 进度日志
 
+## 2025-08-14（续）· UI 修复 + Anki 导出 + GitHub 调研
+
+- 截图走查：无头 Chrome 在 Retina 屏上视口异常（窗口尺寸不生效），导致两轮"裁切"误报；改用 puppeteer-core + 系统 Chrome 精确 390px/1280px 视口重截，**布局测量确认无溢出**（390px 下 scrollW=390，按钮右缘 376）。Kimi 视觉复核通过。相关 CSS 微调（按钮字号/内边距、播放按钮改胶囊、提示文字换行、听写题号）已保留；页签 hash 深链接（`#vocab` 等）一并支持。
+- 截图存档于 docs/screenshots/（手机 + 桌面 × 4 页签）；puppeteer-core 截图脚本留作将来回归测试工具（临时在 /tmp/pu，未入仓库）。
+- 新增 `export-anki.mjs`：一键导出 Anki 卡组（词汇卡/句型卡 TSV + 46 个音频），导入步骤写入 README。SRS 间隔重复即刻可用。
+- GitHub 调研：吸收 the-learning-skill 的 anki.tsv 思路；登记 OpenLingo（AI 语言学习平台）、anki-mcp-server（AI↔Anki）、SpeechSuper（发音评估 API）、awesome-language-learning 为后续参考（见 design.md §4.6）。
+- 截图存档于 docs/screenshots/（手机 + 桌面 × 4 页签）。
+
 ## 2025-08-14 · 项目启动与 MVP 完成 ✅
 
 - 完成需求讨论：确认方向 = 内容流水线 + 练习页 Web 应用；原料以培训班教材为主；手机/电脑自适应。

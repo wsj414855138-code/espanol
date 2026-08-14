@@ -282,6 +282,7 @@ function renderDictation() {
     const div = document.createElement('div');
     div.className = 'item';
     div.innerHTML = `
+      <span class="item-no">第 ${i + 1} 题</span>
       <div class="actions">
         <button class="btn" data-act="play">🔊 常速</button>
         <button class="btn" data-act="playSlow">🐢 慢速</button>
@@ -317,14 +318,22 @@ function checkDictation(div, s) {
        <span class="dict-answer">${s.es}<br>${s.zh}</span>`;
 }
 
-/* ---------- 页签切换 ---------- */
+/* ---------- 页签切换（支持 #hash 深链接） ---------- */
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x.dataset.tab === name));
+  document.querySelectorAll('.tab-panel').forEach((x) => x.classList.toggle('active', x.id === `tab-${name}`));
+  history.replaceState(null, '', `#${name}`);
+}
 document.querySelectorAll('.tab').forEach((t) => {
-  t.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach((x) => x.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach((x) => x.classList.remove('active'));
-    t.classList.add('active');
-    $(`tab-${t.dataset.tab}`).classList.add('active');
-  });
+  t.addEventListener('click', () => switchTab(t.dataset.tab));
+});
+// 浏览器前进/后退、深链接 hash 变化时同步页签
+window.addEventListener('hashchange', () => {
+  const h = location.hash.replace('#', '');
+  if (['vocab', 'listening', 'shadow', 'dictation'].includes(h)) switchTab(h);
 });
 
-init();
+init().then(() => {
+  const hash = location.hash.replace('#', '');
+  if (hash && ['vocab', 'listening', 'shadow', 'dictation'].includes(hash)) switchTab(hash);
+});
