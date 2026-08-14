@@ -86,8 +86,8 @@
 
 ## 6. 音频策略
 
-- **当前**：macOS `say` 内置语音（Mónica es_ES，可选手动切 Paulina es_MX），输出 m4a/AAC，浏览器全兼容、文件小、离线可用、零成本。
-- **将来**：如需更自然的音色或在线部署，替换 `generate-audio.mjs` 为 edge-tts / Azure / ElevenLabs 等，pack 结构不变。
+- **当前（v0.4）**：edge-tts（微软在线神经语音，`es-ES-ElviraNeural` 女声）优先，mp3 → macOS `afconvert` 转 m4a/AAC 保持格式兼容；慢速档 `--rate=-25%`；**edge 不可用时自动回退 macOS `say`（Mónica，离线兜底）**。联网仅喂料生成时需要，学习者播放无感。
+- **将来**：如需更自然的音色或在线部署，只替换 `generate-audio.mjs` 一个文件，pack 结构不感知引擎差异。
 
 ## 7. 使用流程（每周）
 

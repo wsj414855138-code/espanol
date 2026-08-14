@@ -1,5 +1,12 @@
 # 进度日志
 
+## 2025-08-14 · v0.4：TTS 升级 edge-tts + 发音评测调研
+
+- **TTS 升级（用户拍板）**：edge-tts `es-ES-ElviraNeural`（微软在线神经语音）→ `generate-audio.mjs` 支持 `--engine auto|edge|say`，mp3 经 afconvert 转 m4a 保持格式兼容，慢速 -25%，edge 失败自动回退 macOS Mónica；项目 `.venv` 装 edge-tts（已 gitignore）。全量音频重生成中。
+- **发音评测调研（用户要求：国内厂商，综合效果与性价比）**：结论——讯飞官方文档明确只支持中英；腾讯/百度/阿里/火山未见西语发音评测；**SpeechSuper（驰声）是唯一明确支持西语（8 语言）且带音素级错误诊断的候选**。详细报告：[docs/speech-eval-research.md](speech-eval-research.md)。决策：先 Web Speech 免费跑通 → 升级时用户申请 SpeechSuper appKey。
+- **学习者指南**：[docs/learner-guide.md](learner-guide.md) —— 15 分钟四步基础巩固循环（SRS 复习 → 单类音素听辨 → 跟读评分 → 听写），三条纪律 + 毕业标准。
+- 需求对齐（用户回答）：AI 对话陪练**延迟启动**，先巩固基础；主设备手机+电脑（评分方案按 SpeechSuper 规划）；Anki 与内置 SRS 二选一（待她定）。
+
 ## 2025-08-14 · v0.3 完成 ✅（三线并行：内容 / OCR / 前端 + 控制台插件）
 
 - **内容扩充（4 个新 A1 学习包）**：数字与电话、颜色、家庭成员、食物饮料——每包 12 词汇 + 7~8 听辨对 + 8 句型，听辨对全部为真实西语词且每对含本课主题词；全库共 5 包 58 词汇 / 45 听辨对 / 40 句型，音频 222 个新生成。

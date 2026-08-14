@@ -5,8 +5,8 @@
     "level": "A1",
     "source": "通用 A1 示例（待替换为北语培训班教材内容）",
     "audio": {
-      "voice": "Mónica",
-      "engine": "macos-say"
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
     }
   },
   "vocab": [

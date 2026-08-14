@@ -33,10 +33,9 @@
 
 ### 1. 发音评分引擎（影响：学习质量上限）
 - **现状**：浏览器 Web Speech API（es-ES 转写对比），免费、零依赖；**但 iPhone 的 Safari/Chrome 不支持 SpeechRecognition**——她若主要用手机，评分在她设备上不可用。
-- **选项 A（推荐）**：申请 [SpeechSuper](https://github.com/speechsuper/SpeechSuper-API-Samples) 发音评估 API（中文团队，中文文档，通常有免费额度；需要你注册账号拿 App Key）。音素级反馈，手机浏览器全兼容（走 HTTPS 服务）。
-- 选项 B：Azure Speech pronunciation assessment（需 Azure 账号，有免费层，英文文档）。
-- 选项 C：保持现状（Web Speech），接受手机端评分不可用。
-- **需要你**：① 决定 A/B/C；② 若选 A，去注册申请（约 10 分钟），把 App Key 给我。
+- **调研结论（2025-08-14）**：国内大厂（讯飞/腾讯/百度/阿里/火山）发音评测**均未公开支持西语**（讯飞官方文档明确只中英）；**唯一明确支持西语且音素级诊断的是 SpeechSuper（驰声）**，8 语言、官方 Node demo 现成。详细评测见 [docs/speech-eval-research.md](speech-eval-research.md)。
+- **决策（用户）**：先用免费 Web Speech 跑通体验 → 升级时申请 SpeechSuper（用户已确认不以省钱为目标，要综合效果性价比）。
+- **需要你**：升级时去 speechsuper.com 填 "Contact us" 表单询价（问西语引擎生产级与否 + 试用额度 + 按量单价），把 appKey/secretKey 给我。
 
 ### 2. AI 对话陪练（影响：下一阶段目标）
 - 调研结论：**结构化基础巩固之后**才上对话（OpenLingo 的教训：词汇不足时对话退化成查词典）。她目前处于语音/音标阶段，建议先跑 2~4 周 15 分钟循环。
@@ -45,11 +44,10 @@
   - 或在我们练习页里加"对话练习"页签（更贴合教材场景，工作量可控）。
 - **需要你**：决定启动时机 + 平台偏好；如选 OpenLingo，需要 LLM API Key（用 DeepSeek 的也行）。
 
-### 3. 西语 TTS 音质升级（影响：听力材料质量）
-- **现状**：macOS 内置 Mónica（es_ES），离线、零成本、质量尚可。
-- **选项 A（推荐）**：[edge-tts](https://github.com/rany2/edge-tts) 免费微软在线语音（无需 API Key、无需注册，女声自然度明显更好，另有 es-MX 等口音）；代价：生成音频需联网（只影响你喂料，不影响她练习）。
-- 选项 B：保持现状。
-- **需要你**：拍板即可（A 不需要你申请任何东西，我可以直接做）。
+### 3. 西语 TTS 音质升级（✅ 已决策并实现：升级 edge-tts）
+- **现状 → 升级后**：macOS Mónica → **edge-tts es-ES-ElviraNeural**（微软在线神经语音，女声自然度明显更好）；慢速版用 `--rate=-25%`；mp3 经 macOS `afconvert` 转 m4a 保持旧格式兼容；edge 不可用时自动回退 macOS say（离线兜底）。
+- 代价：生成音频需联网（只影响喂料者，不影响学习者练习）。环境：项目 `.venv` 安装 edge-tts（已 gitignore）。
+- **需要你**：无（已完成，无需申请任何东西）。
 
 ### 4. 真实教材内容（影响：练习与课堂对齐）
 - 系统现在是通用 A1 内容。要和她上课同步，需要教材/课件的照片或电子版。
