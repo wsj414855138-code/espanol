@@ -61,6 +61,9 @@ const VOICE = args.find((a) => !a.startsWith('--') && a !== args[0]) || (useEdge
 function ttsEdge(text, outPath, slow) {
   const tmp = join('/tmp', `ls-tts-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.mp3`);
   const cmd = [EDGE, '--voice', VOICE, '--write-media', tmp];
+  // 国内网络 edge-tts 连微软服务常超时：EDGE_TTS_PROXY 环境变量走代理（如 http://127.0.0.1:12001）
+  const proxy = process.env.EDGE_TTS_PROXY;
+  if (proxy) cmd.push('--proxy', proxy);
   if (slow) cmd.push('--rate=' + EDGE_RATE_SLOW); // 用等号形式，避免负数被 argparse 当选项
   cmd.push('--text', text);
   execFileSync(cmd[0], cmd.slice(1));
