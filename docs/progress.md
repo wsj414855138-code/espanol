@@ -211,3 +211,9 @@
 - app/sw.js Service Worker：缓存应用外壳 + index.json，pack.json 网络优先+缓存兜底，音频在线播放不缓存；注册失败静默。
 - 验证：puppeteer 确认 manifest 链接 + SW 注册成功 + 无 JS 错误；verify_practice 全绿。
 - 待办：v0.7 提醒推送（iOS 16.4+ PWA Web Push 需服务器端，后置）；v0.8 SpeechSuper；喂料者周报（待 service_role key）。
+
+## 2026-08-16 · 课程排序 + 发音基础包（用户反馈：按课本顺序、打地基）
+
+- **排序修复**：source.md 全部加 meta.order（学案→课文按课程序号），build-pack.mjs 支持 order 排序（index.json 按课本顺序），修了 meta 首字段带冒号的解析 bug（slice(6) → 正则剥离），--all 跳过无 source.md 目录。练习页课程列表现在与上课顺序一致。
+- **新增 a1-pronunciacion（发音基础包，order=0 排最前）**：按《西班牙语发音讲义》选取代表词（bebé/viva/paloma/puma/gallo/goma/dedo/día/ella/lluvia/chico/perro）+ 8 组对立听辨（b/v、p/b、p/v、t/d、g/c、l/r），句型沿用第 1 课对话。
+- 17 包全量校验通过（verify_practice 全绿），已推送（b46d3e8）。
