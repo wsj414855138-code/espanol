@@ -59,7 +59,8 @@ createServer((req, res) => {
   }
 
   const type = MIME[extname(filePath).toLowerCase()] || 'application/octet-stream';
-  res.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'no-cache' });
+  // no-store：练习页迭代快，必须保证客户端永远拿到最新文件（曾因旧缓存导致音频路径修复不生效）
+  res.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'no-store' });
   res.end(readFileSync(filePath));
 }).listen(PORT, () => {
   console.log(`练习页已启动：http://localhost:${PORT}/app/`);
