@@ -4,3 +4,5 @@ node_modules/
 .venv/
 .chrome-tmp/
 .kimi-tmp/
+.env
+supabase/.temp/
