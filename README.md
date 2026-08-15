@@ -124,3 +124,13 @@ Learning Espanish/
 3. **改动先读 `docs/`**：设计决策记在 `docs/adr/`，进度记在 `docs/progress.md`，动手前先看。
 4. **提交粒度小**：一次提交一件事，消息用中文或英文都行，但要说清楚"为什么"。
 5. 新增功能请保持"原料 → 构建 → 练习页"这条单向流水线不破坏。
+
+## 部署到 GitHub Pages（老婆任何网络可用）
+
+1. 首次：注册 GitHub → 本机 `gh auth login` 授权（或 Codex/DeepSeek 代跑）。
+2. 一键部署：`bash scripts/deploy-pages.sh`（自动自检内容 → 提交 → 推送 → Pages 自动发布）。
+3. 线上地址：`https://<用户名>.github.io/<仓库名>/app/`（本仓库 = https://wsj414855138-code.github.io/espanol/app/）。
+4. iPhone：Safari 打开 → 分享 → "添加到主屏幕"，全屏像 App 一样用。
+5. 更新内容：改 `data/raw/` → 跑构建脚本 → `bash scripts/deploy-pages.sh` → 1-2 分钟后老婆刷新即得新版。
+
+> 注意：GitHub Pages 免费版要求仓库公开；国内访问 github.io 一般可用，若某天变慢可换 Cloudflare Pages（内容不用动）。
