@@ -204,3 +204,10 @@
 - 第 7 课课文 a1-moderno-7-texto（¿Adónde van? 去向与家庭职业 12 句型）——**《现代西班牙语》第一册 1-7 课全部入库**。
 - 累计 16 个学习包（原有 5 + 学案 4 + 课文 7），约 900 个音频文件；verify_practice 全绿；已推送（16eff51）。
 - OCR 草稿全套存 data/raw/ocr-draft/（1-7 课课文），供复核；发音讲义 PDF 待处理。
+
+## 2026-08-16 · PWA 化（v0.7 第一部分）：manifest + 图标 + 离线缓存
+
+- app/manifest.json（standalone、主题色、192/512 图标）+ Swift 生成绿色 ES 图标 + apple-touch-icon（iOS 添加到主屏幕显示图标）。
+- app/sw.js Service Worker：缓存应用外壳 + index.json，pack.json 网络优先+缓存兜底，音频在线播放不缓存；注册失败静默。
+- 验证：puppeteer 确认 manifest 链接 + SW 注册成功 + 无 JS 错误；verify_practice 全绿。
+- 待办：v0.7 提醒推送（iOS 16.4+ PWA Web Push 需服务器端，后置）；v0.8 SpeechSuper；喂料者周报（待 service_role key）。

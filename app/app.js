@@ -247,6 +247,8 @@ function answerReview(remember) {
 /* ---------- 数据加载 ---------- */
 async function init() {
   renderStats();   // 打开页面即显示今日统计（无数据时显示占位提示）
+  // v0.7 PWA：注册 Service Worker（离线缓存应用外壳；失败静默）
+  try { if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {}); } catch { /* 忽略 */ }
   // v0.5 云同步：后台初始化匿名身份 + 拉取云端 SRS 合并进本地（不阻塞页面，失败静默）
   try {
     if (typeof CLOUD !== 'undefined' && CLOUD.init) {
