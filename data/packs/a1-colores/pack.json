@@ -3,7 +3,11 @@
   "title": "A1 第 3 课：颜色",
   "meta": {
     "level": "A1",
-    "source": "通用 A1 示例（待替换为教材内容）"
+    "source": "通用 A1 示例（待替换为教材内容）",
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
   },
   "vocab": [
     {
