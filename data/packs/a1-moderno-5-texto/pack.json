@@ -1,0 +1,290 @@
+{
+  "id": "a1-moderno-5-texto",
+  "title": "A1 现代西语 第 5 课 课文：El armario de Paco",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《现代西班牙语》第一册 第 5 课课文（扫描版 OCR + 校对）"
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "armario",
+      "zh": "衣柜",
+      "example": {
+        "es": "Éste es el armario de Paco.",
+        "zh": "这是帕科的衣柜。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "ropa",
+      "zh": "衣服",
+      "example": {
+        "es": "Dentro hay mucha ropa.",
+        "zh": "里面有很多衣服。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "chaqueta",
+      "zh": "外套",
+      "example": {
+        "es": "Paco tiene tres chaquetas.",
+        "zh": "帕科有三件外套。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "pantalones",
+      "zh": "裤子",
+      "example": {
+        "es": "Éstos son sus pantalones.",
+        "zh": "这些是他的裤子。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "camisa",
+      "zh": "衬衫",
+      "example": {
+        "es": "Tiene cuatro camisas.",
+        "zh": "他有四件衬衫。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "calcetines",
+      "zh": "袜子",
+      "example": {
+        "es": "Hay calcetines en el armario.",
+        "zh": "衣柜里有袜子。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "dentro",
+      "zh": "里面",
+      "example": {
+        "es": "Dentro del armario hay mucha ropa.",
+        "zh": "衣柜里面有很多衣服。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "tampoco",
+      "zh": "也不",
+      "example": {
+        "es": "No son bonitos, pero tampoco feos.",
+        "zh": "不好看，但也不难看。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "元音",
+      "pair": [
+        "negro",
+        "negra"
+      ],
+      "zh": "黑色的（阳性 / 阴性）",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "元音",
+      "pair": [
+        "blanco",
+        "blanca"
+      ],
+      "zh": "白色的（阳性 / 阴性）",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "元音",
+      "pair": [
+        "viejo",
+        "vieja"
+      ],
+      "zh": "旧的（阳性 / 阴性）",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "重音",
+      "pair": [
+        "ésa",
+        "esa"
+      ],
+      "zh": "那个（代词）/ 那个（指示）",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "t/d",
+      "pair": [
+        "tos",
+        "dos"
+      ],
+      "zh": "咳嗽 / 二",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "p/b",
+      "pair": [
+        "peso",
+        "beso"
+      ],
+      "zh": "重量 / 亲吻",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "l/r",
+      "pair": [
+        "lana",
+        "rana"
+      ],
+      "zh": "羊毛 / 青蛙",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "r/rr",
+      "pair": [
+        "pero",
+        "perro"
+      ],
+      "zh": "但是 / 狗",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "Éste es el armario de Paco. Es viejo y pequeño.",
+      "zh": "这是帕科的衣柜。它又旧又小。",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "Dentro del armario hay mucha ropa: chaquetas, pantalones, camisas, calcetines...",
+      "zh": "衣柜里面有很多衣服：外套、裤子、衬衫、袜子……",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "Paco tiene tres chaquetas. Ésta es negra, ésa es azul y aquélla es blanca.",
+      "zh": "帕科有三件外套。这件是黑色的，那件是蓝色的，那件（远的）是白色的。",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "Aquélla blanca es muy bonita.",
+      "zh": "那件白色的非常好看。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "Éstos negros no son bonitos, pero tampoco feos.",
+      "zh": "这些黑色的不好看，但也不难看。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "¿De quién es este armario? — Es de Paco.",
+      "zh": "这个衣柜是谁的？——是帕科的。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "¿Cómo es el armario de Paco? — Es viejo y pequeño.",
+      "zh": "帕科的衣柜怎么样？——又旧又小。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "¿Qué hay dentro de su armario? — Hay mucha ropa.",
+      "zh": "他衣柜里面有什么？——有很多衣服。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    },
+    {
+      "id": "s9",
+      "es": "¿Cuántas chaquetas tiene Paco? — Tiene tres.",
+      "zh": "帕科有几件外套？——有三件。",
+      "audio": "audio/s9.m4a",
+      "audioSlow": "audio/s9-slow.m4a"
+    },
+    {
+      "id": "s10",
+      "es": "¿Es negra esta chaqueta? — Sí, ésta es negra.",
+      "zh": "这件外套是黑色的吗？——是的，这件是黑色的。",
+      "audio": "audio/s10.m4a",
+      "audioSlow": "audio/s10-slow.m4a"
+    },
+    {
+      "id": "s11",
+      "es": "¿Es azul aquella chaqueta? — No, es blanca.",
+      "zh": "那件外套是蓝色的吗？——不，是白色的。",
+      "audio": "audio/s11.m4a",
+      "audioSlow": "audio/s11-slow.m4a"
+    },
+    {
+      "id": "s12",
+      "es": "¿Cuántas camisas tiene Paco? — Tiene cuatro.",
+      "zh": "帕科有几件衬衫？——有四件。",
+      "audio": "audio/s12.m4a",
+      "audioSlow": "audio/s12-slow.m4a"
+    }
+  ]
+}
