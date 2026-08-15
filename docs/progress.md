@@ -1,5 +1,13 @@
 # 进度日志
 
+## 2026-08-15 · Kimi 视觉桥 v1.2.1：默认模型切回 K2.7 + 开源方案调研
+
+- **用户反馈**：想要 K2.6（怀疑更快）；整体 1 分钟太长；要求看 GitHub 开源方案。
+- **确认**：coding 端点**没有 K2.6**（`GET /v1/models` 实测只有 kimi-for-coding / highspeed / k3 / k3-256k）；K2.7 即 K2 系列最高。
+- **再基准（紧凑提示词 + m-dictation，双轮）**：**K2.7 7.8/8.5s**（首 token 2.2/1.7s）vs **k3 10.6/10.6s**（首 token 3.0/4.2s）——紧凑提示词下 K2.7 反而快 ~25% 且价格只有 k3 的 1/3。**默认模型切回 `kimi-coding/kimi-for-coding`**（?r=8，pid=78136 验证）。
+- **1 分钟拆解**：识图仅占 ~8-12s，其余 ~40s 是 DeepSeek 主模型 `reasoningEffort: max` 的思考+生成（模型设置，非插件问题；GUI 可调低 effort 提速）。
+- **GitHub 开源方案调研**（vision-bridge-mcp / codex-vision-bridge / visual-proxy / VisionBridge 等）：主流架构与我们一致（剥离图片 → 视觉模型描述 → 文本注入 + 内容寻址缓存 + 多模型回退），本插件已覆盖其核心优化（prefetch、sha256 缓存、http→pi 回退、thinking off）。**值得借鉴的后续功能**：VisionBridge 的 `scan`（密集文档分块扫描转写）与 `compare`（多图对比单次调用）——列入 backlog，用户需要时再加。
+
 ## 2026-08-15 · Kimi 视觉桥 v1.2：模型选型基准 + 全面绕开 pi
 
 - **用户要求**：选个快且便宜的模型；pi 慢就绕开它直接调 API；未来可能换千问/豆包等模型。
@@ -177,3 +185,8 @@
 - 语音发音讲解（第 15-18 页：元音/辅音口型+练习词）OCR 草稿存 data/raw/ocr-draft/（发音练习词可做"元音训练"包，待用户确认）。
 - 修正课文包听辨对（bien/vienes 非最小对 → quién/quien 重音对）。
 - 音频：代理重试 3 轮收敛 + say 兜底；10 包全量校验通过；已推送（9ce05a8）。
+
+## 2026-08-16 · 第2课课文包（目标长跑续）
+
+- 扫描版第 2 课正文（pdf 29-32 页）OCR + 人工校对 → a1-moderno-2-texto（词汇 8 + 听辨 8 + 句型 11，主题：La familia de Paco 职业与家庭）。
+- 音频代理重试收敛 + say 兜底；11 包全量校验通过；已推送（afb6931）。
