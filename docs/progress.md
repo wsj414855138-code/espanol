@@ -160,3 +160,13 @@
 - 冒烟测试（node 模拟浏览器，真实 Supabase）：匿名注册 ✓、SRS 推送 ✓、跨设备拉取合并 ✓、统计推送 ✓、RLS 拦截匿名查询 ✓。
 - 回归：verify_practice 全绿（9 包 + 真实播放）。
 - 待办：v0.6 学习报告（读 activity/scores 做热力图与周报）；SpeechSuper 询价等用户提交。
+
+## 2026-08-16 · v0.6 报告页（学习者视角）完成（目标长跑第 3 轮）
+
+- 练习页新增「📊 报告」页签：连续打卡天数（streak 热力图，对标 Duolingo）+ 今日练习次数 + 到期复习卡 + 已学词汇 4 张摘要卡 + 近 8 周打卡热力图（SVG）。
+- 数据来源：本地 stats + CLOUD.pullActivity（新增，云端 activity 表近 90 天）；SRS 到期数本地统计。
+- 修 bug：loadPack 的 tab 隐藏逻辑未映射 report 页签导致 TypeError → 加 key 守卫。
+- 验证：puppeteer 390px 实测渲染正常（无 JS 错误，仅 favicon 404 无害）；Kimi 视觉复核通过；verify_practice 全绿。
+- 新增 scripts/pdf2png.swift（PDFKit 逐页转 PNG，供扫描版教材 OCR）。
+- 扫描版《现代西班牙语1》（449 页）OCR 试水：正文/目录页 OCR 质量可用，但整书课文 OCR 校对风险高，留待人工校对后入库（学案已覆盖 1-7 课核心）。
+- 待办：喂料者周报（需 service_role key，待用户重新生成访问令牌）；SpeechSuper 询价；扫描版课文校对。

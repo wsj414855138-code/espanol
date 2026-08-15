@@ -379,3 +379,12 @@ body {
 }
 .play-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 [data-theme="light"] .play-toast { background: rgba(40, 40, 48, 0.94); }
+
+/* 报告页（v0.6） */
+.report-summary { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.report-card { flex: 1; min-width: 120px; padding: 12px 10px; border-radius: 12px; background: var(--card-soft, rgba(128,128,160,0.08)); text-align: center; }
+.rc-num { font-size: 26px; font-weight: 700; color: var(--accent, #4c9f6a); }
+.rc-label { font-size: 12px; color: var(--muted, #9a9ab0); margin-top: 4px; }
+.report-h3 { margin: 16px 0 8px; font-size: 14px; }
+.report-heatmap { overflow-x: auto; padding: 4px 0; }
+.report-heatmap svg { display: block; }

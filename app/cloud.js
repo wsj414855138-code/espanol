@@ -140,6 +140,17 @@ const CLOUD = (() => {
     } catch { return false; }
   }
 
+  /** 拉取近期活动（v0.6 报告页热力图用）；返回 [{day,type,correct,total}]，失败返回 [] */
+  async function pullActivity(days) {
+    try {
+      const limit = Number(days) || 90;
+      const res = await api(`/rest/v1/${ACT_TABLE}?select=day,type,correct,total&order=day.desc&limit=${limit}`, { method: 'GET' });
+      if (!res || !res.ok) return [];
+      const rows = await res.json();
+      return Array.isArray(rows) ? rows : [];
+    } catch { return []; }
+  }
+
   return {
     init: ensureAuth,
     pullSRS,

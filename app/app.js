@@ -304,6 +304,7 @@ async function loadPack(id) {
   // 没数据的 tab 隐藏
   document.querySelectorAll('.tab[data-tab]').forEach((t) => {
     const key = { vocab: 'vocab', listening: 'listening', shadow: 'sentences', dictation: 'sentences' }[t.dataset.tab];
+    if (!key) return;
     const empty = key === 'sentences' ? !state.pack.sentences.length : !state.pack[key].length;
     t.style.display = empty ? 'none' : '';
   });
@@ -651,11 +652,93 @@ function checkDictation(div, s) {
   div.dataset.lastJudge = now;
 }
 
+
+/* ---------- 报告页（v0.6：打卡热力图 + 摘要） ---------- */
+async function renderReport() {
+  const summaryEl = $('reportSummary');
+  const heatEl = $('reportHeatmap');
+  summaryEl.innerHTML = '<span class="hint">加载中…</span>';
+  heatEl.innerHTML = '';
+
+  // 汇总：本地今日统计 + 云端近 90 天活动
+  const today = todayStr();
+  const s = loadStats();
+  const todayDone = s && s.date === today ? s.listeningDone + s.dictationDone + s.reviewCards : 0;
+
+  const byDay = {};
+  let cloudOk = false;
+  if (typeof CLOUD !== 'undefined' && CLOUD.pullActivity) {
+    const acts = await CLOUD.pullActivity(90);
+    if (acts.length) {
+      cloudOk = true;
+      for (const a of acts) {
+        byDay[a.day] = (byDay[a.day] || 0) + (Number(a.total) || 0);
+      }
+    }
+  }
+
+  // SRS 到期统计
+  const map = loadSRS();
+  let dueCount = 0, totalCards = 0;
+  for (const k of Object.keys(map)) {
+    totalCards++;
+    if (isDue(map[k])) dueCount++;
+  }
+
+  // 摘要卡
+  const streak = calcStreak(byDay, today);
+  summaryEl.innerHTML =
+    `<div class="report-card"><div class="rc-num">${streak}</div><div class="rc-label">连续打卡（天）</div></div>` +
+    `<div class="report-card"><div class="rc-num">${todayDone}</div><div class="rc-label">今日练习（次）</div></div>` +
+    `<div class="report-card"><div class="rc-num">${dueCount}</div><div class="rc-label">到期复习卡</div></div>` +
+    `<div class="report-card"><div class="rc-num">${totalCards}</div><div class="rc-label">已学词汇</div></div>`;
+  summaryEl.dataset.cloud = cloudOk ? '1' : '0';
+  if (!cloudOk && todayDone === 0) {
+    summaryEl.innerHTML += '<div class="hint">还没有练习记录，去做几题吧！</div>';
+  }
+
+  // 热力图：近 8 周（56 天），列 = 周
+  const days = [];
+  for (let i = 55; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push({ day: dateStr(d), count: byDay[dateStr(d)] || 0 });
+  }
+  const maxCount = Math.max(1, ...days.map((x) => x.count));
+  const weeks = [];
+  for (let i = 0; i < days.length; i += 7) weeks.push(days.slice(i, i + 7));
+  const cellSize = 14;
+  const gap = 3;
+  const width = weeks.length * (cellSize + gap) + 8;
+  const svg = `<svg width="${width}" height="${7 * (cellSize + gap) + 8}" viewBox="0 0 ${width} ${7 * (cellSize + gap) + 8}">` +
+    weeks.map((week, wi) => week.map((d, di) => {
+      const level = d.count <= 0 ? 0 : Math.min(4, Math.ceil((d.count / maxCount) * 4));
+      const fill = ['#2d2d35', 'rgba(47,158,68,0.25)', 'rgba(47,158,68,0.45)', 'rgba(47,158,68,0.7)', 'rgba(47,158,68,1)'][level];
+      const isToday = d.day === today;
+      const title = `${d.day}：${d.count} 次练习`;
+      return `<rect x="${wi * (cellSize + gap)}" y="${di * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="3" fill="${fill}"${isToday ? ' stroke="#fff" stroke-width="1.5"' : ''}><title>${title}</title></rect>`;
+    }).join('')).join('') + '</svg>';
+  heatEl.innerHTML = svg;
+}
+
+/** 连续打卡天数：从今天往回数，今天没练则从昨天往回数 */
+function calcStreak(byDay, today) {
+  let streak = 0;
+  let d = new Date();
+  if (!byDay[today]) d.setDate(d.getDate() - 1);   // 今天还没练，从昨天算
+  while (byDay[dateStr(d)]) {
+    streak++;
+    d.setDate(d.getDate() - 1);
+  }
+  return streak;
+}
+
 /* ---------- 页签切换（支持 #hash 深链接） ---------- */
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x.dataset.tab === name));
   document.querySelectorAll('.tab-panel').forEach((x) => x.classList.toggle('active', x.id === `tab-${name}`));
   history.replaceState(null, '', `#${name}`);
+  if (name === 'report') renderReport();
 }
 document.querySelectorAll('.tab').forEach((t) => {
   t.addEventListener('click', () => switchTab(t.dataset.tab));
@@ -663,10 +746,10 @@ document.querySelectorAll('.tab').forEach((t) => {
 // 浏览器前进/后退、深链接 hash 变化时同步页签
 window.addEventListener('hashchange', () => {
   const h = location.hash.replace('#', '');
-  if (['vocab', 'listening', 'shadow', 'dictation'].includes(h)) switchTab(h);
+  if (['vocab', 'listening', 'shadow', 'dictation', 'report'].includes(h)) switchTab(h);
 });
 
 init().then(() => {
   const hash = location.hash.replace('#', '');
-  if (hash && ['vocab', 'listening', 'shadow', 'dictation'].includes(hash)) switchTab(hash);
+  if (hash && ['vocab', 'listening', 'shadow', 'dictation', 'report'].includes(hash)) switchTab(hash);
 });

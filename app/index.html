@@ -17,6 +17,7 @@
       <button class="tab" data-tab="listening">听辨</button>
       <button class="tab" data-tab="shadow">跟读</button>
       <button class="tab" data-tab="dictation">听写</button>
+      <button class="tab" data-tab="report">📊 报告</button>
     </nav>
   </header>
 
@@ -84,6 +85,14 @@
     <section id="tab-dictation" class="tab-panel">
       <p class="hint">听句子，把你听到的打出来（可以忽略大小写、重音和标点）。</p>
       <div id="dictationList" class="item-list"></div>
+    </section>
+
+    <!-- 报告 -->
+    <section id="tab-report" class="tab-panel">
+      <div id="reportSummary" class="report-summary"></div>
+      <h3 class="report-h3">打卡热力图（近 8 周）</h3>
+      <div id="reportHeatmap" class="report-heatmap"></div>
+      <p class="hint" id="reportHint">练习记录同步在云端，换设备不丢；断网时先记在本机，联网后自动补传。</p>
     </section>
   </main>
 
