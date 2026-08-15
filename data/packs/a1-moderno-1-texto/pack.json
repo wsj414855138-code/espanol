@@ -1,0 +1,276 @@
+{
+  "id": "a1-moderno-1-texto",
+  "title": "A1 现代西语 第 1 课 课文：¿Quién es él?",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《现代西班牙语》第一册 第 1 课课文（扫描版 OCR + 校对）"
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "¿quién?",
+      "zh": "谁",
+      "example": {
+        "es": "¿Quién es él?",
+        "zh": "他是谁？"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "llamarse",
+      "zh": "名叫",
+      "example": {
+        "es": "Ella se llama Ana.",
+        "zh": "她叫安娜。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "amigo / amiga",
+      "zh": "朋友（男/女）",
+      "example": {
+        "es": "Paco y Pepe son amigos.",
+        "zh": "帕科和佩佩是朋友。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "cubano / cubana",
+      "zh": "古巴的",
+      "example": {
+        "es": "Paco es cubano.",
+        "zh": "帕科是古巴人。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "chileno / chilena",
+      "zh": "智利的",
+      "example": {
+        "es": "Pepe es chileno.",
+        "zh": "佩佩是智利人。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "panameño / panameña",
+      "zh": "巴拿马的",
+      "example": {
+        "es": "Ana es panameña.",
+        "zh": "安娜是巴拿马人。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "chino / china",
+      "zh": "中国的",
+      "example": {
+        "es": "Es china.",
+        "zh": "她是中国人。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "ellos / ellas",
+      "zh": "他们 / 她们",
+      "example": {
+        "es": "Ellos son amigos.",
+        "zh": "他们是朋友。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "元音",
+      "pair": [
+        "ella",
+        "olla"
+      ],
+      "zh": "她 / 锅",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "元音",
+      "pair": [
+        "mi",
+        "mí"
+      ],
+      "zh": "我的 / 我（重读）",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "l/r",
+      "pair": [
+        "lana",
+        "rana"
+      ],
+      "zh": "羊毛 / 青蛙",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "m/n",
+      "pair": [
+        "mi",
+        "ni"
+      ],
+      "zh": "我的 / 也不",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "t/d",
+      "pair": [
+        "tú",
+        "dos"
+      ],
+      "zh": "你 / 二",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "重音",
+      "pair": [
+        "este",
+        "está"
+      ],
+      "zh": "这个 / 他（她）在",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "重音",
+      "pair": [
+        "quién",
+        "quien"
+      ],
+      "zh": "谁（疑问）/ 谁（关系代词）",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "元音",
+      "pair": [
+        "Ema",
+        "ama"
+      ],
+      "zh": "埃玛（人名）/ 爱（动词变位）",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "¿Quién es él? — Él es Pepe.",
+      "zh": "他是谁？——他是佩佩。",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "¿Es Pepe chino? — No, Pepe no es chino. Pepe es chileno.",
+      "zh": "佩佩是中国人吗？——不，佩佩不是中国人，佩佩是智利人。",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "Ella se llama Ana. Ana es panameña.",
+      "zh": "她叫安娜。安娜是巴拿马人。",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "Ella es Li Xin. Es china.",
+      "zh": "她是李欣。她是中国人。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "Paco y Pepe son amigos.",
+      "zh": "帕科和佩佩是朋友。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "Ana y Li Xin son amigas.",
+      "zh": "安娜和李欣是朋友。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "¿Es él Paco? — Sí, él es Paco.",
+      "zh": "他是帕科吗？——是的，他是帕科。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "¿Es ella Ema? — No, ella no es Ema, es Ana.",
+      "zh": "她是埃玛吗？——不，她不是埃玛，是安娜。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    },
+    {
+      "id": "s9",
+      "es": "¿Son amigos Pepe y Paco? — Sí, ellos son amigos.",
+      "zh": "佩佩和帕科是朋友吗？——是的，他们是朋友。",
+      "audio": "audio/s9.m4a",
+      "audioSlow": "audio/s9-slow.m4a"
+    },
+    {
+      "id": "s10",
+      "es": "¿Quién es ella? — Ella es Ana.",
+      "zh": "她是谁？——她是安娜。",
+      "audio": "audio/s10.m4a",
+      "audioSlow": "audio/s10-slow.m4a"
+    }
+  ]
+}
