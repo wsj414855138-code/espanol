@@ -190,3 +190,11 @@
 
 - 扫描版第 2 课正文（pdf 29-32 页）OCR + 人工校对 → a1-moderno-2-texto（词汇 8 + 听辨 8 + 句型 11，主题：La familia de Paco 职业与家庭）。
 - 音频代理重试收敛 + say 兜底；11 包全量校验通过；已推送（afb6931）。
+
+## 2026-08-16 · 课文包 3-5 课（目标长跑续）
+
+- 第 3 课课文 a1-moderno-3-texto（¿Dónde está la casa? 房子位置 12 句型）
+- 第 4 课课文 a1-moderno-4-texto（¿Cómo es la familia de Paco? 形容词描述 12 句型）
+- 第 5 课课文 a1-moderno-5-texto（El armario de Paco 衣服颜色 12 句型）
+- 全部 OCR 草稿入 data/raw/ocr-draft/，句子人工校对；音频代理多轮重试收敛；14 包全量校验通过；已推送（59c81b6）。
+- 累计真实教材包 9 个（学案 4 + 课文 5），覆盖《现代西语》第 1-5 课。
