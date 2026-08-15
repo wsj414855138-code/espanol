@@ -2,7 +2,10 @@
 'use strict';
 
 const $ = (id) => document.getElementById(id);
-const BASE = location.pathname.startsWith('/app/') ? '../data/packs' : 'data/packs';
+// BASE 解析：页面可能在 /app/（本地）或 /<仓库>/app/（GitHub Pages 子路径）下。
+// 只要路径里含 /app/ 段就用相对上一级的 data/packs（曾因 startsWith('/app/')
+// 在子路径部署下失效，导致线上"数据加载失败"——2026-08-15 修复）
+const BASE = (location.pathname + '/').includes('/app/') ? '../data/packs' : 'data/packs';
 
 const state = {
   packs: [],
