@@ -1,5 +1,47 @@
 # 进度日志
 
+## 2026-08-15 · Kimi 视觉桥 v1.2：模型选型基准 + 全面绕开 pi
+
+- **用户要求**：选个快且便宜的模型；pi 慢就绕开它直接调 API；未来可能换千问/豆包等模型。
+- **四模型基准**（直连 HTTP + thinking off，d-shadow.png 双轮）：k3 **10.0/10.3s**（最快）；K2.7 13.5/14.7s；highspeed 13.4/13.6s（价 2x）；k3-256k 13.4/13.2s（订阅免费）。质量全部正确转写。
+- **定版**：默认模型 → `kimi-coding/k3`（快 ~25%，单图成本 ¥0.1 vs K2.7 ¥0.03，量小无所谓；用户优先速度）。
+- **绕开 pi**：识图 100% 直连 `api.kimi.com/coding/v1/chat/completions`（OpenAI 兼容，`data:` base64 图片 + `thinking:{type:"disabled"}` + SSE 流式早停）。pi 仅保留两个兜底：token 过期刷新（401 时跑一次 pi 空调用，约每月一次）、HTTP 全失败时回退 pi CLI（`transport: auto`）。
+- **可扩展**：新增 `endpoint`/`apiKey` 配置——以后接千问/豆包只需改三行配置（端点 + 模型 id + key），不用改代码。
+- **实测**：k3 冷启动 11.6s，缓存 0ms；live 热加载验证 pid=78136，version 1.2.0。
+
+## 2026-08-15 · Kimi 视觉桥 v1.1：提速（直连 API + 关思考模式）
+
+- **用户反馈**：识图 30s 才开始显示 thinking，太慢。
+- **测量**（基准数据）：pi 固定开销 2-4s；带图时 K2.7 先输出大段 `reasoning_content` 再出内容（首个内容 token 6.2s）；`thinking:{type:"disabled"}` 后首个内容 token **3.2s**、同图总耗时 3.5s vs 6.2s（快 45%）。
+- **改动（v1.1.0，?r=6，pid=78136 验证已热加载）**：
+  1. **直连 HTTP**：POST `https://api.kimi.com/coding/v1/chat/completions`（OpenAI 兼容），Bearer 用 `~/.pi/agent/auth.json` 的 kimi-coding OAuth token；省掉 pi 子进程启动 2-4s；401 时用 pi 跑一次空调用刷新 token 再重试；`transport: auto` 失败自动回退 pi CLI（老路径保留）。
+  2. **关思考**：`thinking: {type:"disabled"}`（`disableThinking`，K2.7 不接受时会自动去掉重试）。
+  3. **流式早停**：SSE 解析 + `abortAfterChars`（默认 1200）到量即断流，长描述不生成完。
+  4. **入队即预热**：监听 `agent/inbox/inserted`，图片一进收件箱就开始识图，与 pre-step/组包并行。
+  5. 提示词精简（去掉开场白/总结指令）。
+- **实测**：真实截图 cold 12.5s（原 pi 路径 15-25s），缓存命中 0ms。用户端预期 30s → 15~20s（取决于图密度）。
+- 踩坑：SSE chunk 在 Node22 fetch 里 `chunk.toString()` 是逗号数字串，必须 `TextDecoder().decode(chunk)`；`enable_thinking:false`/`reasoning_effort:off` 均无效或破坏输出，唯 `thinking:{type:"disabled"}` 有效。
+
+## 2026-08-15 · 视觉桥二次修复：DSH bash 工具 PATH 缺失 node/pi
+
+- **症状复现**：用户再次报告同样的 `bash: node: command not found`；诊断日志为空 → 失败不在插件桥路径。
+- **新发现（关键）**：`echo $PATH` 实测 **DSH 的 bash 工具默认 PATH=`/usr/bin:/bin:/usr/sbin:/sbin`，没有 node 也没有 pi**（宿主由 Electron 启动，环境最小化）。所以：
+  1. pi 里的 Kimi 调 bash 工具跑 `node` 会失败（r3 已用 --no-tools 封死此路）；
+  2. **用户在聊天里让 agent"看这张图"，agent 跑 `node scripts/vision-review.mjs` 也会撞同一个错**——这很可能就是用户看到的"图片解码失败: bash: node: command not found"（模型转述 bash 失败）。
+- **修复（r5）**：插件 apply 时把 pi-node bin 目录 prepend 进**宿主进程 `process.env.PATH`**（`extendHostPath`，默认开）。DSH bash 工具子进程 `childEnv = scrubbedParentEnv() + overrides` 继承宿主 PATH → 实测本会话 bash 已能直接 `node --version`（v22.23.2）和 `pi --version`（0.84.1）。
+- **验证强化**：status 写入 `pid` + `version`，本次确认 `.status.json` 的 pid=78136 == live 宿主进程（ps 实测），热加载链路首次被铁证确认；新增 `.heartbeat.log`（每次识图 start/ok/fail）与 `.diagnostics.log`（失败详情），下次失败可精确定位。
+- 教训：DSH bash 工具 PATH 是宿主最小 PATH，任何依赖 node/pi 的 agent bash 操作都会失败；插件补 PATH 是通用解法。
+
+## 2026-08-15 · Kimi 视觉桥修复：`bash: node: command not found`
+
+- **症状（用户实测）**：发图后模型收到 `图片解码失败: bash: node: command not found`。
+- **根因**：DSH 宿主由 Electron 启动，PATH 只有 `/usr/bin:/bin:/usr/sbin:/sbin`；Kimi 在 pi 里会调用 pi 的 bash 工具执行 `node ...` 分析图片，而 pi 给 bash 工具拼的环境（`~/.pi/agent/bin` + 继承 PATH）里找不到 node。
+- **修复（三管齐下，热加载已生效，?r=2→?r=3）**：
+  1. pi 加 `--no-tools` 运行（config `noTools: true`）——Kimi 不再有 bash 工具，失败从根上不可能发生；
+  2. 插件把 node/npm/npx 软链进 `~/.pi/agent/bin`（pi 自己的辅助 bin 目录，config `ensureNodeInPiBin: true`）——pi 派生的任何 bash 都能找到 node（已用 `bash -c "node --version"` + 最小 PATH 验证 exit 0）；
+  3. 失败写诊断日志 `~/.dsh/profiles/web/plugins/kimi-vision/.diagnostics.log`。
+- **验证**：r3 回归通过（--no-tools 识图正常，20.5s，注入格式正确）；live `.status.json` = applied: true；软链已就位。
+
 ## 2026-08-15 · DSH 插件：Kimi 视觉桥（dsh-plugin-kimi-vision）
 
 - **问题**：主模型是 DeepSeek（纯文本），用户在 DSH 聊天里发图片会被 `session.prompt` 直接拒绝（"当前模型不支持图片"），只能手动把图片丢给 Kimi 再粘贴描述回来，很麻烦。
@@ -101,3 +143,12 @@
 - **新增 scripts/extract-frames.swift**：零依赖录屏/视频抽帧（AVFoundation），供 Kimi 视觉逐帧分析录屏（两段录屏共 37 帧已分析：用户在词汇例句喇叭/听辨/跟读/听写各点播放，无视觉反馈属设计如此，真因在服务器头部）。
 - **新增 DSH 插件 kimi-7/pkg-7（多模态自动召唤 Kimi）**：用户消息含图片 → 自动经 pi CLI（kimi-coding/kimi-for-coding K2.7）逐图分析 → 结果以文字块注入模型上下文；字节安全 base64（DSH btoa 为 UTF-8 语义不可用于二进制）→ `.kimi-tmp/` 中转 → pi；按 attachmentId 去重防重试重复计费；pi 失败兜底绝对路径重试，并注入失败说明。链路已在 bash 实测（base64 与 Buffer 基准逐字节一致、pi 正常出结果）。
 - **交接文档**：根目录 `交接文档-音频无声.md`（现象/证据链/修复/复验步骤/接力清单/历史根因备忘）。
+
+## 2026-08-16 · 真实教材入库 + 上线（目标长跑第 1 轮）
+
+- 用户提供 [待归档]真实教材/（BLCU《现代西班牙语》第一册扫描版 + 1-7 课学案 doc/docx + 发音讲义）。
+- 学案用 macOS `textutil` 提取（数字文件无需 OCR，准确率 100%），内容质量高（Wynnie 老师学案：问候/人称/SER/国家国籍/数字/职业/物主/ESTAR/HAY/定冠词/房间/颜色/家庭/衣服/TENER/外貌/性格/地点/IR/-AR 变位/动词）。
+- 新建 4 个真实学习包：a1-moderno-1（第1课）、a1-moderno-23（第2-3课）、a1-moderno-45（第4-5课）、a1-moderno-67（第6-7课）：每包 12 词汇 + 8 听辨 + 8 句型，音频 224 个（edge-tts/Elvira，慢速版一并生成）。
+- 音频生成踩坑：edge-tts 连微软服务深夜超时/被墙 → generate-audio.mjs 新增 `EDGE_TTS_PROXY` 环境变量支持（--proxy），代理重试 3 轮收敛，剩余用 macOS say 兜底补齐；say 兜底跑误改写全 9 包 meta.audio → 已修正统一为 edge-tts/es-ES-ElviraNeural。
+- 校验：verify_practice 全绿（9 包静态+HTTP+真实播放 7 播放点）；已推送 GitHub（ea405d2 + e8bd023），Pages 线上 4 新包全 200。
+- 待办：扫描版 PDF（《现代西班牙语1》整书）后续可 OCR 补充课文/对话内容；发音讲义 PDF 同理。
