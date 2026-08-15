@@ -92,7 +92,8 @@ Learning Espanish/
 ├── docs/
 │   ├── design.md        ← 产品设计文档（目标、功能、路线图）
 │   ├── adr/             ← 架构决策记录（为什么这么做）
-│   └── progress.md      ← 进度日志
+│   ├── progress.md      ← 进度日志
+│   └── plugins/kimi-vision/ ← DSH 插件「Kimi 视觉桥」源码镜像 + 文档
 ├── data/
 │   ├── raw/             ← 原料：人工/AI 编辑的 Markdown（唯一"入口"）
 │   │   └── <课程>/

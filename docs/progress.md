@@ -1,5 +1,17 @@
 # 进度日志
 
+## 2026-08-15 · DSH 插件：Kimi 视觉桥（dsh-plugin-kimi-vision）
+
+- **问题**：主模型是 DeepSeek（纯文本），用户在 DSH 聊天里发图片会被 `session.prompt` 直接拒绝（"当前模型不支持图片"），只能手动把图片丢给 Kimi 再粘贴描述回来，很麻烦。
+- **方案（用户确认）**：DSH 宿主侧插件，发图后**自动**调 Kimi 视觉（pi CLI + ~/.pi OAuth，K2.7）把图片描述成文字注入模型请求；原图仍在聊天里显示；DeepSeek 正常回答。
+- **实现**：`~/.dsh/profiles/web/plugins/kimi-vision/`（零 npm 依赖）+ `cordis.patch.yml` 注册（热加载，无需重启）。仓库镜像在 `docs/plugins/kimi-vision/`。
+  - 补丁 `ctx.llm.resolveModelInfo`：纯文本模型上报 `inputModalities` 含 image，绕开图片准入拒绝；
+  - 监听 `llm/stream` waterfall：目标模型纯文本时，图片块 → `[📷 文件名 · Kimi 视觉识别] 描述` 文本块（只改 wire 请求，不动会话日志）；原生看图模型（kimi-coding/k3）原样透传；
+  - 描述按附件 id 缓存（内存 + cache.json 落盘），同图秒回；识别失败 fail-open 不中断对话。
+- **验证**：独立导入 + 模拟 ctx 端到端冒烟（真实 pi 识图 15~20s，图片从未到达 adapter；二次调用 0ms 缓存命中）；live 热加载后 `.status.json` = `applied: true`；`dsh --profile web --dump-config` 确认条目在树中。
+- **踩坑**：cordis 服务访问必须 `inject`（"cannot get property llm without inject"）；插件模块被 import 缓存，改代码后要 bump `name` 里的 `?r=` 查询串才会重载。
+- 教训：DSH 图片准入在 `session.prompt`（宿主侧无钩子），唯一干净的绕法是补丁模型能力上报 + 在 wire 层改写请求。
+
 ## 2025-08-14 · 校验流程插件化（verify_practice）
 
 - 用户反馈"仍听不到"：服务端与前端链路验证全部正常（7 播放点 play() 成功 + 全 200），判定为**客户端缓存旧 app.js**（旧版播放路径 404）。对策：serve.mjs 缓存策略 `no-cache → no-store` 并重启服务，客户端刷新即拿新文件。

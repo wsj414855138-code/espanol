@@ -1,0 +1,7 @@
+{
+  "name": "dsh-plugin-kimi-vision",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH host plugin: bridge image attachments to the Kimi vision model so text-only models (DeepSeek) can read them."
+}
