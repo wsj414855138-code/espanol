@@ -4,10 +4,7 @@
   "meta": {
     "level": "A1",
     "source": "通用 A1 示例（待替换为教材内容）",
-    "audio": {
-      "engine": "edge-tts",
-      "voice": "es-ES-ElviraNeural"
-    }
+    "order": 16
   },
   "vocab": [
     {

@@ -54,8 +54,8 @@ function parseSource(md) {
       continue;
     }
     if (line.startsWith('> meta')) {
-      // 例如：> meta: level=A1, source=教材《现代西班牙语》第1课
-      const body = line.slice(6).trim();
+      // 例如：> meta: order=1, level=A1, source=教材《现代西班牙语》第1课
+      const body = line.replace(/^>\s*meta\s*:\s*/, '');
       for (const kv of body.split(',')) {
         const [k, ...v] = kv.split('=');
         if (k) result.meta[k.trim()] = v.join('=').trim();
@@ -106,7 +106,11 @@ function buildPack(packId) {
   const pack = {
     id: packId,
     title: src.title,
-    meta: { level, source: src.meta.source || '待补充来源' },
+    meta: {
+      level,
+      source: src.meta.source || '待补充来源',
+      ...(src.meta.order !== undefined ? { order: Number(src.meta.order) } : {}),
+    },
     vocab: src.vocab.map((v, i) => ({
       id: `v${i + 1}`,
       es: v.es,
@@ -142,9 +146,14 @@ function refreshIndex() {
     .filter((d) => d.isDirectory() && existsSync(join(PACKS_DIR, d.name, 'pack.json')))
     .map((d) => {
       const p = JSON.parse(readFileSync(join(PACKS_DIR, d.name, 'pack.json'), 'utf8'));
-      return { id: p.id, title: p.title, level: p.meta?.level || '' };
+      return { id: p.id, title: p.title, level: p.meta?.level || '', order: p.meta?.order };
     })
-    .sort((a, b) => a.id.localeCompare(b.id));
+    // 按课本课程顺序排序（meta.order）；无 order 的按 id 排最后
+    .sort((a, b) => {
+      const oa = a.order ?? 1e9, ob = b.order ?? 1e9;
+      if (oa !== ob) return oa - ob;
+      return a.id.localeCompare(b.id);
+    });
   writeFileSync(join(PACKS_DIR, 'index.json'), JSON.stringify(packs, null, 2) + '\n');
   return packs;
 }
@@ -153,7 +162,8 @@ const arg = process.argv[2];
 let built = [];
 if (arg === '--all') {
   for (const d of readdirSync(RAW_DIR, { withFileTypes: true })) {
-    if (d.isDirectory()) {
+    // 只处理含 source.md 的学习包目录（跳过 ocr-draft 等素材目录）
+    if (d.isDirectory() && existsSync(join(RAW_DIR, d.name, 'source.md'))) {
       const p = buildPack(d.name);
       if (p) built.push(p);
     }

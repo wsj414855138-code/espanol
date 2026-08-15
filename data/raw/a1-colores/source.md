@@ -1,6 +1,6 @@
 # A1 第 3 课：颜色
 
-> meta: level=A1, source=通用 A1 示例（待替换为教材内容）
+> meta: order=14, level=A1, source=通用 A1 示例（待替换为教材内容）
 > 本课场景：描述物品颜色、询问颜色、表达颜色喜好。
 > 注意：颜色形容词有阴阳性变化（rojo/roja、blanco/blanca、negro/negra、amarillo/amarilla），naranja、rosa、marrón、gris 等词性不变。
 

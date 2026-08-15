@@ -1,6 +1,6 @@
 # A1 现代西语 第 4 课 课文：¿Cómo es la familia de Paco?
 
-> meta: level=A1, source=BLCU《现代西班牙语》第一册 第 4 课课文（扫描版 OCR + 校对）
+> meta: order=7, level=A1, source=BLCU《现代西班牙语》第一册 第 4 课课文（扫描版 OCR + 校对）
 > 内容来源：[待归档]真实教材/[现代西班牙语1].刘建&董燕生.扫描版(1).pdf 第 61-62 页（OCR 草稿见 data/raw/ocr-draft/leccion-4-texto.txt，已人工校对）
 > 课文主题：帕科的家与家人（形容词描述）
 

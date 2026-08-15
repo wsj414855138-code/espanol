@@ -4,10 +4,7 @@
   "meta": {
     "level": "A1",
     "source": "BLCU《现代西班牙语》第一册 第 6-7 课补充学案（Wynnie 老师）",
-    "audio": {
-      "engine": "edge-tts",
-      "voice": "es-ES-ElviraNeural"
-    }
+    "order": 9
   },
   "vocab": [
     {

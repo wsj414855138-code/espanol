@@ -1,6 +1,6 @@
 # A1 第 4 课：家庭成员
 
-> meta: level=A1, source=通用 A1 示例（待替换为教材内容）
+> meta: order=15, level=A1, source=通用 A1 示例（待替换为教材内容）
 > 本课场景：介绍家庭成员、谈论家庭大小与成员职业。
 > 注意：hermanos（复数）可泛指"兄弟姐妹"，hijos（复数）可泛指"子女"；亲属词多为阴阳性成对出现（padre/madre、hermano/hermana、hijo/hija、abuelo/abuela、esposo/esposa）。
 

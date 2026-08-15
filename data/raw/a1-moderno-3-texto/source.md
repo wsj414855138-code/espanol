@@ -1,6 +1,6 @@
 # A1 现代西语 第 3 课 课文：¿Dónde está la casa?
 
-> meta: level=A1, source=BLCU《现代西班牙语》第一册 第 3 课课文（扫描版 OCR + 校对）
+> meta: order=5, level=A1, source=BLCU《现代西班牙语》第一册 第 3 课课文（扫描版 OCR + 校对）
 > 内容来源：[待归档]真实教材/[现代西班牙语1].刘建&董燕生.扫描版(1).pdf 第 48-49 页（OCR 草稿见 data/raw/ocr-draft/leccion-3-texto.txt，已人工校对）
 > 课文主题：我的家（房间、位置、ESTAR/HAY 句型）
 

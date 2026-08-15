@@ -1,6 +1,6 @@
 # A1 第 5 课：食物与饮料
 
-> meta: level=A1, source=通用 A1 示例（待替换为教材内容）
+> meta: order=16, level=A1, source=通用 A1 示例（待替换为教材内容）
 > 本课场景：点餐、表达想吃想喝、谈论日常饮食。
 > 注意：pescado 指"做好的鱼肉"，活鱼是 pez；agua 是阴性名词，但因词首是重读 a 而用 el agua。
 

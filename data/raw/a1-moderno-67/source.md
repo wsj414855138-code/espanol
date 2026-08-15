@@ -1,6 +1,6 @@
 # A1 现代西语 第 6-7 课：人物与动作
 
-> meta: level=A1, source=BLCU《现代西班牙语》第一册 第 6-7 课补充学案（Wynnie 老师）
+> meta: order=9, level=A1, source=BLCU《现代西班牙语》第一册 第 6-7 课补充学案（Wynnie 老师）
 > 内容来源：[待归档]真实教材/《现代西班牙语》第一册第六课和第七课补充学案.docx（textutil 提取）
 
 ## 词汇

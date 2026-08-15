@@ -1,6 +1,6 @@
 # A1 现代西语 第 2 课 课文：La familia de Paco
 
-> meta: level=A1, source=BLCU《现代西班牙语》第一册 第 2 课课文（扫描版 OCR + 校对）
+> meta: order=4, level=A1, source=BLCU《现代西班牙语》第一册 第 2 课课文（扫描版 OCR + 校对）
 > 内容来源：[待归档]真实教材/[现代西班牙语1].刘建&董燕生.扫描版(1).pdf 第 29-32 页（OCR 草稿见 data/raw/ocr-draft/leccion-2-texto.txt，已人工校对）
 > 课文主题：帕科一家人（职业与家庭关系）
 

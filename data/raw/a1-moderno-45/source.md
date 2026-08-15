@@ -1,6 +1,6 @@
 # A1 现代西语 第 4-5 课：家与生活
 
-> meta: level=A1, source=BLCU《现代西班牙语》第一册 第 4-5 课补充学案（Wynnie 老师）
+> meta: order=6, level=A1, source=BLCU《现代西班牙语》第一册 第 4-5 课补充学案（Wynnie 老师）
 > 内容来源：[待归档]真实教材/《现代西班牙语》第一册第四课和第五课补充学案.docx（textutil 提取）
 
 ## 词汇
