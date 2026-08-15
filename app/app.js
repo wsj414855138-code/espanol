@@ -32,6 +32,11 @@ const state = {
 /* ---------- 基础工具 ---------- */
 function playAudio(url) {
   if (!url) return;
+  // pack.json 里的音频是包内相对路径（audio/xxx.m4a），页面在 /app/ 下，
+  // 必须解析为 /data/packs/<课程>/audio/xxx.m4a 才能播放（曾因直接用相对路径 404）
+  if (typeof url === 'string' && url.startsWith('audio/') && state.pack) {
+    url = `${BASE}/${state.pack.id}/${url}`;
+  }
   if (state.player) { state.player.pause(); state.player.src = ''; }
   const a = new Audio(url);
   a.play().catch(() => {});
