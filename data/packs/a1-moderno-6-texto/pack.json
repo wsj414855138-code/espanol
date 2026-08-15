@@ -1,0 +1,290 @@
+{
+  "id": "a1-moderno-6-texto",
+  "title": "A1 现代西语 第 6 课 课文：La foto de mi familia",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《现代西班牙语》第一册 第 6 课课文（扫描版 OCR + 校对）"
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "foto",
+      "zh": "照片",
+      "example": {
+        "es": "Esta es la foto de mi familia.",
+        "zh": "这是我们家的照片。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "abuelo / abuela",
+      "zh": "祖父 / 祖母",
+      "example": {
+        "es": "Mi abuelo es mayor.",
+        "zh": "我祖父年纪大了。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "mujer",
+      "zh": "女人，妻子",
+      "example": {
+        "es": "La mujer rubia es mi madre.",
+        "zh": "那位金发女士是我妈妈。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "mayor",
+      "zh": "年长的",
+      "example": {
+        "es": "Son muy mayores.",
+        "zh": "他们年纪很大了。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "blusa",
+      "zh": "女式衬衫",
+      "example": {
+        "es": "Lleva una blusa roja.",
+        "zh": "她穿一件红色衬衫。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "veinticinco",
+      "zh": "二十五",
+      "example": {
+        "es": "Tiene veinticinco años.",
+        "zh": "她二十五岁。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "cincuenta",
+      "zh": "五十",
+      "example": {
+        "es": "Tiene cincuenta años.",
+        "zh": "他五十岁。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "ochenta",
+      "zh": "八十",
+      "example": {
+        "es": "Tienen ochenta años.",
+        "zh": "他们八十岁。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "元音",
+      "pair": [
+        "rubio",
+        "rubia"
+      ],
+      "zh": "金发的（阳性 / 阴性）",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "元音",
+      "pair": [
+        "limpio",
+        "limpia"
+      ],
+      "zh": "干净的（阳性 / 阴性）",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "元音",
+      "pair": [
+        "alto",
+        "alta"
+      ],
+      "zh": "高的（阳性 / 阴性）",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "重音",
+      "pair": [
+        "cuánto",
+        "cuanto"
+      ],
+      "zh": "多少 / 多么（关系）",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "t/d",
+      "pair": [
+        "tos",
+        "dos"
+      ],
+      "zh": "咳嗽 / 二",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "p/b",
+      "pair": [
+        "peso",
+        "beso"
+      ],
+      "zh": "重量 / 亲吻",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "l/r",
+      "pair": [
+        "lana",
+        "rana"
+      ],
+      "zh": "羊毛 / 青蛙",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "r/rr",
+      "pair": [
+        "caro",
+        "carro"
+      ],
+      "zh": "贵的 / 车",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "Esta es la foto de mi familia. Somos siete.",
+      "zh": "这是我们家的照片。我们家有七口人。",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "Estamos en la habitación de mi hermana.",
+      "zh": "我们在姐姐的房间里。",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "La habitación está limpia y ordenada.",
+      "zh": "房间干净又整齐。",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "Mi hermana es cantante. Tiene veinticinco años.",
+      "zh": "我姐姐是歌手。她二十五岁。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "El hombre moreno es mi padre. Es taxista.",
+      "zh": "那位皮肤黝黑的男人是我爸爸。他是出租车司机。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "Es alto, fuerte y alegre.",
+      "zh": "他个子高、身体强壮又开朗。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "La mujer rubia y de blusa roja es mi madre.",
+      "zh": "那位金发、穿红衬衫的女士是我妈妈。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "Es peluquera. Tiene también cincuenta años.",
+      "zh": "她是理发师。她也五十岁。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    },
+    {
+      "id": "s9",
+      "es": "¿Cuántos sois en tu familia? — Somos siete.",
+      "zh": "你家有几口人？——七口。",
+      "audio": "audio/s9.m4a",
+      "audioSlow": "audio/s9-slow.m4a"
+    },
+    {
+      "id": "s10",
+      "es": "¿Cuántos hermanos tienes? — Tengo dos hermanos.",
+      "zh": "你有几个兄弟姐妹？——我有两个兄弟。",
+      "audio": "audio/s10.m4a",
+      "audioSlow": "audio/s10-slow.m4a"
+    },
+    {
+      "id": "s11",
+      "es": "¿Cómo está la habitación de tu hermana? — Está limpia y ordenada.",
+      "zh": "你姐姐的房间怎么样？——干净又整齐。",
+      "audio": "audio/s11.m4a",
+      "audioSlow": "audio/s11-slow.m4a"
+    },
+    {
+      "id": "s12",
+      "es": "¿Son mayores tus abuelos? — Sí, tienen ochenta años.",
+      "zh": "你祖父母年纪大吗？——是的，他们八十岁了。",
+      "audio": "audio/s12.m4a",
+      "audioSlow": "audio/s12-slow.m4a"
+    }
+  ]
+}
