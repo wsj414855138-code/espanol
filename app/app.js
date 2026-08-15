@@ -99,6 +99,8 @@ function loadStats() {
 
 function saveStats(s) {
   try { localStorage.setItem(STATS_KEY, JSON.stringify(s)); } catch { /* 隐私模式等场景忽略写入失败 */ }
+  // v0.5 云同步：每日统计推送（失败静默）
+  try { if (typeof CLOUD !== 'undefined' && CLOUD.pushStats) CLOUD.pushStats(s); } catch { /* 云不可用不影响练习 */ }
 }
 
 /** 累计今日统计；type: listening(ok=对错) / dictation / review */
@@ -145,6 +147,8 @@ function loadSRS() {
 
 function saveSRS(map) {
   try { localStorage.setItem(SRS_KEY, JSON.stringify(map)); } catch { /* 忽略写入失败 */ }
+  // v0.5 云同步：本地为事实源，尽力推送（失败静默，联网后自动补）
+  try { if (typeof CLOUD !== 'undefined' && CLOUD.pushSRS) CLOUD.pushSRS(map); } catch { /* 云不可用不影响练习 */ }
 }
 
 function srsKey(item) { return `${state.pack.id || 'pack'}/${item.id}`; }
@@ -243,6 +247,17 @@ function answerReview(remember) {
 /* ---------- 数据加载 ---------- */
 async function init() {
   renderStats();   // 打开页面即显示今日统计（无数据时显示占位提示）
+  // v0.5 云同步：后台初始化匿名身份 + 拉取云端 SRS 合并进本地（不阻塞页面，失败静默）
+  try {
+    if (typeof CLOUD !== 'undefined' && CLOUD.init) {
+      CLOUD.init().then(async (ok) => {
+        if (!ok) return;
+        const map = loadSRS();
+        const changed = await CLOUD.pullSRS(map);
+        if (changed) saveSRS(map);
+      });
+    }
+  } catch { /* 云不可用完全不影响本地使用 */ }
   try {
     const res = await fetch(`${BASE}/index.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

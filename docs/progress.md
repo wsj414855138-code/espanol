@@ -152,3 +152,11 @@
 - 音频生成踩坑：edge-tts 连微软服务深夜超时/被墙 → generate-audio.mjs 新增 `EDGE_TTS_PROXY` 环境变量支持（--proxy），代理重试 3 轮收敛，剩余用 macOS say 兜底补齐；say 兜底跑误改写全 9 包 meta.audio → 已修正统一为 edge-tts/es-ES-ElviraNeural。
 - 校验：verify_practice 全绿（9 包静态+HTTP+真实播放 7 播放点）；已推送 GitHub（ea405d2 + e8bd023），Pages 线上 4 新包全 200。
 - 待办：扫描版 PDF（《现代西班牙语1》整书）后续可 OCR 补充课文/对话内容；发音讲义 PDF 同理。
+
+## 2026-08-16 · v0.5 数据上云核心完成（目标长跑第 2 轮）
+
+- 新增 app/cloud.js（零依赖纯 fetch）：Supabase 匿名身份（signup + refresh 续期）、SRS 全量拉取合并/推送 upsert、今日统计推送；全部失败静默（离线可练，联网自动补同步）。
+- app.js 集成三处（均守卫 typeof CLOUD）：init 后台初始化+拉取合并；saveSRS 后推送；saveStats 后推送。localStorage 仍是唯一事实源，云是备份/跨设备介质。
+- 冒烟测试（node 模拟浏览器，真实 Supabase）：匿名注册 ✓、SRS 推送 ✓、跨设备拉取合并 ✓、统计推送 ✓、RLS 拦截匿名查询 ✓。
+- 回归：verify_practice 全绿（9 包 + 真实播放）。
+- 待办：v0.6 学习报告（读 activity/scores 做热力图与周报）；SpeechSuper 询价等用户提交。
