@@ -80,3 +80,12 @@
 3. 发音评分（Web Speech API es-ES 粗粒度反馈）。
 4. 同源词桥（restaurante→restaurant）。
 5. 学习统计（每日练习量、正确率）。
+
+## 2026-08-15 · 无声根因修复（Safari 媒体栈）+ 多模态自动召唤 Kimi 插件
+
+- **根因定位**：serve.mjs 旧版 `res.writeHead(200)` 后 `end(buffer)` → Node 不再补 Content-Length，实际响应为 chunked 无长度、无 Accept-Ranges、无视 Range 请求。Chrome 容忍（puppeteer 验证全过），**Safari/AppleCoreMedia 强制字节区间**：实测其先发 `Range: bytes=0-1` 探测再要全文，旧服务器一律回 200 chunked → 拒播无声。
+- **修复**：serve.mjs v2 = 显式 Content-Length + Accept-Ranges + 单区间 Range→206/Content-Range（后缀区间、416 越界）+ 每次请求日志（URL/状态/Range/UA，以后排查直接看日志）。
+- **复验**：verify-audio.mjs --http 新增头部断言（Content-Length/Accept-Ranges/206）；AVFoundation（Safari 同引擎）直测服务器 URL：playable=true ✓；verify_practice 全绿；app.js 播放失败不再静默（页面 🔇 toast）。
+- **新增 scripts/extract-frames.swift**：零依赖录屏/视频抽帧（AVFoundation），供 Kimi 视觉逐帧分析录屏（两段录屏共 37 帧已分析：用户在词汇例句喇叭/听辨/跟读/听写各点播放，无视觉反馈属设计如此，真因在服务器头部）。
+- **新增 DSH 插件 kimi-7/pkg-7（多模态自动召唤 Kimi）**：用户消息含图片 → 自动经 pi CLI（kimi-coding/kimi-for-coding K2.7）逐图分析 → 结果以文字块注入模型上下文；字节安全 base64（DSH btoa 为 UTF-8 语义不可用于二进制）→ `.kimi-tmp/` 中转 → pi；按 attachmentId 去重防重试重复计费；pi 失败兜底绝对路径重试，并注入失败说明。链路已在 bash 实测（base64 与 Buffer 基准逐字节一致、pi 正常出结果）。
+- **交接文档**：根目录 `交接文档-音频无声.md`（现象/证据链/修复/复验步骤/接力清单/历史根因备忘）。

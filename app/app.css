@@ -356,3 +356,26 @@ body {
 .score-result.bad { background: rgba(224, 49, 49, 0.12); color: var(--bad); }
 .score-result .rec-text { color: var(--muted); font-size: 13px; margin-top: 4px; }
 .btn.score-na { opacity: 0.55; }
+
+/* 播放失败提示（固定底部，自动消失） */
+.play-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 64px;
+  transform: translateX(-50%) translateY(8px);
+  max-width: min(92vw, 520px);
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(30, 30, 38, 0.92);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 99;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+.play-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+[data-theme="light"] .play-toast { background: rgba(40, 40, 48, 0.94); }

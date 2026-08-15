@@ -30,6 +30,17 @@ const state = {
 };
 
 /* ---------- 基础工具 ---------- */
+let playToastTimer = null;
+/** 播放失败时在页面底部显示提示（2026-08-15：此前静默 catch 导致"无声"问题难以察觉） */
+function toast(msg) {
+  const box = document.getElementById('playToast');
+  if (!box) return;
+  box.textContent = msg;
+  box.classList.add('show');
+  clearTimeout(playToastTimer);
+  playToastTimer = setTimeout(() => box.classList.remove('show'), 4000);
+}
+
 function playAudio(url) {
   if (!url) return;
   // pack.json 里的音频是包内相对路径（audio/xxx.m4a），页面在 /app/ 下，
@@ -39,7 +50,10 @@ function playAudio(url) {
   }
   if (state.player) { state.player.pause(); state.player.src = ''; }
   const a = new Audio(url);
-  a.play().catch(() => {});
+  a.play().catch((err) => {
+    toast(`🔇 播放失败：${url.split('/').pop()}（${err.name || '未知错误'}）。请刷新页面重试，或检查服务器是否在运行。`);
+    console.error('[play] 播放失败', url, err);
+  });
   state.player = a;
 }
 
