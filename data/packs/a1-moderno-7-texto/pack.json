@@ -1,0 +1,290 @@
+{
+  "id": "a1-moderno-7-texto",
+  "title": "A1 现代西语 第 7 课 课文：¿Adónde van?",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《现代西班牙语》第一册 第 7 课课文（扫描版 OCR + 校对）"
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "adónde",
+      "zh": "去哪里",
+      "example": {
+        "es": "¿Adónde van?",
+        "zh": "他们去哪里？"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "lejos",
+      "zh": "远",
+      "example": {
+        "es": "La fábrica está lejos de la ciudad.",
+        "zh": "工厂离城市很远。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "primo / prima",
+      "zh": "堂（表）兄弟 / 姐妹",
+      "example": {
+        "es": "Luis y Pepe son primos.",
+        "zh": "路易斯和佩佩是表兄弟。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "domingo",
+      "zh": "星期天",
+      "example": {
+        "es": "Hoy es domingo.",
+        "zh": "今天是星期天。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "trabajar",
+      "zh": "工作",
+      "example": {
+        "es": "Trabaja en una fábrica.",
+        "zh": "他在一家工厂工作。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "descansar",
+      "zh": "休息",
+      "example": {
+        "es": "Manolo descansa en casa.",
+        "zh": "马诺罗在家休息。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "mercado",
+      "zh": "市场",
+      "example": {
+        "es": "Está en el mercado.",
+        "zh": "她在市场。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "facultad",
+      "zh": "系，学院",
+      "example": {
+        "es": "Van a la facultad.",
+        "zh": "他们去学院。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "元音",
+      "pair": [
+        "primo",
+        "prima"
+      ],
+      "zh": "表兄弟 / 表姐妹",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "重音",
+      "pair": [
+        "adónde",
+        "adonde"
+      ],
+      "zh": "去哪里 / 去…的地方",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "元音",
+      "pair": [
+        "tío",
+        "tía"
+      ],
+      "zh": "叔叔 / 阿姨",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "元音",
+      "pair": [
+        "trabajo",
+        "trabaja"
+      ],
+      "zh": "工作（名词）/ 他工作",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "t/d",
+      "pair": [
+        "tos",
+        "dos"
+      ],
+      "zh": "咳嗽 / 二",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "p/b",
+      "pair": [
+        "peso",
+        "beso"
+      ],
+      "zh": "重量 / 亲吻",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "l/r",
+      "pair": [
+        "lana",
+        "rana"
+      ],
+      "zh": "羊毛 / 青蛙",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "r/rr",
+      "pair": [
+        "pero",
+        "perro"
+      ],
+      "zh": "但是 / 狗",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "Luis y Pepe son primos.",
+      "zh": "路易斯和佩佩是表兄弟。",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "Luis es moreno y Pepe es rubio.",
+      "zh": "路易斯皮肤黝黑，佩佩是金发。",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "Estudian en la universidad.",
+      "zh": "他们在大学学习。",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "Ahora van a la facultad. Van a hablar con sus profesores.",
+      "zh": "现在他们去学院。他们要去和老师谈话。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "Manolo es el padre de Luis. Es mecánico.",
+      "zh": "马诺罗是路易斯的爸爸。他是机械师。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "Trabaja en una fábrica muy grande. La fábrica está lejos de la ciudad.",
+      "zh": "他在一家很大的工厂工作。工厂离城市很远。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "Hoy es domingo. Manolo no trabaja; descansa en casa.",
+      "zh": "今天是星期天。马诺罗不工作，在家休息。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "Ema es la madre de Luis. Es enfermera. Trabaja en un hospital pequeño.",
+      "zh": "埃玛是路易斯的妈妈。她是护士，在一家小医院工作。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    },
+    {
+      "id": "s9",
+      "es": "Ahora está en el mercado. Compra comidas para la familia.",
+      "zh": "现在她在市场。她在为家人买食品。",
+      "audio": "audio/s9.m4a",
+      "audioSlow": "audio/s9-slow.m4a"
+    },
+    {
+      "id": "s10",
+      "es": "¿Cómo son Luis y Pepe? — Luis es moreno y Pepe es rubio.",
+      "zh": "路易斯和佩佩长得怎么样？——路易斯皮肤黝黑，佩佩是金发。",
+      "audio": "audio/s10.m4a",
+      "audioSlow": "audio/s10-slow.m4a"
+    },
+    {
+      "id": "s11",
+      "es": "¿Adónde van ahora y qué van a hacer? — Van a la facultad.",
+      "zh": "他们现在去哪里，要做什么？——去学院。",
+      "audio": "audio/s11.m4a",
+      "audioSlow": "audio/s11-slow.m4a"
+    },
+    {
+      "id": "s12",
+      "es": "¿Con quién está en el mercado Ema? — Está con su hermana Lucía.",
+      "zh": "埃玛和谁在市场？——和她妹妹露西亚。",
+      "audio": "audio/s12.m4a",
+      "audioSlow": "audio/s12-slow.m4a"
+    }
+  ]
+}
