@@ -1,0 +1,654 @@
+===== 第1页 =====
+1: 西班牙语语音
+2: 西班牙语字母表 EL ALFABETO
+3: A a
+4: a
+5: B b
+6: be
+7: Ce
+8: ce
+9: Dd
+10: de
+11: Ee
+12: e
+13: Ff
+14: efe
+15: Gg
+16: ge
+17: H h
+18: hache
+19: Ii
+20: i
+21: Jj
+22: jota
+23: Kk
+24: ca
+25: LI
+26: ele
+27: M m
+28: eme
+29: Nn
+30: ene
+31: Ññ
+32: eiie
+33: eñe
+34: Pp
+35: pe
+36: Q9
+37: cu
+38: Rr erre
+39: Ss
+40: ese
+41: Tt
+42: te
+43: Uu
+44: u
+45: Vv uve
+46: Ww doble uve
+47: Xx
+48: equis
+49: Yy i griega
+50: Zz ceta
+51: CH ch che
+52: LLII elle
+53: 西班牙语语音规则
+54: i
+55: a
+56: e
+57: o
+58: u
+59: b，v浊音
+60: ba
+61: be
+62: bo
+63: bu
+64: 放在单词
+65: 开头，在辅
+66: 音m,n后面
+67: va
+68: ve
+69: VO
+70: vu
+71: 放在单词中间：上牙轻咬下唇发“w”
+72: p清音
+73: pa
+74: pe
+75: po
+76: pu
+77: 拼读练习：
+78: 放在单词开
+79: beso
+80: boca
+81: bota
+82: vaso
+83: vino
+84: 头
+85: vano
+86: valle
+87: vota
+88: VOZ
+89: vida
+90: 放在单词中
+91: nube
+92: bebo
+93: uva
+94: ave
+95: sube
+96: 间
+97: 1
+
+===== 第2页 =====
+1: 西班牙语语音
+2: labio
+3: nieve
+4: alba
+5: bebé
+6: viva
+7: paloma
+8: pena
+9: pepino
+10: puma
+11: mapa
+12: palo
+13: paso
+14: poco
+15: piso
+16: pues
+17: papa
+18: polo
+19: a
+20: e
+21: i
+22: u
+23: c,Z 咬舌
+24: za
+25: ce ze
+26: ci zi
+27: zu
+28: z 放在结尾时 咬舌不出声
+29: s
+30: sa
+31: se
+32: So
+33: su
+34: s
+35: as
+36: es
+37: is
+38: os
+39: us
+40: s在辅音前浊化，轻轻发z
+41: 拼读练习：
+42: sano
+43: masa
+44: mesa
+45: ese
+46: así
+47: supe
+48: sopa
+49: sino
+50: Susana
+51: sepa
+52: somos
+53: salas
+54: OSOS
+55: usos
+56: asma
+57: asno
+58: isla
+59: mismo
+60: pasmo
+61: sismo
+62: misma
+63: a
+64: e
+65: i
+66: o
+67: u
+68: c,q清音
+69: ca
+70: que
+71: qui
+72: co
+73: cu
+74: g浊音
+75: ga
+76: gue
+77: gui
+78: go
+79: gu
+80: güe
+81: güi
+82: 拼读练习；
+83: casa
+84: cama
+85: laca
+86: saque
+87: queso
+88: quiso
+89: Quito
+90: cosa
+91: Paco
+92: cuna
+93: cupo
+94: come
+95: loca
+96: aquí
+97: 2
+
+===== 第3页 =====
+1: 西班牙语语音
+2: gasto
+3: gallo
+4: guerra
+5: gueto guisante guisa
+6: goza
+7: gusto
+8: goce
+9: amigo
+10: goma
+11: gafas
+12: gusano
+13: lago
+14: bilingüe pingüino vergüenza
+15: cc 双写时，第一个C发K 的音 leccibn, accidente, actividad
+16: c后面接其他辅音时（I,r除外）发k的音 acto, actor, actual
+17: a
+18: e
+19: i
+20: o
+21: u
+22: g
+23: ge
+24: j
+25: je
+26: ji
+27: 拼读练习：
+28: jota
+29: jefe
+30: jamón
+31: jinete
+32: joven
+33: jugo
+34: jerez
+35: gente
+36: ojalá
+37: gesto
+38: juntos
+39: ojo
+40: gira
+41: jocoso
+42: a
+43: e
+44: i
+45: o
+46: u
+47: d 浊音
+48: da
+49: de
+50: di
+51: do
+52: du
+53: 放在单词
+54: 开头
+55: 单词中间
+56: 咬舌
+57: d 放在单词结尾 咬舌不出声 Madrid
+58: t清音
+59: ta
+60: te
+61: ti
+62: to
+63: tu
+64: 拼读练习：
+65: nada
+66: todo
+67: pide
+68: pedí
+69: lado
+70: duda
+71: ducha
+72: 3
+
+===== 第4页 =====
+1: 西班牙语语音
+2: dato
+3: dama
+4: dos
+5: dedo
+6: día
+7: diez
+8: deseo
+9: anda
+10: panda
+11: dicho
+12: dilema
+13: debajo
+14: pasado
+15: cuando
+16: edad
+17: sed
+18: usted
+19: salud
+20: vivid
+21: soledad
+22: ciudad
+23: taza
+24: mata
+25: teme
+26: tipo
+27: toma
+28: tasa
+29: tapas
+30: pista
+31: mate
+32: tomate
+33: tanto
+34: hasta
+35: tenis
+36: título
+37: tequila
+38: tango
+39: tamal
+40: turno
+41: tinto
+42: Toledo
+43: a
+44: e
+45: i
+46: o
+47: u
+48: f
+49: fa
+50: fi
+51: fu
+52: 拼读练习：
+53: fama
+54: sofá
+55: feo
+56: foto
+57: café
+58: fino
+59: ninfa
+60: fecha
+61: fase
+62: foco
+63: fuma
+64: física
+65: diferente
+66: jefa
+67: a
+68: e
+69: i
+70: o
+71: u
+72: la
+73: le
+74: li
+75: il
+76: ull
+77: 拼读练习：
+78: Lola
+79: lila
+80: lulú
+81: loto
+82: malo
+83: luna
+84: lava
+85: Elena
+86: loma
+87: laca
+88: lata
+89: lunes
+90: listo
+91: luz
+92: sal
+93: sol
+94: total
+95: el
+96: ágil
+97: alto
+98: mil
+99: capital
+100: pulpo
+101: volcán
+102: salmón
+103: vegetal
+104: fútbol
+105: hotel
+106: 4
+
+===== 第5页 =====
+1: 西班牙语语音
+2: a
+3: e
+4: i
+5: o
+6: u
+7: m
+8: ma
+9: me
+10: mi
+11: mo
+12: mu
+13: 拼读练习：
+14: mamá
+15: mes
+16: moneda
+17: mal
+18: ama
+19: móvil
+20: memoria
+21: manga
+22: mano
+23: maleta
+24: moda
+25: motivo
+26: música
+27: minuto
+28: a
+29: e
+30: i
+31: u
+32: n
+33: na
+34: ne
+35: ni
+36: no
+37: nu
+38: an
+39: en
+40: on
+41: un
+42: 拼读练习：
+43: nueve
+44: noche
+45: línea
+46: Ana
+47: lana
+48: nena
+49: Nilo
+50: maní
+51: nulo
+52: uno
+53: nunca
+54: melón
+55: linda
+56: llaman
+57: a
+58: e
+59: i
+60: u
+61: ni
+62: fa
+63: ña
+64: ñe
+65: ñi
+66: ño
+67: 拼读练习：
+68: leña
+69: muñeca
+70: niño
+71: niña
+72: baño
+73: español España
+74: pañuelo
+75: uña
+76: eñe
+77: año
+78: añadimos sueño
+79: moño
+80: a
+81: e
+82: i
+83: o
+84: u
+85: 5
+
+===== 第6页 =====
+1: 西班牙语语音
+2: r 开头和rr
+3: ra
+4: re
+5: ri
+6: ro
+7: ru
+8: 双写多颤
+9: r中间和结
+10: ar
+11: er
+12: or
+13: ur
+14: 尾单颤
+15: 拼读练习：
+16: raza
+17: rosa
+18: ruta
+19: ropa
+20: radio
+21: reloj
+22: Roma
+23: carro
+24: marrón
+25: perro
+26: jarra
+27: terraza socorro ferrocarril
+28: lugar
+29: camarero
+30: cara
+31: pera
+32: pare
+33: iris
+34: paro
+35: toro
+36: Perú
+37: mar
+38: par
+39: poder
+40: amor
+41: sur
+42: x 在单词开头发s：xantoma, xen6fobo, xenofobia
+43: x 在辅音前和两个元音之间发 ks 或s:exito, texto, examen, taxi，
+44: léxico
+45: x 在墨西哥发j的音：Mexico, mexicano, mexicana, Oaxaca
+46: a
+47: e
+48: i
+49: o
+50: u
+51: y
+52: ya
+53: ye
+54: yi
+55: yo
+56: yu
+57: ay
+58: ey
+59: oy
+60: uy
+61: 拼读练习：
+62: yema
+63: yogur
+64: ayer
+65: yo
+66: cuyo
+67: yoga
+68: yegua
+69: soy
+70: rey
+71: ley
+72: hay
+73: hoy
+74: muy
+75: buey
+76: 6
+
+===== 第7页 =====
+1: 西班牙语语音
+2: a
+3: e
+4: i
+5: u
+6: elle
+7: lla
+8: lle
+9: llo
+10: llu
+11: llu
+12: 拼读练习：
+13: allá
+14: olla
+15: ella
+16: allí
+17: llama
+18: llena
+19: pollo
+20: sello
+21: talla
+22: lluvia
+23: llave
+24: lleva
+25: galleta
+26: calle
+27: a
+28: e
+29: i
+30: u
+31: u
+32: ch che
+33: cha
+34: che
+35: chi
+36: cho
+37: chu
+38: 拼读练习；
+39: China
+40: chino
+41: chileno
+42: ancha
+43: chulo
+44: chuleta
+45: churros
+46: coche
+47: chico
+48: echa
+49: pincho
+50: chema
+51: choca
+52: chiste
+53: h 永远不发音，但是要写出来
+54: 拼读练习：
+55: hijo
+56: hola
+57: hecho
+58: hablar
+59: hacer
+60: hombre
+61: hoja
+62: 二重元音
+63: 强元音：a,e，。
+64: 弱元音：i，u
+65: 二重元音组合规则：强＋弱；弱＋强；弱＋弱
+66: 要求：重音落在强元音上，弱弱组合有约定俗成
+67: estudia, cambia, piano, media
+68: 7
+
+===== 第8页 =====
+1: 西班牙语语音
+2: ie
+3: quien, bien, siete, miel
+4: ue
+5: bueno, nuevo, abuelo, escuela
+6: ai
+7: vais, naipe, laico, aire
+8: io
+9: dios, Mario, indio, sucio
+10: iu
+11: ciudad, diurno, miura
+12: ua
+13: cuando, cual, lengua, estatua
+14: uO
+15: antiguo, arduo, cuota, continuo
+16: T3.
+17: seis, peinar, aceite, reino
+18: 10.
+19: sois, doy, hoy, coincidir
+20: ui
+21: fui, ruido, Luis, muy
+22: au
+23: auxilio, causa, náutico
+24: eu
+25: deuda, euro, neutral, Europa
+26: 三重元音
+27: 组合规则：1强+2弱
+28: 常见的三重元音：uay,uey
+29: 例如：Uruguay, Paraguay, buey
+30: 辅音连缀
+31: 固定的两个辅音组合在一起，不能划开。
+32: planta, plaza, pleno, explicar, Plutón
+33: pr
+34: practicar, pregunta, primo, pronto, pruno
+35: bl
+36: blanco, amable, blindar, blog, blusa
+37: 8
+
