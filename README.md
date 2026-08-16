@@ -57,6 +57,7 @@ node scripts/generate-audio.mjs --all # edge-tts 神经语音 → m4a（常速+�
 # 3) 质量校验（改任何东西后必跑）
 node scripts/verify-audio.mjs --http  # 文件 + 媒体头（Content-Length / Accept-Ranges / Range-206）
 node scripts/verify-playback.mjs      # 真实浏览器点击播放验证
+node scripts/weekly-report.mjs        # 喂料者周报（读云端学习记录，需 .env 配置）
 
 # 4) 部署线上（GitHub Pages，1-2 分钟自动发布）
 bash scripts/deploy-pages.sh

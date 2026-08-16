@@ -217,3 +217,8 @@
 - **排序修复**：source.md 全部加 meta.order（学案→课文按课程序号），build-pack.mjs 支持 order 排序（index.json 按课本顺序），修了 meta 首字段带冒号的解析 bug（slice(6) → 正则剥离），--all 跳过无 source.md 目录。练习页课程列表现在与上课顺序一致。
 - **新增 a1-pronunciacion（发音基础包，order=0 排最前）**：按《西班牙语发音讲义》选取代表词（bebé/viva/paloma/puma/gallo/goma/dedo/día/ella/lluvia/chico/perro）+ 8 组对立听辨（b/v、p/b、p/v、t/d、g/c、l/r），句型沿用第 1 课对话。
 - 17 包全量校验通过（verify_practice 全绿），已推送（b46d3e8）。
+
+## 2026-08-16 · 资料库整理 + 喂料者周报（用户反馈：桌面整理 + 新令牌）
+
+- **data/materials/ 资料库规范**：外挂资料统一归档（真实教材 / 录屏-音频排查），git mv 保留历史；全部 source.md 路径引用更新为 data/materials/...；README 目录结构同步；清理 .chrome-tmp 与桌面源录屏。
+- **新 Supabase 令牌**（7 天有效）：验证有效；service_role 长期密钥已取回存入 .env（不随令牌过期，网页永不使用）；新增 scripts/weekly-report.mjs 喂料者周报（7 天练习天数/听辨正确率/听写/复习/SRS 到期 + 建议），实测运行成功。
