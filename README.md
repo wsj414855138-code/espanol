@@ -124,6 +124,7 @@ app/（纯静态页面：词汇 / 听辨 / 跟读 / 听写 / 报告）
 
 ```
 app/                练习页（index.html / app.js / cloud.js / sw.js / manifest）
+data/materials/     外挂资料库（唯一归档处）：真实教材 / 录屏 / 讲义等原始素材
 data/raw/           原料：教材 Markdown（唯一手改入口）+ ocr-draft/ 扫描件草稿
 data/packs/         生成物：pack.json + 音频 + Anki 卡组（勿手改）
 scripts/            流水线与工具（build / generate-audio / ocr / verify / serve / deploy）

@@ -1,7 +1,7 @@
 # A1 现代西语 第 1 课：问候与自我介绍
 
 > meta: order=1, level=A1, source=BLCU《现代西班牙语》第一册 第 1 课学案（Wynnie 老师）
-> 内容来源：[待归档]真实教材/《现代西班牙语第一册》第一课学案.doc（textutil 提取）
+> 内容来源：data/materials/真实教材/《现代西班牙语第一册》第一课学案.doc（textutil 提取）
 > 听辨小节覆盖中文母语者难点：清浊对立（b/v、p/b、t/d）、l/r、r/rr、元音、重音。
 
 ## 词汇

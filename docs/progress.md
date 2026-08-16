@@ -154,7 +154,7 @@
 
 ## 2026-08-16 · 真实教材入库 + 上线（目标长跑第 1 轮）
 
-- 用户提供 [待归档]真实教材/（BLCU《现代西班牙语》第一册扫描版 + 1-7 课学案 doc/docx + 发音讲义）。
+- 用户提供 data/materials/真实教材/（BLCU《现代西班牙语》第一册扫描版 + 1-7 课学案 doc/docx + 发音讲义）。
 - 学案用 macOS `textutil` 提取（数字文件无需 OCR，准确率 100%），内容质量高（Wynnie 老师学案：问候/人称/SER/国家国籍/数字/职业/物主/ESTAR/HAY/定冠词/房间/颜色/家庭/衣服/TENER/外貌/性格/地点/IR/-AR 变位/动词）。
 - 新建 4 个真实学习包：a1-moderno-1（第1课）、a1-moderno-23（第2-3课）、a1-moderno-45（第4-5课）、a1-moderno-67（第6-7课）：每包 12 词汇 + 8 听辨 + 8 句型，音频 224 个（edge-tts/Elvira，慢速版一并生成）。
 - 音频生成踩坑：edge-tts 连微软服务深夜超时/被墙 → generate-audio.mjs 新增 `EDGE_TTS_PROXY` 环境变量支持（--proxy），代理重试 3 轮收敛，剩余用 macOS say 兜底补齐；say 兜底跑误改写全 9 包 meta.audio → 已修正统一为 edge-tts/es-ES-ElviraNeural。

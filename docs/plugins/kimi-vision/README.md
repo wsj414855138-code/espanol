@@ -32,7 +32,9 @@
 
 | 键 | 默认 | 说明 |
 |---|---|---|
-| `model` | `kimi-coding/kimi-for-coding` | Kimi 视觉模型（K2.7）。可换 `kimi-coding/k3` |
+| `model` | `kimi-coding/kimi-for-coding` | 识图模型。**实测基准（2026-08-15，直连 HTTP + 关思考 + 紧凑提示词）**：K2.7 ≈7.8~8.5s（最快且最便宜 $0.95/$4）；k3 ≈10.6s（价 3 倍）；highspeed、k3-256k ≈13s。**K2.6 不存在**（coding 端点只有 kimi-for-coding / highspeed / k3 / k3-256k 四个，K2.6 是 Kimi App 里的旧名，K2.7 即 K2 系列最高） |
+| `endpoint` | `https://api.kimi.com/coding/v1/chat/completions` | OpenAI 兼容端点。以后接千问/豆包直接改这里 + `model` + `apiKey` 即可 |
+| `apiKey` | 空 | 直接 Bearer API Key；为空时自动用 `~/.pi/agent/auth.json` 的 kimi-coding OAuth token |
 | `language` | `zh` | 描述语言：`zh` / `es` / `en` |
 | `piBin` | 自动探测 | pi CLI 路径（PATH → `~/.local/share/pi-node/*/bin/pi`） |
 | `sessionDir` | `$TMPDIR/dsh-kimi-vision` | pi 会话文件临时目录（与 ~/.pi 的历史会话隔离） |
@@ -41,6 +43,28 @@
 | `maxParallel` | `4` | 同时识别的图片数 |
 | `maxDescriptionChars` | `4000` | 单张图描述注入的上限字符数 |
 | `maxContextChars` | `2000` | 随图片带给 Kimi 的用户消息上下文上限 |
+| `transport` | `auto` | 识图通道：`http`（直连 Kimi API，快）｜`pi`（CLI 兜底）｜`auto`（http 优先，失败自动回退 pi） |
+| `disableThinking` | `true` | 发 `thinking: {type:"disabled"}`：K2.7 带图时默认先输出大段思考（reasoning_content）再出描述，关掉后首个描述 token 提前约一半（实测 6.2s→3.2s） |
+| `abortAfterChars` | `1200` | 流式识别时描述达到该字符数即中断（0=不截断）；文字密集的图可调大保完整 |
+| `prefetchOnInsert` | `true` | 图片一进 agent 收件箱就开识（与 pre-step/组包并行，省约 1s） |
+| `noTools` | `true` | 用 `--no-tools` 跑 pi：Kimi 不能调 bash 工具（否则它可能在宿主最小 PATH 下跑 `node` 失败：`bash: node: command not found`） |
+| `piExtraArgs` | `[]` | 附加 pi CLI 参数 |
+| `ensureNodeInPiBin` | `true` | 把 node/npm/npx 软链进 `~/.pi/agent/bin`（pi 的 bash 工具环境会优先用它），保证 pi 内部任何 bash 都能找到 node |
+| `extendHostPath` | `true` | 把 pi-node bin 目录加到**宿主进程** PATH——DSH 的 bash 工具继承宿主环境（默认只有 `/usr/bin:/bin:/usr/sbin:/sbin`），加了之后 agent 在 bash 里也能直接跑 `node`/`pi`（否则 `bash: node: command not found`） |
+
+## 已知故障与修复（2026-08-15）
+
+**症状**：发图后出现 `图片解码失败: bash: node: command not found`（可能是聊天里模型转述的 bash 失败）。
+
+**根因（两层）**：DSH 宿主由 Electron 启动，PATH 只有系统默认（`/usr/bin:/bin`），DSH 的 bash 工具也继承这个最小 PATH：
+1. pi 里的 Kimi 会调 pi 的 **bash 工具**跑 `node ...` 分析图片，bash 里找不到 node；
+2. 你在聊天里让 agent"看这张图"时，agent 想跑 `node scripts/vision-review.mjs ...` 也会撞上同样的 `bash: node: command not found`。
+
+**修复（已热加载生效，pid 验证 = live 宿主）**：
+1. pi 带 `--no-tools` 运行——Kimi 不再有 bash 工具，这类失败从根上不可能发生；
+2. 插件把 node/npm/npx 软链进 `~/.pi/agent/bin`（pi 自己的辅助 bin 目录）——任何 pi 派生的 bash 都能找到 node；
+3. 插件把 pi-node bin 目录**加进宿主进程 PATH**——DSH bash 工具（继承宿主环境）现在直接能跑 `node` 和 `pi`，agent 用 `scripts/vision-review.mjs` 也不会再报 command not found；
+4. 失败/心跳会写 `~/.dsh/profiles/web/plugins/kimi-vision/.diagnostics.log` 和 `.heartbeat.log`，再出问题先看这两个文件。
 
 ## 安装 / 卸载 / 排障
 

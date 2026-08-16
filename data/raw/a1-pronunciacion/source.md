@@ -1,7 +1,7 @@
 # 西班牙语语音：发音基础（讲义配套）
 
 > meta: order=0, level=A1, source=BLCU 西班牙语发音 讲义（扫描版 OCR + 校对）
-> 内容来源：[待归档]真实教材/西班牙语发音 讲义.pdf（OCR 草稿见 data/raw/ocr-draft/pronunciacion-讲义.txt，已人工校对）
+> 内容来源：data/materials/真实教材/西班牙语发音 讲义.pdf（OCR 草稿见 data/raw/ocr-draft/pronunciacion-讲义.txt，已人工校对）
 > 说明：语音阶段入门包——按讲义顺序（字母→b/v→p→g→d→元音→r/rr→ll/ch）选取代表词练习
 
 ## 词汇
