@@ -222,3 +222,12 @@
 
 - **data/materials/ 资料库规范**：外挂资料统一归档（真实教材 / 录屏-音频排查），git mv 保留历史；全部 source.md 路径引用更新为 data/materials/...；README 目录结构同步；清理 .chrome-tmp 与桌面源录屏。
 - **新 Supabase 令牌**（7 天有效）：验证有效；service_role 长期密钥已取回存入 .env（不随令牌过期，网页永不使用）；新增 scripts/weekly-report.mjs 喂料者周报（7 天练习天数/听辨正确率/听写/复习/SRS 到期 + 建议），实测运行成功。
+
+## 2026-08-29 · 第 8-9 课学案 + 旧版 9-10 补充 + Repaso 复习课（3 个新课包入库）
+
+- 新增 a1-moderno-89（第 8-9 课：能愿动词与宾格代词，32 词/9 听辨/21 句型，order=12）——poder/ver/querer/venir/decir 变位、hay que/tener que、宾格代词、重读物主形容词、水果与电影词汇、姓名问答；听辨新增词干元音变化对（puedo/puede、quiero/quiere、vengo/viene）。
+- 新增 a1-moderno-910（第 9-10 课补充：与格代词与交通工具，17 词/8 听辨/16 句型，order=13）——交通工具与场所词汇、与格代词 le/les、volver/saber、¿Qué/Dónde/Cómo 疑问句问答。
+- 新增 a1-repaso-colores-familia（复习课：颜色与家庭，20 词/7 听辨/13 句型，order=14）——颜色形容词性数一致、家庭成员词汇、¿De qué color? / ¿Cuántos años tiene? 问答；听辨以颜色阴阳性别对为主。
+- 排序调整：5 个通用示例包 order 12-16 后移至 15-19，现西课程序列 0-14 保持连续。
+- 流程：docx 用 Python 标准库解 XML 提取（本机无 pandoc）；课件原件归档 data/materials/真实教材/；286 个新音频（edge-tts/es-ES-ElviraNeural）；三层校验通过（文件层 20 包全绿 / HTTP 媒体头抽查全绿 / Chrome 真实播放冒烟 18 项全过）；已推送（8752b1a）。累计 20 个学习包。
+- 备注：源 docx 中的变位填空练习表（无答案）与《Bailando》歌词不适合生成练习音频，未入库。
