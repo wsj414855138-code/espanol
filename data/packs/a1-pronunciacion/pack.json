@@ -4,7 +4,11 @@
   "meta": {
     "level": "A1",
     "source": "BLCU 西班牙语发音 讲义（扫描版 OCR + 校对）",
-    "order": 0
+    "order": 0,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
   },
   "vocab": [
     {

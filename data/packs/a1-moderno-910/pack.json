@@ -1,0 +1,422 @@
+{
+  "id": "a1-moderno-910",
+  "title": "A1 现代西语 第 9-10 课补充：与格代词与交通工具",
+  "meta": {
+    "level": "A1",
+    "source": "旧版《现代西班牙语第一册》9-10 课补充内容与造句练习（Wynnie 老师）",
+    "order": 13,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "a pie",
+      "zh": "走路（交通方式）",
+      "example": {
+        "es": "Mi marido va al trabajo a pie.",
+        "zh": "我丈夫走路上班。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "a caballo",
+      "zh": "骑马",
+      "example": {
+        "es": "Vamos a caballo.",
+        "zh": "我们骑马去。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "en coche",
+      "zh": "坐小汽车",
+      "example": {
+        "es": "¿Vais en coche? — No, vamos en metro.",
+        "zh": "你们坐车去吗？——不，我们坐地铁。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "en autobús",
+      "zh": "坐公交车",
+      "example": {
+        "es": "Vamos en autobús.",
+        "zh": "我们坐公交车去。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "en tren",
+      "zh": "坐火车",
+      "example": {
+        "es": "Voy a Sevilla en tren.",
+        "zh": "我坐火车去塞维利亚。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "en avión",
+      "zh": "坐飞机",
+      "example": {
+        "es": "Juan va a Barcelona en avión.",
+        "zh": "胡安坐飞机去巴塞罗那。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "en metro",
+      "zh": "坐地铁",
+      "example": {
+        "es": "Voy a la universidad en metro.",
+        "zh": "我坐地铁去上大学。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "en barco",
+      "zh": "坐船",
+      "example": {
+        "es": "Vamos a la isla en barco.",
+        "zh": "我们坐船去岛上。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    },
+    {
+      "id": "v9",
+      "es": "en bicicleta",
+      "zh": "骑自行车",
+      "example": {
+        "es": "Voy al parque en bicicleta.",
+        "zh": "我骑车去公园。"
+      },
+      "audio": "audio/v9.m4a",
+      "exampleAudio": "audio/v9-ex.m4a"
+    },
+    {
+      "id": "v10",
+      "es": "en motocicleta",
+      "zh": "骑摩托车",
+      "example": {
+        "es": "Él va al trabajo en motocicleta.",
+        "zh": "他骑摩托车上班。"
+      },
+      "audio": "audio/v10.m4a",
+      "exampleAudio": "audio/v10-ex.m4a"
+    },
+    {
+      "id": "v11",
+      "es": "el garaje",
+      "zh": "车库",
+      "example": {
+        "es": "El coche está en el garaje.",
+        "zh": "车在车库里。"
+      },
+      "audio": "audio/v11.m4a",
+      "exampleAudio": "audio/v11-ex.m4a"
+    },
+    {
+      "id": "v12",
+      "es": "la estación",
+      "zh": "车站",
+      "example": {
+        "es": "El tren está en la estación.",
+        "zh": "火车在车站。"
+      },
+      "audio": "audio/v12.m4a",
+      "exampleAudio": "audio/v12-ex.m4a"
+    },
+    {
+      "id": "v13",
+      "es": "la parada",
+      "zh": "公交站",
+      "example": {
+        "es": "El autobús está en la parada.",
+        "zh": "公交车在站台。"
+      },
+      "audio": "audio/v13.m4a",
+      "exampleAudio": "audio/v13-ex.m4a"
+    },
+    {
+      "id": "v14",
+      "es": "el aeropuerto",
+      "zh": "机场",
+      "example": {
+        "es": "El avión está en el aeropuerto.",
+        "zh": "飞机在机场。"
+      },
+      "audio": "audio/v14.m4a",
+      "exampleAudio": "audio/v14-ex.m4a"
+    },
+    {
+      "id": "v15",
+      "es": "el puerto",
+      "zh": "港口",
+      "example": {
+        "es": "El barco está en el puerto.",
+        "zh": "船在港口。"
+      },
+      "audio": "audio/v15.m4a",
+      "exampleAudio": "audio/v15-ex.m4a"
+    },
+    {
+      "id": "v16",
+      "es": "volver",
+      "zh": "回，返回",
+      "example": {
+        "es": "Vuelvo a casa.",
+        "zh": "我回家。"
+      },
+      "audio": "audio/v16.m4a",
+      "exampleAudio": "audio/v16-ex.m4a"
+    },
+    {
+      "id": "v17",
+      "es": "saber",
+      "zh": "知道；会",
+      "example": {
+        "es": "¿Sabes nadar? — Sí, sé nadar.",
+        "zh": "你会游泳吗？——会，我会。"
+      },
+      "audio": "audio/v17.m4a",
+      "exampleAudio": "audio/v17-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "重音",
+      "pair": [
+        "té",
+        "te"
+      ],
+      "zh": "茶 / 你（宾格）",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "重音",
+      "pair": [
+        "sí",
+        "si"
+      ],
+      "zh": "是 / 如果",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "t/d",
+      "pair": [
+        "modo",
+        "moto"
+      ],
+      "zh": "方式 / 摩托车",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "b/v",
+      "pair": [
+        "bota",
+        "vota"
+      ],
+      "zh": "靴子 / 他投票",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "l/r",
+      "pair": [
+        "sal",
+        "sur"
+      ],
+      "zh": "盐 / 南方",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "r/rr",
+      "pair": [
+        "coro",
+        "corro"
+      ],
+      "zh": "合唱团 / 我跑",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "元音",
+      "pair": [
+        "vuelvo",
+        "vuelve"
+      ],
+      "zh": "回（我）/ 回（他）",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "元音",
+      "pair": [
+        "rápido",
+        "rápida"
+      ],
+      "zh": "快的（阳性）/ 快的（阴性）",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "¿Qué te regala Luis? — Me regala un reloj.",
+      "zh": "路易斯送你什么礼物？——他送我一块手表。",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "¿Qué le regalas a Pedro? — Le regalo una chaqueta.",
+      "zh": "你送给佩德罗什么？——我送他一件外套。",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "¿Qué te dice el médico? — Me dice que estoy bien.",
+      "zh": "医生对你说什么？——他说我很好。",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "Les compro unos bombones a mis hermanas.",
+      "zh": "我给我的姐妹们买巧克力。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "Vuelvo a la universidad.",
+      "zh": "我回大学。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "No puedo volver a Beijing.",
+      "zh": "我没法回北京了。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "Lo sé.",
+      "zh": "我知道。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "¿Sabes bailar? — No, no sé bailar.",
+      "zh": "你会跳舞吗？——不会，我不会跳。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    },
+    {
+      "id": "s9",
+      "es": "Voy a la universidad en metro.",
+      "zh": "我坐地铁去上大学。",
+      "audio": "audio/s9.m4a",
+      "audioSlow": "audio/s9-slow.m4a"
+    },
+    {
+      "id": "s10",
+      "es": "¿Vais en coche? — No, vamos en metro, hay mucho tráfico ahora.",
+      "zh": "你们坐车去吗？——不，我们坐地铁，现在路上很堵。",
+      "audio": "audio/s10.m4a",
+      "audioSlow": "audio/s10-slow.m4a"
+    },
+    {
+      "id": "s11",
+      "es": "Mi marido va al trabajo a pie.",
+      "zh": "我丈夫走路上班。",
+      "audio": "audio/s11.m4a",
+      "audioSlow": "audio/s11-slow.m4a"
+    },
+    {
+      "id": "s12",
+      "es": "¿Qué es esto? — Es una llave.",
+      "zh": "这是什么？——这是一把钥匙。",
+      "audio": "audio/s12.m4a",
+      "audioSlow": "audio/s12-slow.m4a"
+    },
+    {
+      "id": "s13",
+      "es": "¿Qué hay en el mar? — En el mar hay un barco.",
+      "zh": "海里有什么？——海里有一条船。",
+      "audio": "audio/s13.m4a",
+      "audioSlow": "audio/s13-slow.m4a"
+    },
+    {
+      "id": "s14",
+      "es": "¿Dónde están los árboles? — Los árboles están en el parque.",
+      "zh": "树在哪儿？——树在公园里。",
+      "audio": "audio/s14.m4a",
+      "audioSlow": "audio/s14-slow.m4a"
+    },
+    {
+      "id": "s15",
+      "es": "¿Cómo es el mar? — El mar es bonito.",
+      "zh": "大海怎么样？——大海很美。",
+      "audio": "audio/s15.m4a",
+      "audioSlow": "audio/s15-slow.m4a"
+    },
+    {
+      "id": "s16",
+      "es": "¿Cómo son las flores? — Las flores son amarillas.",
+      "zh": "花是什么样？——花是黄色的。",
+      "audio": "audio/s16.m4a",
+      "audioSlow": "audio/s16-slow.m4a"
+    }
+  ]
+}

@@ -4,7 +4,11 @@
   "meta": {
     "level": "A1",
     "source": "BLCU《现代西班牙语》第一册 第 4-5 课补充学案（Wynnie 老师）",
-    "order": 6
+    "order": 6,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
   },
   "vocab": [
     {

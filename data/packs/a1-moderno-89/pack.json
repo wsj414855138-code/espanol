@@ -1,0 +1,635 @@
+{
+  "id": "a1-moderno-89",
+  "title": "A1 现代西语 第 8-9 课：能愿动词与宾格代词",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《现代西班牙语》第一册 第八课和第九课补充学案（Wynnie 老师）",
+    "order": 12,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "primero / después",
+      "zh": "首先 / 然后",
+      "example": {
+        "es": "Primero, estudio español. Después, hago deporte.",
+        "zh": "我先学西语，然后做运动。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "por la mañana",
+      "zh": "在早上（时段）",
+      "example": {
+        "es": "Tenemos la clase de español por la mañana.",
+        "zh": "我们早上有西语课。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "por la tarde",
+      "zh": "在下午（时段）",
+      "example": {
+        "es": "Hago deporte por la tarde.",
+        "zh": "我下午做运动。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "por la noche",
+      "zh": "在晚上（时段）",
+      "example": {
+        "es": "Juan ve la tele por la noche.",
+        "zh": "胡安晚上看电视。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "el texto",
+      "zh": "课文",
+      "example": {
+        "es": "¿Puedes comentar el texto en español?",
+        "zh": "你能用西语评述课文吗？"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "el artículo",
+      "zh": "文章",
+      "example": {
+        "es": "¿Podéis escribir un artículo en español?",
+        "zh": "你们能用西语写一篇文章吗？"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "enfermo / enferma",
+      "zh": "病了的",
+      "example": {
+        "es": "¿Estás enfermo?",
+        "zh": "你病了吗？"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "cansado / cansada",
+      "zh": "疲惫的",
+      "example": {
+        "es": "Juan está muy cansado.",
+        "zh": "胡安很累。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    },
+    {
+      "id": "v9",
+      "es": "ocupado / ocupada",
+      "zh": "忙碌的",
+      "example": {
+        "es": "Mi marido está ocupado, no puedo hablar con él.",
+        "zh": "我丈夫很忙，我不能跟他说话。"
+      },
+      "audio": "audio/v9.m4a",
+      "exampleAudio": "audio/v9-ex.m4a"
+    },
+    {
+      "id": "v10",
+      "es": "contento / contenta",
+      "zh": "高兴的",
+      "example": {
+        "es": "Mis padres están contentos.",
+        "zh": "我父母很高兴。"
+      },
+      "audio": "audio/v10.m4a",
+      "exampleAudio": "audio/v10-ex.m4a"
+    },
+    {
+      "id": "v11",
+      "es": "tener que",
+      "zh": "得（不得不）",
+      "example": {
+        "es": "Tengo que estudiar más.",
+        "zh": "我得再多学习。"
+      },
+      "audio": "audio/v11.m4a",
+      "exampleAudio": "audio/v11-ex.m4a"
+    },
+    {
+      "id": "v12",
+      "es": "hay que",
+      "zh": "应该（无人称）",
+      "example": {
+        "es": "Hay que hacer deporte.",
+        "zh": "应该做运动。"
+      },
+      "audio": "audio/v12.m4a",
+      "exampleAudio": "audio/v12-ex.m4a"
+    },
+    {
+      "id": "v13",
+      "es": "la prisa",
+      "zh": "着急，急事",
+      "example": {
+        "es": "Tengo prisa.",
+        "zh": "我赶时间。"
+      },
+      "audio": "audio/v13.m4a",
+      "exampleAudio": "audio/v13-ex.m4a"
+    },
+    {
+      "id": "v14",
+      "es": "la película",
+      "zh": "电影",
+      "example": {
+        "es": "Veo películas el fin de semana.",
+        "zh": "我周末看电影。"
+      },
+      "audio": "audio/v14.m4a",
+      "exampleAudio": "audio/v14-ex.m4a"
+    },
+    {
+      "id": "v15",
+      "es": "las películas de terror",
+      "zh": "恐怖片",
+      "example": {
+        "es": "¿Ves las películas de terror? — No, nunca veo.",
+        "zh": "你看恐怖片吗？——我从来不看。"
+      },
+      "audio": "audio/v15.m4a",
+      "exampleAudio": "audio/v15-ex.m4a"
+    },
+    {
+      "id": "v16",
+      "es": "la naranja",
+      "zh": "橙子",
+      "example": {
+        "es": "La naranja es naranja.",
+        "zh": "橙子是橙色的。"
+      },
+      "audio": "audio/v16.m4a",
+      "exampleAudio": "audio/v16-ex.m4a"
+    },
+    {
+      "id": "v17",
+      "es": "la manzana",
+      "zh": "苹果",
+      "example": {
+        "es": "Esta manzana es roja.",
+        "zh": "这个苹果是红色的。"
+      },
+      "audio": "audio/v17.m4a",
+      "exampleAudio": "audio/v17-ex.m4a"
+    },
+    {
+      "id": "v18",
+      "es": "la piña",
+      "zh": "菠萝",
+      "example": {
+        "es": "Quiero comer piña.",
+        "zh": "我想吃菠萝。"
+      },
+      "audio": "audio/v18.m4a",
+      "exampleAudio": "audio/v18-ex.m4a"
+    },
+    {
+      "id": "v19",
+      "es": "el mango",
+      "zh": "芒果",
+      "example": {
+        "es": "El mango es dulce.",
+        "zh": "芒果很甜。"
+      },
+      "audio": "audio/v19.m4a",
+      "exampleAudio": "audio/v19-ex.m4a"
+    },
+    {
+      "id": "v20",
+      "es": "la banana",
+      "zh": "香蕉",
+      "example": {
+        "es": "La banana es amarilla.",
+        "zh": "香蕉是黄色的。"
+      },
+      "audio": "audio/v20.m4a",
+      "exampleAudio": "audio/v20-ex.m4a"
+    },
+    {
+      "id": "v21",
+      "es": "la uva",
+      "zh": "葡萄",
+      "example": {
+        "es": "Como uvas por la tarde.",
+        "zh": "我下午吃葡萄。"
+      },
+      "audio": "audio/v21.m4a",
+      "exampleAudio": "audio/v21-ex.m4a"
+    },
+    {
+      "id": "v22",
+      "es": "el melocotón",
+      "zh": "桃子",
+      "example": {
+        "es": "Quiero un melocotón.",
+        "zh": "我想要一个桃子。"
+      },
+      "audio": "audio/v22.m4a",
+      "exampleAudio": "audio/v22-ex.m4a"
+    },
+    {
+      "id": "v23",
+      "es": "la sandía",
+      "zh": "西瓜",
+      "example": {
+        "es": "La sandía es grande.",
+        "zh": "西瓜很大。"
+      },
+      "audio": "audio/v23.m4a",
+      "exampleAudio": "audio/v23-ex.m4a"
+    },
+    {
+      "id": "v24",
+      "es": "la cereza",
+      "zh": "樱桃",
+      "example": {
+        "es": "Las cerezas son rojas.",
+        "zh": "樱桃是红色的。"
+      },
+      "audio": "audio/v24.m4a",
+      "exampleAudio": "audio/v24-ex.m4a"
+    },
+    {
+      "id": "v25",
+      "es": "la fresa",
+      "zh": "草莓",
+      "example": {
+        "es": "Quiero comer fresas.",
+        "zh": "我想吃草莓。"
+      },
+      "audio": "audio/v25.m4a",
+      "exampleAudio": "audio/v25-ex.m4a"
+    },
+    {
+      "id": "v26",
+      "es": "claro",
+      "zh": "当然",
+      "example": {
+        "es": "Claro que sí.",
+        "zh": "那当然。"
+      },
+      "audio": "audio/v26.m4a",
+      "exampleAudio": "audio/v26-ex.m4a"
+    },
+    {
+      "id": "v27",
+      "es": "para llevar",
+      "zh": "打包带走",
+      "example": {
+        "es": "¿Comes aquí o para llevar?",
+        "zh": "你在这儿吃还是打包？"
+      },
+      "audio": "audio/v27.m4a",
+      "exampleAudio": "audio/v27-ex.m4a"
+    },
+    {
+      "id": "v28",
+      "es": "dar",
+      "zh": "给",
+      "example": {
+        "es": "¿Me das un libro?",
+        "zh": "你能给我一本书吗？"
+      },
+      "audio": "audio/v28.m4a",
+      "exampleAudio": "audio/v28-ex.m4a"
+    },
+    {
+      "id": "v29",
+      "es": "abrir",
+      "zh": "打开",
+      "example": {
+        "es": "¿Puedes abrir la puerta, por favor?",
+        "zh": "请你开一下门好吗？"
+      },
+      "audio": "audio/v29.m4a",
+      "exampleAudio": "audio/v29-ex.m4a"
+    },
+    {
+      "id": "v30",
+      "es": "esperar",
+      "zh": "等待，希望",
+      "example": {
+        "es": "Te espero un rato.",
+        "zh": "我等你一会儿。"
+      },
+      "audio": "audio/v30.m4a",
+      "exampleAudio": "audio/v30-ex.m4a"
+    },
+    {
+      "id": "v31",
+      "es": "decir",
+      "zh": "说",
+      "example": {
+        "es": "No me dices la verdad.",
+        "zh": "你没跟我说实话。"
+      },
+      "audio": "audio/v31.m4a",
+      "exampleAudio": "audio/v31-ex.m4a"
+    },
+    {
+      "id": "v32",
+      "es": "vivir",
+      "zh": "居住",
+      "example": {
+        "es": "¿Dónde vives? — Vivo en Sevilla.",
+        "zh": "你住在哪里？——我住在塞维利亚。"
+      },
+      "audio": "audio/v32.m4a",
+      "exampleAudio": "audio/v32-ex.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "元音",
+      "pair": [
+        "puedo",
+        "puede"
+      ],
+      "zh": "能（我）/ 能（他），o 变 ue",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "元音",
+      "pair": [
+        "quiero",
+        "quiere"
+      ],
+      "zh": "想（我）/ 想（他），e 变 ie",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "元音",
+      "pair": [
+        "vengo",
+        "viene"
+      ],
+      "zh": "来（我）/ 来（他），e 变 ie",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "b/v",
+      "pair": [
+        "boto",
+        "voto"
+      ],
+      "zh": "我投掷 / 选票",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "p/b",
+      "pair": [
+        "peso",
+        "beso"
+      ],
+      "zh": "比索 / 吻",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "t/d",
+      "pair": [
+        "toma",
+        "doma"
+      ],
+      "zh": "他拿 / 他驯服",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "l/r",
+      "pair": [
+        "pila",
+        "pira"
+      ],
+      "zh": "电池 / 篝火",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "r/rr",
+      "pair": [
+        "cero",
+        "cerro"
+      ],
+      "zh": "零 / 山",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    },
+    {
+      "id": "l9",
+      "category": "重音",
+      "pair": [
+        "papa",
+        "papá"
+      ],
+      "zh": "土豆 / 爸爸",
+      "audio": [
+        "audio/l9-0.m4a",
+        "audio/l9-1.m4a"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s1",
+      "es": "¿Cómo te llamas? — Me llamo José.",
+      "zh": "你叫什么名字？——我叫何塞。",
+      "audio": "audio/s1.m4a",
+      "audioSlow": "audio/s1-slow.m4a"
+    },
+    {
+      "id": "s2",
+      "es": "¿Cuál es tu nombre? — Mi nombre es David.",
+      "zh": "你叫什么名字？——我叫大卫。",
+      "audio": "audio/s2.m4a",
+      "audioSlow": "audio/s2-slow.m4a"
+    },
+    {
+      "id": "s3",
+      "es": "¿Cómo se llama? — Se llama Cristina.",
+      "zh": "他叫什么名字？——她叫克里斯蒂娜。",
+      "audio": "audio/s3.m4a",
+      "audioSlow": "audio/s3-slow.m4a"
+    },
+    {
+      "id": "s4",
+      "es": "¿Cómo te apellidas? — Me apellido García.",
+      "zh": "你姓什么？——我姓加西亚。",
+      "audio": "audio/s4.m4a",
+      "audioSlow": "audio/s4-slow.m4a"
+    },
+    {
+      "id": "s5",
+      "es": "¿Cuál es tu apellido? — Mi apellido es Hernández.",
+      "zh": "你的姓是什么？——我姓埃尔南德斯。",
+      "audio": "audio/s5.m4a",
+      "audioSlow": "audio/s5-slow.m4a"
+    },
+    {
+      "id": "s6",
+      "es": "Puedo bailar tango.",
+      "zh": "我会跳探戈。",
+      "audio": "audio/s6.m4a",
+      "audioSlow": "audio/s6-slow.m4a"
+    },
+    {
+      "id": "s7",
+      "es": "¿Puedes hablar más despacio? — Sí, puedo.",
+      "zh": "你能说慢一点吗？——可以。",
+      "audio": "audio/s7.m4a",
+      "audioSlow": "audio/s7-slow.m4a"
+    },
+    {
+      "id": "s8",
+      "es": "Juan no puede contestar bien.",
+      "zh": "胡安答得不好。",
+      "audio": "audio/s8.m4a",
+      "audioSlow": "audio/s8-slow.m4a"
+    },
+    {
+      "id": "s9",
+      "es": "Hay que estudiar.",
+      "zh": "应该学习。",
+      "audio": "audio/s9.m4a",
+      "audioSlow": "audio/s9-slow.m4a"
+    },
+    {
+      "id": "s10",
+      "es": "Tienes que hacer deporte. Ya eres gordito.",
+      "zh": "你得做运动了，你已经是小胖墩了。",
+      "audio": "audio/s10.m4a",
+      "audioSlow": "audio/s10-slow.m4a"
+    },
+    {
+      "id": "s11",
+      "es": "¿Me amas, Lola? — Sí, Carlos, te amo.",
+      "zh": "罗拉，你爱我吗？——爱，卡洛斯，我爱你。",
+      "audio": "audio/s11.m4a",
+      "audioSlow": "audio/s11-slow.m4a"
+    },
+    {
+      "id": "s12",
+      "es": "¿Dónde están mis hermanos? — No los veo.",
+      "zh": "我的兄弟们在哪儿？——我没看见他们。",
+      "audio": "audio/s12.m4a",
+      "audioSlow": "audio/s12-slow.m4a"
+    },
+    {
+      "id": "s13",
+      "es": "¿Amas a Julia? — Sí, la amo.",
+      "zh": "你爱胡莉亚吗？——爱，我爱她。",
+      "audio": "audio/s13.m4a",
+      "audioSlow": "audio/s13-slow.m4a"
+    },
+    {
+      "id": "s14",
+      "es": "¿Por qué estudias español? — Quiero estudiar español para leer en español.",
+      "zh": "你为什么学西语？——我想学西语，为了能用西语阅读。",
+      "audio": "audio/s14.m4a",
+      "audioSlow": "audio/s14-slow.m4a"
+    },
+    {
+      "id": "s15",
+      "es": "Quiero estudiar español porque mi novia es colombiana.",
+      "zh": "我学西语，因为我女朋友是哥伦比亚人。",
+      "audio": "audio/s15.m4a",
+      "audioSlow": "audio/s15-slow.m4a"
+    },
+    {
+      "id": "s16",
+      "es": "¿De dónde vienes? — Vengo de China.",
+      "zh": "你从哪儿来？——我从中国来。",
+      "audio": "audio/s16.m4a",
+      "audioSlow": "audio/s16-slow.m4a"
+    },
+    {
+      "id": "s17",
+      "es": "Esta chaqueta no es mía. ¿Es tuya, Julia?",
+      "zh": "这件外套不是我的。是你的吗，胡莉亚？",
+      "audio": "audio/s17.m4a",
+      "audioSlow": "audio/s17-slow.m4a"
+    },
+    {
+      "id": "s18",
+      "es": "¿De quién es este libro? — Es mío.",
+      "zh": "这本书是谁的？——是我的。",
+      "audio": "audio/s18.m4a",
+      "audioSlow": "audio/s18-slow.m4a"
+    },
+    {
+      "id": "s19",
+      "es": "Mi padre habla dos idiomas. — Pues el mío habla cuatro.",
+      "zh": "我爸爸会说两种语言。——我爸爸会说四种。",
+      "audio": "audio/s19.m4a",
+      "audioSlow": "audio/s19-slow.m4a"
+    },
+    {
+      "id": "s20",
+      "es": "¿Quieres conocer la ciudad?",
+      "zh": "你想了解这座城市吗？",
+      "audio": "audio/s20.m4a",
+      "audioSlow": "audio/s20-slow.m4a"
+    },
+    {
+      "id": "s21",
+      "es": "¿Me puedes dar unas llaves de la casa?",
+      "zh": "你能把家里的钥匙给我吗？",
+      "audio": "audio/s21.m4a",
+      "audioSlow": "audio/s21-slow.m4a"
+    }
+  ]
+}

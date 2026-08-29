@@ -72,33 +72,51 @@
     "order": 11
   },
   {
+    "id": "a1-moderno-89",
+    "title": "A1 现代西语 第 8-9 课：能愿动词与宾格代词",
+    "level": "A1",
+    "order": 12
+  },
+  {
+    "id": "a1-moderno-910",
+    "title": "A1 现代西语 第 9-10 课补充：与格代词与交通工具",
+    "level": "A1",
+    "order": 13
+  },
+  {
+    "id": "a1-repaso-colores-familia",
+    "title": "A1 复习课：颜色与家庭（Repaso）",
+    "level": "A1",
+    "order": 14
+  },
+  {
     "id": "a1-leccion-1",
     "title": "A1 第 1 课：问候与自我介绍",
     "level": "A1",
-    "order": 12
+    "order": 15
   },
   {
     "id": "a1-numeros",
     "title": "A1 第 2 课：数字与电话号码",
     "level": "A1",
-    "order": 13
+    "order": 16
   },
   {
     "id": "a1-colores",
     "title": "A1 第 3 课：颜色",
     "level": "A1",
-    "order": 14
+    "order": 17
   },
   {
     "id": "a1-familia",
     "title": "A1 第 4 课：家庭成员",
     "level": "A1",
-    "order": 15
+    "order": 18
   },
   {
     "id": "a1-comida",
     "title": "A1 第 5 课：食物与饮料",
     "level": "A1",
-    "order": 16
+    "order": 19
   }
 ]
