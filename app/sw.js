@@ -1,7 +1,7 @@
 'use strict';
 /* 离线缓存（v0.7 PWA）：缓存应用外壳 + 数据清单；音频在线播放不缓存 */
-const CACHE = 'ls-v0.7';
-const SHELL = ['./', './index.html', './app.css', './app.js', './cloud.js', '../data/packs/index.json'];
+const CACHE = 'ls-v0.7.2';
+const SHELL = ['./', './index.html', './app.css', './app.js', './playground.js', './cloud.js', '../data/packs/index.json'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
 });

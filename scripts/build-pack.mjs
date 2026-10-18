@@ -32,11 +32,14 @@ const isSeparatorRow = (cells) =>
   cells.length > 0 && cells.every((c) => /^:?-{2,}:?$/.test(c));
 
 // 表头行（各小节表格的列名）不参与数据解析
-const HEADER_TOKENS = ['西语', '中文', '类别', '词A', '词B', '说明', '例句（西语）', '例句（中文）'];
+const HEADER_TOKENS = [
+  '西语', '中文', '类别', '词A', '词B', '说明', '例句（西语）', '例句（中文）',
+  '图示', '字母', '读音', '组', '发音要领', '代表词',
+];
 const isHeaderRow = (cells) => cells.some((c) => HEADER_TOKENS.includes(stripMd(c)));
 
 function parseSource(md) {
-  const result = { title: '', meta: {}, vocab: [], listening: [], sentences: [] };
+  const result = { title: '', meta: {}, vocab: [], listening: [], letters: [], sentences: [] };
   let section = null;
   let headerDone = false;
 
@@ -68,17 +71,30 @@ function parseSource(md) {
     if (isSeparatorRow(cells) || isHeaderRow(cells)) continue;
 
     if (section === '词汇') {
-      const [es, zh, exEs, exZh] = cells.map(stripMd);
+      const [es, zh, exEs, exZh, emoji] = cells.map(stripMd);
       if (!es || !zh) continue;
       const example =
         exEs && exZh && exEs !== '—'
           ? { es: exEs, zh: exZh }
           : null;
-      result.vocab.push({ es, zh, example });
+      // 图示（emoji）列可省略：游乐场互动卡片用
+      const pic = emoji && emoji !== '—' ? emoji : '';
+      result.vocab.push({ es, zh, example, ...(pic ? { emoji: pic } : {}) });
     } else if (section === '听辨') {
       const [category, a, b, zh] = cells.map(stripMd);
       if (!category || !a || !b) continue;
       result.listening.push({ category, pair: [a, b], zh: zh || '' });
+    } else if (section === '字母') {
+      // 字母启蒙卡（游乐场）：读音 = 给 TTS 的字母名文本；代表词用于听发音
+      const [letter, tts, group, tip, rep] = cells.map(stripMd);
+      if (!letter) continue;
+      result.letters.push({
+        letter,
+        tts: tts || letter,
+        group: group || '',
+        tip: tip || '',
+        rep: rep || '',
+      });
     } else if (section === '句型') {
       const [es, zh] = cells.map(stripMd);
       if (!es) continue;
@@ -103,6 +119,24 @@ function buildPack(packId) {
   if (!src.title) src.title = packId;
 
   const level = src.meta.level || inferLevel(packId);
+  // 字母卡代表词的发音：能对上词汇表就直接复用词汇音频，否则生成独立音频
+  const vocabAudioByText = new Map(src.vocab.map((v, i) => [v.es, `audio/v${i + 1}.m4a`]));
+  const letters = src.letters.map((l, i) => {
+    const reuse = l.rep && vocabAudioByText.get(l.rep);
+    const repAudio = reuse || (l.rep ? `audio/x${i + 1}-rep.m4a` : '');
+    return {
+      id: `x${i + 1}`,
+      letter: l.letter,
+      tts: l.tts,
+      group: l.group,
+      tip: l.tip,
+      rep: l.rep,
+      letterAudio: `audio/x${i + 1}.m4a`,
+      ...(repAudio ? { repAudio } : {}),
+      // repNeedsAudio=true 表示该代表词音频需要单独生成（未复用词汇音频）
+      ...(repAudio && !reuse ? { repNeedsAudio: true } : {}),
+    };
+  });
   const pack = {
     id: packId,
     title: src.title,
@@ -115,6 +149,7 @@ function buildPack(packId) {
       id: `v${i + 1}`,
       es: v.es,
       zh: v.zh,
+      ...(v.emoji ? { emoji: v.emoji } : {}),
       ...(v.example ? { example: v.example } : {}),
       audio: `audio/v${i + 1}.m4a`,
       ...(v.example ? { exampleAudio: `audio/v${i + 1}-ex.m4a` } : {}),
@@ -126,6 +161,7 @@ function buildPack(packId) {
       zh: l.zh,
       audio: [`audio/l${i + 1}-0.m4a`, `audio/l${i + 1}-1.m4a`],
     })),
+    ...(letters.length ? { letters } : {}),
     sentences: src.sentences.map((s, i) => ({
       id: `s${i + 1}`,
       es: s.es,
@@ -180,5 +216,11 @@ if (built.length === 0) process.exit(1);
 refreshIndex();
 console.log(`✓ 构建 ${built.length} 个学习包：`);
 for (const p of built) {
-  console.log(`  - ${p.id}：${p.title}（词汇 ${p.vocab.length}，听辨 ${p.listening.length}，句型 ${p.sentences.length}）`);
+  const extra = [
+    `词汇 ${p.vocab.length}`,
+    `听辨 ${p.listening.length}`,
+    ...(p.letters ? [`字母 ${p.letters.length}`] : []),
+    `句型 ${p.sentences.length}`,
+  ].join('，');
+  console.log(`  - ${p.id}：${p.title}（${extra}）`);
 }

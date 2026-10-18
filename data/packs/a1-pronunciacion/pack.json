@@ -15,6 +15,7 @@
       "id": "v1",
       "es": "bebé",
       "zh": "婴儿",
+      "emoji": "👶",
       "example": {
         "es": "El bebé es pequeño.",
         "zh": "婴儿很小。"
@@ -26,6 +27,7 @@
       "id": "v2",
       "es": "viva",
       "zh": "万岁（v 发音）",
+      "emoji": "🎉",
       "example": {
         "es": "¡Viva España!",
         "zh": "西班牙万岁！"
@@ -37,6 +39,7 @@
       "id": "v3",
       "es": "paloma",
       "zh": "鸽子",
+      "emoji": "🕊️",
       "example": {
         "es": "La paloma es blanca.",
         "zh": "鸽子是白色的。"
@@ -48,6 +51,7 @@
       "id": "v4",
       "es": "puma",
       "zh": "美洲狮",
+      "emoji": "🐆",
       "example": {
         "es": "El puma corre mucho.",
         "zh": "美洲狮跑得很快。"
@@ -59,6 +63,7 @@
       "id": "v5",
       "es": "gallo",
       "zh": "公鸡",
+      "emoji": "🐓",
       "example": {
         "es": "El gallo canta por la mañana.",
         "zh": "公鸡早上打鸣。"
@@ -70,6 +75,7 @@
       "id": "v6",
       "es": "goma",
       "zh": "橡胶，橡皮",
+      "emoji": "🧽",
       "example": {
         "es": "Tengo una goma.",
         "zh": "我有一块橡皮。"
@@ -81,6 +87,7 @@
       "id": "v7",
       "es": "dedo",
       "zh": "手指",
+      "emoji": "☝️",
       "example": {
         "es": "Tengo cinco dedos.",
         "zh": "我有五根手指。"
@@ -92,6 +99,7 @@
       "id": "v8",
       "es": "día",
       "zh": "天，日子",
+      "emoji": "☀️",
       "example": {
         "es": "Hoy es un buen día.",
         "zh": "今天是好日子。"
@@ -103,6 +111,7 @@
       "id": "v9",
       "es": "ella",
       "zh": "她",
+      "emoji": "👩",
       "example": {
         "es": "Ella es mi amiga.",
         "zh": "她是我朋友。"
@@ -114,6 +123,7 @@
       "id": "v10",
       "es": "lluvia",
       "zh": "雨",
+      "emoji": "🌧️",
       "example": {
         "es": "Hoy hay lluvia.",
         "zh": "今天下雨。"
@@ -125,6 +135,7 @@
       "id": "v11",
       "es": "chico",
       "zh": "男孩",
+      "emoji": "👦",
       "example": {
         "es": "El chico es alto.",
         "zh": "男孩很高。"
@@ -136,6 +147,7 @@
       "id": "v12",
       "es": "perro",
       "zh": "狗",
+      "emoji": "🐶",
       "example": {
         "es": "Mi perro es grande.",
         "zh": "我的狗很大。"
@@ -248,6 +260,149 @@
         "audio/l8-0.m4a",
         "audio/l8-1.m4a"
       ]
+    }
+  ],
+  "letters": [
+    {
+      "id": "x1",
+      "letter": "b",
+      "tts": "be",
+      "group": "b/v",
+      "tip": "双唇闭合后气流冲开，声带振动（浊音）；别读成中文\"杯\"",
+      "rep": "bebé",
+      "letterAudio": "audio/x1.m4a",
+      "repAudio": "audio/v1.m4a"
+    },
+    {
+      "id": "x2",
+      "letter": "v",
+      "tts": "uve",
+      "group": "b/v",
+      "tip": "嘴型和发音与 b 完全相同，只是字母不同；不要咬嘴唇（不是英语 v）",
+      "rep": "viva",
+      "letterAudio": "audio/x2.m4a",
+      "repAudio": "audio/v2.m4a"
+    },
+    {
+      "id": "x3",
+      "letter": "p",
+      "tts": "pe",
+      "group": "p",
+      "tip": "双唇闭合突然打开、强送气，像轻轻\"泼\"；p 送气，b 声带振动",
+      "rep": "paloma",
+      "letterAudio": "audio/x3.m4a",
+      "repAudio": "audio/v3.m4a"
+    },
+    {
+      "id": "x4",
+      "letter": "g",
+      "tts": "ge",
+      "group": "g",
+      "tip": "舌根抬向软腭、声带振动；在 a/o/u 前发浊音\"嘎\"",
+      "rep": "gallo",
+      "letterAudio": "audio/x4.m4a",
+      "repAudio": "audio/v5.m4a"
+    },
+    {
+      "id": "x5",
+      "letter": "d",
+      "tts": "de",
+      "group": "d",
+      "tip": "舌尖抵上齿背、声带振动；比中文\"得\"（舌尖抵齿龈）更靠前",
+      "rep": "dedo",
+      "letterAudio": "audio/x5.m4a",
+      "repAudio": "audio/v7.m4a"
+    },
+    {
+      "id": "x6",
+      "letter": "a",
+      "tts": "a",
+      "group": "元音",
+      "tip": "嘴张大、舌放平，一个音到底不滑动",
+      "rep": "paloma",
+      "letterAudio": "audio/x6.m4a",
+      "repAudio": "audio/v3.m4a"
+    },
+    {
+      "id": "x7",
+      "letter": "e",
+      "tts": "e",
+      "group": "元音",
+      "tip": "嘴角向两边咧开像微笑；不要滑成\"诶伊\"",
+      "rep": "dedo",
+      "letterAudio": "audio/x7.m4a",
+      "repAudio": "audio/v7.m4a"
+    },
+    {
+      "id": "x8",
+      "letter": "i",
+      "tts": "i",
+      "group": "元音",
+      "tip": "短促清亮；不要拖长滑成\"爱\"",
+      "rep": "día",
+      "letterAudio": "audio/x8.m4a",
+      "repAudio": "audio/v8.m4a"
+    },
+    {
+      "id": "x9",
+      "letter": "o",
+      "tts": "o",
+      "group": "元音",
+      "tip": "嘴拢成圆形不动；不要滑成\"欧乌\"",
+      "rep": "gallo",
+      "letterAudio": "audio/x9.m4a",
+      "repAudio": "audio/v5.m4a"
+    },
+    {
+      "id": "x10",
+      "letter": "u",
+      "tts": "u",
+      "group": "元音",
+      "tip": "双唇撮圆前突；不要滑成\"欧\"",
+      "rep": "lluvia",
+      "letterAudio": "audio/x10.m4a",
+      "repAudio": "audio/v10.m4a"
+    },
+    {
+      "id": "x11",
+      "letter": "r",
+      "tts": "erre",
+      "group": "r/rr",
+      "tip": "词首单颤：舌尖轻弹上齿龈一下就够",
+      "rep": "rana",
+      "letterAudio": "audio/x11.m4a",
+      "repAudio": "audio/x11-rep.m4a",
+      "repNeedsAudio": true
+    },
+    {
+      "id": "x12",
+      "letter": "rr",
+      "tts": "erre doble",
+      "group": "r/rr",
+      "tip": "舌尖连续颤动好几下，像小马达\"得rrrr\"",
+      "rep": "perro",
+      "letterAudio": "audio/x12.m4a",
+      "repAudio": "audio/v12.m4a"
+    },
+    {
+      "id": "x13",
+      "letter": "ll",
+      "tts": "elle",
+      "group": "ll",
+      "tip": "整个舌面贴住硬腭再放开，读\"呀\"音（yeísmo）",
+      "rep": "lluvia",
+      "letterAudio": "audio/x13.m4a",
+      "repAudio": "audio/v10.m4a"
+    },
+    {
+      "id": "x14",
+      "letter": "ch",
+      "tts": "che",
+      "group": "ch",
+      "tip": "和中文\"吃\"的声母一样，短促、不过度送气",
+      "rep": "chico",
+      "letterAudio": "audio/x14.m4a",
+      "repAudio": "audio/v11.m4a"
     }
   ],
   "sentences": [

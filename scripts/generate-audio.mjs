@@ -103,6 +103,11 @@ function generate(packId) {
   for (const l of pack.listening) {
     l.pair.forEach((word, i) => jobs.push({ path: l.audio[i], text: word, slow: false }));
   }
+  // 字母启蒙（游乐场）：字母名 + 未复用词汇音频的代表词
+  for (const l of pack.letters || []) {
+    jobs.push({ path: l.letterAudio, text: l.tts || l.letter, slow: false });
+    if (l.repAudio && l.repNeedsAudio) jobs.push({ path: l.repAudio, text: l.rep, slow: false });
+  }
   for (const s of pack.sentences) {
     jobs.push({ path: s.audio, text: s.es, slow: false });
     jobs.push({ path: s.audioSlow, text: s.es, slow: true });

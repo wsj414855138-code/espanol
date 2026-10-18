@@ -6,3 +6,8 @@ node_modules/
 .kimi-tmp/
 .env
 supabase/.temp/
+.mimosa/
+.v2c/
+.video_agent/
+.zcode/
+.chrome-tmp/

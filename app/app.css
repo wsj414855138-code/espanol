@@ -388,3 +388,192 @@ body {
 .report-h3 { margin: 16px 0 8px; font-size: 14px; }
 .report-heatmap { overflow-x: auto; padding: 4px 0; }
 .report-heatmap svg { display: block; }
+
+/* ===================== 游乐场（v0.8） ===================== */
+.pg-subnav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.pg-chip {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pg-chip.active { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-soft); }
+.pg-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.pg-chip-sm { font-size: 13px; padding: 6px 12px; font-weight: 500; }
+
+/* 认一认：3D 翻面大卡 */
+.pg-flipwrap {
+  perspective: 1000px;
+  height: 300px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pg-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pg-card-inner.is-flipped { transform: rotateY(180deg); }
+.pg-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+}
+.pg-face.pg-back { transform: rotateY(180deg); }
+.pg-emoji { font-size: 88px; line-height: 1.1; }
+.pg-word { font-size: 40px; font-weight: 700; letter-spacing: 1px; color: var(--accent); }
+.pg-word-sm { font-size: 26px; font-weight: 700; color: var(--accent); }
+.pg-zh { font-size: 22px; }
+.pg-example {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-style: italic;
+  max-width: 100%;
+}
+.pg-example span { font-style: normal; color: var(--muted); font-size: 13px; }
+.pg-taphint { color: var(--muted); font-size: 12px; }
+.pg-ctrls { display: flex; gap: 8px; margin-top: 12px; }
+.pg-ctrls .btn { flex: 1; padding: 12px 6px; font-size: 14px; white-space: nowrap; }
+
+/* 配一配 / 听音找图：卡片网格 */
+.pg-match-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; min-height: 28px; }
+.pg-taphint-inline { color: var(--muted); font-size: 13px; }
+.pg-cheer { color: var(--ok); font-weight: 700; font-size: 15px; }
+.pg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.pg-mcard {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  perspective: 600px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pg-minner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pg-mcard.is-up .pg-minner { transform: rotateY(180deg); }
+.pg-mface {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pg-mback { background: var(--accent-soft); font-size: 24px; }
+.pg-mfront {
+  transform: rotateY(180deg);
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.pg-mfront { font-size: 32px; }
+.pg-mfront b { font-size: 14px; font-weight: 700; padding: 4px; overflow-wrap: break-word; }
+.pg-mcard.is-matched { pointer-events: none; animation: pgPop 0.4s ease; }
+.pg-mcard.is-matched .pg-mfront { opacity: 0.28; border-color: var(--ok); }
+.pg-mcard.is-shake { animation: pgShake 0.4s ease; }
+
+/* 听音找图选项卡 */
+.pg-pick {
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+.pg-pick-emoji { font-size: 42px; line-height: 1.15; }
+.pg-pick-word { font-size: 13px; font-weight: 700; color: var(--accent); }
+.pg-pick.is-right { border-color: var(--ok); background: rgba(47, 158, 68, 0.12); }
+.pg-pick.is-wrong { opacity: 0.5; }
+.pg-pick:disabled { cursor: default; }
+.pg-pick.is-shake { animation: pgShake 0.45s ease; }
+
+/* 字母启蒙卡 */
+.pg-letter-card { text-align: left; gap: 8px; padding: 18px 16px; }
+.pg-letter-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pg-letter { font-size: 56px; font-weight: 800; color: var(--accent); line-height: 1; min-width: 64px; }
+.pg-mouth {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 6px;
+  width: 128px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pg-mouth-svg { display: block; width: 100%; height: auto; }
+.pg-mouth.playing .pg-mouth-svg { animation: pgTalk 0.9s ease; }
+.pg-tip { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+/* 彩带庆祝 */
+.pg-confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 98;
+  overflow: hidden;
+}
+.pg-confetti span {
+  position: absolute;
+  top: -40px;
+  animation: pgFall 2.6s ease-in forwards;
+}
+
+@keyframes pgPop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+@keyframes pgShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+@keyframes pgTalk {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1, 0.92); }
+  50% { transform: scale(0.94, 1.06); }
+  75% { transform: scale(1.06, 0.96); }
+}
+@keyframes pgFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(540deg); opacity: 0.2; }
+}

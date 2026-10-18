@@ -129,6 +129,7 @@ const CLOUD = (() => {
       { day: s.date, type: 'listening', correct: s.listeningRight || 0, total: s.listeningDone || 0 },
       { day: s.date, type: 'dictation', correct: s.dictationDone || 0, total: s.dictationDone || 0 },
       { day: s.date, type: 'review', correct: s.reviewCards || 0, total: s.reviewCards || 0 },
+      { day: s.date, type: 'play', correct: s.playRight || 0, total: s.playDone || 0 },
     ];
     try {
       const res = await api(`/rest/v1/${ACT_TABLE}`, {

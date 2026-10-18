@@ -103,13 +103,13 @@ function saveStats(s) {
   try { if (typeof CLOUD !== 'undefined' && CLOUD.pushStats) CLOUD.pushStats(s); } catch { /* 云不可用不影响练习 */ }
 }
 
-/** 累计今日统计；type: listening(ok=对错) / dictation / review */
+/** 累计今日统计；type: listening(ok=对错) / dictation / review / play(游乐场答题) */
 function statsAdd(type, ok) {
   const today = todayStr();
-  const s = loadStats() || { date: today, listeningDone: 0, listeningRight: 0, dictationDone: 0, reviewCards: 0 };
+  const s = loadStats() || { date: today, listeningDone: 0, listeningRight: 0, dictationDone: 0, reviewCards: 0, playDone: 0, playRight: 0 };
   if (s.date !== today) {
     // 跨天：重置为新的一天
-    s.date = today; s.listeningDone = 0; s.listeningRight = 0; s.dictationDone = 0; s.reviewCards = 0;
+    s.date = today; s.listeningDone = 0; s.listeningRight = 0; s.dictationDone = 0; s.reviewCards = 0; s.playDone = 0; s.playRight = 0;
   }
   if (type === 'listening') {
     s.listeningDone++;
@@ -118,6 +118,9 @@ function statsAdd(type, ok) {
     s.dictationDone++;
   } else if (type === 'review') {
     s.reviewCards++;
+  } else if (type === 'play') {
+    s.playDone++;
+    if (ok) s.playRight++;
   }
   saveStats(s);
   renderStats();
@@ -131,7 +134,8 @@ function renderStats() {
     return;
   }
   bar.innerHTML =
-    `<span class="badge">今日：听辨 ${s.listeningRight}/${s.listeningDone} ✓ · 听写 ${s.dictationDone} 句 · 复习 ${s.reviewCards} 卡</span>`;
+    `<span class="badge">今日：听辨 ${s.listeningRight}/${s.listeningDone} ✓ · 听写 ${s.dictationDone} 句 · 复习 ${s.reviewCards} 卡` +
+    (s.playDone ? ` · 游乐场 ${s.playRight}/${s.playDone}` : '') + `</span>`;
 }
 
 /* ---------- 间隔重复复习（简化 SM-2，localStorage） ---------- */
@@ -302,9 +306,16 @@ async function loadPack(id) {
   // 跟读 / 听写
   renderShadow();
   renderDictation();
+  // 游乐场（v0.8：有图卡/字母数据的包才会显示页签）
+  if (window.Playground) window.Playground.render();
 
   // 没数据的 tab 隐藏
   document.querySelectorAll('.tab[data-tab]').forEach((t) => {
+    if (t.dataset.tab === 'playground') {
+      const has = (state.pack.vocab || []).some((v) => v.emoji) || (state.pack.letters || []).length;
+      t.style.display = has ? '' : 'none';
+      return;
+    }
     const key = { vocab: 'vocab', listening: 'listening', shadow: 'sentences', dictation: 'sentences' }[t.dataset.tab];
     if (!key) return;
     const empty = key === 'sentences' ? !state.pack.sentences.length : !state.pack[key].length;
@@ -665,7 +676,9 @@ async function renderReport() {
   // 汇总：本地今日统计 + 云端近 90 天活动
   const today = todayStr();
   const s = loadStats();
-  const todayDone = s && s.date === today ? s.listeningDone + s.dictationDone + s.reviewCards : 0;
+  const todayDone = s && s.date === today
+    ? s.listeningDone + s.dictationDone + s.reviewCards + (s.playDone || 0)
+    : 0;
 
   const byDay = {};
   let cloudOk = false;
@@ -741,6 +754,11 @@ function switchTab(name) {
   document.querySelectorAll('.tab-panel').forEach((x) => x.classList.toggle('active', x.id === `tab-${name}`));
   history.replaceState(null, '', `#${name}`);
   if (name === 'report') renderReport();
+  // 游乐场：进入时重渲染（数据未加载完时跳过，loadPack 完成后会补渲染），离开时停掉自动播放
+  if (window.Playground) {
+    if (name === 'playground') { if (state.pack) window.Playground.render(); }
+    else window.Playground.stopAuto();
+  }
 }
 document.querySelectorAll('.tab').forEach((t) => {
   t.addEventListener('click', () => switchTab(t.dataset.tab));
@@ -748,10 +766,10 @@ document.querySelectorAll('.tab').forEach((t) => {
 // 浏览器前进/后退、深链接 hash 变化时同步页签
 window.addEventListener('hashchange', () => {
   const h = location.hash.replace('#', '');
-  if (['vocab', 'listening', 'shadow', 'dictation', 'report'].includes(h)) switchTab(h);
+  if (['playground', 'vocab', 'listening', 'shadow', 'dictation', 'report'].includes(h)) switchTab(h);
 });
 
 init().then(() => {
   const hash = location.hash.replace('#', '');
-  if (hash && ['vocab', 'listening', 'shadow', 'dictation', 'report'].includes(hash)) switchTab(hash);
+  if (hash && ['playground', 'vocab', 'listening', 'shadow', 'dictation', 'report'].includes(hash)) switchTab(hash);
 });

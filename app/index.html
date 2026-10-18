@@ -15,6 +15,7 @@
       <select id="packSelect" aria-label="选择课程"></select>
     </div>
     <nav class="tabs" id="tabs">
+      <button class="tab" data-tab="playground">游乐场</button>
       <button class="tab active" data-tab="vocab">词汇卡</button>
       <button class="tab" data-tab="listening">听辨</button>
       <button class="tab" data-tab="shadow">跟读</button>
@@ -28,6 +29,12 @@
       <p>⚠️ 数据加载失败。</p>
       <p>请先用 <code>node scripts/serve.mjs</code> 启动服务，再访问 <code>http://localhost:8000/app/</code>。</p>
     </div>
+
+    <!-- 游乐场（v0.8：教宝宝式互动卡片，仅在有图卡/字母数据的包显示） -->
+    <section id="tab-playground" class="tab-panel">
+      <div class="pg-subnav" id="pgSubnav"></div>
+      <div id="pgBody"></div>
+    </section>
 
     <!-- 词汇卡 -->
     <section id="tab-vocab" class="tab-panel active">
@@ -100,8 +107,9 @@
 
   <div id="statsBar" class="stats-bar" role="status"></div>
   <div id="playToast" class="play-toast" role="alert"></div>
-  <footer class="foot">v0.3 · 内容随培训班进度更新 · 复习与今日统计保存在本机</footer>
+  <footer class="foot">v0.7.2 · 游乐场互动卡 + 听说练四件套 · 进度自动云同步</footer>
   <script src="cloud.js"></script>
+  <script src="playground.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
