@@ -61,3 +61,21 @@ create index if not exists scores_user_time_idx on public.scores (user_id, creat
 -- - 前端用 supabase-js 的 signInAnonymously() 获得匿名身份（无需用户注册，自动）
 -- - anon key 可公开；service_role key 只用于管理端/Edge Function，绝不进网页
 -- - 断网时前端 localStorage 兜底，联网后按 (user_id, card_key)/(user_id, day, type) upsert 合并
+
+-- ============================================================
+-- v0.8 课程进度表（M1 语音关）：跟 srs 表同款匿名身份 + RLS
+-- 在 Supabase 控制台 SQL Editor 里执行一次即可
+-- ============================================================
+create table if not exists course_progress (
+  user_id uuid not null default auth.uid(),
+  lesson_id text not null,
+  status text not null default '',          -- '' | in_progress | done
+  step int not null default 0,              -- 上课流走到第几步
+  best numeric,                             -- 过关测最好成绩（0-1）
+  updated_at timestamptz not null default now(),
+  primary key (user_id, lesson_id)
+);
+alter table course_progress enable row level security;
+drop policy if exists "own course progress" on course_progress;
+create policy "own course progress" on course_progress
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);

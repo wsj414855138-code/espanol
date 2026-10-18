@@ -19,6 +19,7 @@ const CLOUD = (() => {
   const AUTH_KEY = 'ls_cloud_auth';
   const SRS_TABLE = 'srs';
   const ACT_TABLE = 'activity';
+  const COURSE_TABLE = 'course_progress';
 
   let auth = null;   // { access_token, refresh_token, user_id }
 
@@ -152,11 +153,59 @@ const CLOUD = (() => {
     } catch { return []; }
   }
 
+  /** 课程进度（M1）：云端拉取 → 只并入本地没有或更新的键；返回是否有变化 */
+  async function pullCourse(localMap) {
+    try {
+      const res = await api(`/rest/v1/${COURSE_TABLE}?select=lesson_id,status,step,best,updated_at`, { method: 'GET' });
+      if (!res || !res.ok) return false;
+      const rows = await res.json();
+      if (!Array.isArray(rows)) return false;
+      let merged = false;
+      for (const r of rows) {
+        if (!r.lesson_id) continue;
+        const local = localMap[r.lesson_id];
+        // 本地没有 → 并入；本地也是 done → 不动；云端 done 本地没有 → done
+        if (!local) {
+          localMap[r.lesson_id] = { status: r.status || '', step: r.step || 0, best: r.best != null ? r.best : undefined };
+          merged = true;
+        } else if (r.status === 'done' && local.status !== 'done') {
+          localMap[r.lesson_id] = { ...local, status: 'done' };
+          merged = true;
+        }
+      }
+      return merged;
+    } catch { return false; }
+  }
+
+  /** 课程进度全量推送（upsert，按 user_id+lesson_id 合并） */
+  async function pushCourse(localMap) {
+    try {
+      const rows = Object.entries(localMap || {})
+        .filter(([, rec]) => rec && (rec.status || rec.step))
+        .map(([lessonId, rec]) => ({
+          lesson_id: lessonId,
+          status: rec.status || '',
+          step: rec.step || 0,
+          best: rec.best != null ? rec.best : null,
+          updated_at: new Date().toISOString(),
+        }));
+      if (!rows.length) return false;
+      const res = await api(`/rest/v1/${COURSE_TABLE}`, {
+        method: 'POST',
+        headers: { 'Prefer': 'resolution=merge-duplicates,return=minimal' },
+        body: JSON.stringify(rows),
+      });
+      return !!res && res.ok;
+    } catch { return false; }
+  }
+
   return {
     init: ensureAuth,
     pullSRS,
     pushSRS,
     pushStats,
+    pullCourse,
+    pushCourse,
     get auth() { return auth; },
   };
 })();

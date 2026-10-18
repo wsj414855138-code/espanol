@@ -35,11 +35,12 @@ const isSeparatorRow = (cells) =>
 const HEADER_TOKENS = [
   '西语', '中文', '类别', '词A', '词B', '说明', '例句（西语）', '例句（中文）',
   '图示', '字母', '读音', '组', '发音要领', '代表词',
+  '步骤', '类型', '标题', '要领', '素材', '辅音', '音节',
 ];
 const isHeaderRow = (cells) => cells.some((c) => HEADER_TOKENS.includes(stripMd(c)));
 
 function parseSource(md) {
-  const result = { title: '', meta: {}, vocab: [], listening: [], letters: [], sentences: [] };
+  const result = { title: '', meta: {}, vocab: [], listening: [], letters: [], cards: [], syllables: [], sentences: [] };
   let section = null;
   let headerDone = false;
 
@@ -85,7 +86,7 @@ function parseSource(md) {
       if (!category || !a || !b) continue;
       result.listening.push({ category, pair: [a, b], zh: zh || '' });
     } else if (section === '字母') {
-      // 字母启蒙卡（游乐场）：读音 = 给 TTS 的字母名文本；代表词用于听发音
+      // 字母启蒙卡（游乐场/课程）：读音 = 给 TTS 的字母名文本；代表词用于听发音
       const [letter, tts, group, tip, rep] = cells.map(stripMd);
       if (!letter) continue;
       result.letters.push({
@@ -95,6 +96,26 @@ function parseSource(md) {
         tip: tip || '',
         rep: rep || '',
       });
+    } else if (section === '讲解') {
+      // 课程流讲解卡（M1 语音关）：步骤 | 类型 | 标题 | 要领 | 素材（逗号分隔例词）
+      const [step, type, title, tip, mat] = cells.map(stripMd);
+      if (!title) continue;
+      const matWords = (mat && mat !== '—' ? mat : '')
+        .split(/[,，、]/).map((w) => w.trim()).filter(Boolean);
+      result.cards.push({
+        step: step && !Number.isNaN(Number(step)) ? Number(step) : result.cards.length + 1,
+        type: type || '规则',
+        title,
+        tip: tip || '',
+        mat: matWords,
+      });
+    } else if (section === '音节') {
+      // 音节表（M1 语音关）：辅音 × 五元音，音节列空格分隔
+      const [group, cons, items] = cells.map(stripMd);
+      if (!cons || !items) continue;
+      const list = items.split(/\s+/).filter(Boolean);
+      if (!list.length) continue;
+      result.syllables.push({ cons, items: list, group: group || '' });
     } else if (section === '句型') {
       const [es, zh] = cells.map(stripMd);
       if (!es) continue;
@@ -161,6 +182,33 @@ function buildPack(packId) {
       zh: l.zh,
       audio: [`audio/l${i + 1}-0.m4a`, `audio/l${i + 1}-1.m4a`],
     })),
+    // 课程流讲解卡（M1 语音关）：素材词音频 y{步骤}-{序}
+    ...(src.cards.length
+      ? {
+          cards: src.cards.map((c, i) => ({
+            id: `y${i + 1}`,
+            step: c.step,
+            type: c.type,
+            title: c.title,
+            tip: c.tip,
+            ...(c.mat.length
+              ? { mat: c.mat, matAudio: c.mat.map((_, k) => `audio/y${i + 1}-${k + 1}.m4a`) }
+              : {}),
+          })),
+        }
+      : {}),
+    // 音节表（M1 语音关）：每组辅音一行，音节音频 g{组}-{序}
+    ...(src.syllables.length
+      ? {
+          syllables: src.syllables.map((s, i) => ({
+            id: `g${i + 1}`,
+            cons: s.cons,
+            note: s.group,
+            items: s.items,
+            audio: s.items.map((_, k) => `audio/g${i + 1}-${k + 1}.m4a`),
+          })),
+        }
+      : {}),
     ...(letters.length ? { letters } : {}),
     sentences: src.sentences.map((s, i) => ({
       id: `s${i + 1}`,
@@ -220,6 +268,8 @@ for (const p of built) {
     `词汇 ${p.vocab.length}`,
     `听辨 ${p.listening.length}`,
     ...(p.letters ? [`字母 ${p.letters.length}`] : []),
+    ...(p.cards ? [`讲解 ${p.cards.length}`] : []),
+    ...(p.syllables ? [`音节 ${p.syllables.length} 组/${p.syllables.reduce((n, s) => n + s.items.length, 0)} 个`] : []),
     `句型 ${p.sentences.length}`,
   ].join('，');
   console.log(`  - ${p.id}：${p.title}（${extra}）`);

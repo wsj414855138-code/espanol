@@ -1,0 +1,31 @@
+1: 西班牙语语音
+2: br
+3: Brasil, brecha, británico, brocha, brusco
+4: cl
+5: clase, clemencia, clima, ciclo, club
+6: cr
+7: craso, credo, cristal, crónico, cruel
+8: fl
+9: flaco, flecha, conflicto, flor, flujo
+10: fr
+11: frágil, fresa, frío, frote, fruta
+12: glacial, gleba, gliconio, globo, aglutinante
+13: gr
+14: gracias, Grecia, griego, grosor, grupo
+15: tr
+16: tras, tres, tribu, tropa, truco
+17: dr
+18: drama, Andrés, droga, dril, madrugada
+19: 分音节规则
+20: 西班牙语中的词可以分成音节。
+21: 元音是音节的基础。A, E，I,0，U 一个词有几个元音就有几个音节。
+22: 字母|1和 ch 不能被划开，两个强元音在一起时要划开。
+23: UA•
+24: 1.音节可以由一个元音组成。
+25: Ana
+26: A-na
+27: ella
+28: e-lla
+29: 2.音节可以由一个元音和几个辅音组成，如辅音在元音之前或之后，
+30: 则与之共同构成音节，但独自不构成音节。
+31: 9

@@ -108,6 +108,14 @@ function generate(packId) {
     jobs.push({ path: l.letterAudio, text: l.tts || l.letter, slow: false });
     if (l.repAudio && l.repNeedsAudio) jobs.push({ path: l.repAudio, text: l.rep, slow: false });
   }
+  // 课程讲解卡（M1 语音关）：素材例词
+  for (const c of pack.cards || []) {
+    (c.mat || []).forEach((w, k) => jobs.push({ path: c.matAudio[k], text: w, slow: false }));
+  }
+  // 音节表（M1 语音关）：音节本身就是 TTS 文本
+  for (const g of pack.syllables || []) {
+    g.items.forEach((syl, k) => jobs.push({ path: g.audio[k], text: syl, slow: false }));
+  }
   for (const s of pack.sentences) {
     jobs.push({ path: s.audio, text: s.es, slow: false });
     jobs.push({ path: s.audioSlow, text: s.es, slow: true });

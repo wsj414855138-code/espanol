@@ -1,0 +1,809 @@
+{
+  "id": "a1-fonetica-1",
+  "title": "语音关·一：字母与发音",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《西班牙语发音讲义》P1-P8 + 《现西》第一册语音阶段",
+    "order": 100,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "amigo",
+      "zh": "朋友",
+      "emoji": "👫",
+      "example": {
+        "es": "Ella es mi amiga.",
+        "zh": "她是我朋友。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "elefante",
+      "zh": "大象",
+      "emoji": "🐘",
+      "example": {
+        "es": "El elefante es grande.",
+        "zh": "大象很大。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "isla",
+      "zh": "岛",
+      "emoji": "🏝️",
+      "example": {
+        "es": "Cuba es una isla.",
+        "zh": "古巴是一个岛。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "oso",
+      "zh": "熊",
+      "emoji": "🐻",
+      "example": {
+        "es": "El oso duerme.",
+        "zh": "熊在睡觉。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "uva",
+      "zh": "葡萄",
+      "emoji": "🍇",
+      "example": {
+        "es": "Como uvas.",
+        "zh": "我吃葡萄。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "bebé",
+      "zh": "婴儿",
+      "emoji": "👶",
+      "example": {
+        "es": "El bebé es pequeño.",
+        "zh": "婴儿很小。"
+      },
+      "audio": "audio/v6.m4a",
+      "exampleAudio": "audio/v6-ex.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "vaso",
+      "zh": "杯子",
+      "emoji": "🥛",
+      "example": {
+        "es": "El vaso es azul.",
+        "zh": "杯子是蓝色的。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "papá",
+      "zh": "爸爸",
+      "emoji": "👨",
+      "example": {
+        "es": "Mi papá trabaja.",
+        "zh": "我爸爸工作。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    },
+    {
+      "id": "v9",
+      "es": "foto",
+      "zh": "照片",
+      "emoji": "📷",
+      "example": {
+        "es": "Miro la foto.",
+        "zh": "我看照片。"
+      },
+      "audio": "audio/v9.m4a",
+      "exampleAudio": "audio/v9-ex.m4a"
+    },
+    {
+      "id": "v10",
+      "es": "mamá",
+      "zh": "妈妈",
+      "emoji": "👩",
+      "example": {
+        "es": "Mi mamá cocina.",
+        "zh": "我妈妈做饭。"
+      },
+      "audio": "audio/v10.m4a",
+      "exampleAudio": "audio/v10-ex.m4a"
+    },
+    {
+      "id": "v11",
+      "es": "tomate",
+      "zh": "西红柿",
+      "emoji": "🍅",
+      "example": {
+        "es": "Como un tomate.",
+        "zh": "我吃一个西红柿。"
+      },
+      "audio": "audio/v11.m4a",
+      "exampleAudio": "audio/v11-ex.m4a"
+    },
+    {
+      "id": "v12",
+      "es": "dedo",
+      "zh": "手指",
+      "emoji": "☝️",
+      "example": {
+        "es": "Tengo cinco dedos.",
+        "zh": "我有五根手指。"
+      },
+      "audio": "audio/v12.m4a",
+      "exampleAudio": "audio/v12-ex.m4a"
+    },
+    {
+      "id": "v13",
+      "es": "luna",
+      "zh": "月亮",
+      "emoji": "🌙",
+      "example": {
+        "es": "La luna es blanca.",
+        "zh": "月亮是白色的。"
+      },
+      "audio": "audio/v13.m4a",
+      "exampleAudio": "audio/v13-ex.m4a"
+    },
+    {
+      "id": "v14",
+      "es": "nube",
+      "zh": "云",
+      "emoji": "☁️",
+      "example": {
+        "es": "Hay nubes hoy.",
+        "zh": "今天有云。"
+      },
+      "audio": "audio/v14.m4a",
+      "exampleAudio": "audio/v14-ex.m4a"
+    },
+    {
+      "id": "v15",
+      "es": "sol",
+      "zh": "太阳",
+      "emoji": "☀️",
+      "example": {
+        "es": "El sol es grande.",
+        "zh": "太阳很大。"
+      },
+      "audio": "audio/v15.m4a",
+      "exampleAudio": "audio/v15-ex.m4a"
+    },
+    {
+      "id": "v16",
+      "es": "zapato",
+      "zh": "鞋",
+      "emoji": "👟",
+      "example": {
+        "es": "Compro zapatos.",
+        "zh": "我买鞋。"
+      },
+      "audio": "audio/v16.m4a",
+      "exampleAudio": "audio/v16-ex.m4a"
+    },
+    {
+      "id": "v17",
+      "es": "coco",
+      "zh": "椰子",
+      "emoji": "🥥",
+      "example": {
+        "es": "Bebo agua de coco.",
+        "zh": "我喝椰子水。"
+      },
+      "audio": "audio/v17.m4a",
+      "exampleAudio": "audio/v17-ex.m4a"
+    },
+    {
+      "id": "v18",
+      "es": "queso",
+      "zh": "奶酪",
+      "emoji": "🧀",
+      "example": {
+        "es": "El queso es rico.",
+        "zh": "奶酪很好吃。"
+      },
+      "audio": "audio/v18.m4a",
+      "exampleAudio": "audio/v18-ex.m4a"
+    },
+    {
+      "id": "v19",
+      "es": "gato",
+      "zh": "猫",
+      "emoji": "🐱",
+      "example": {
+        "es": "El gato es negro.",
+        "zh": "猫是黑色的。"
+      },
+      "audio": "audio/v19.m4a",
+      "exampleAudio": "audio/v19-ex.m4a"
+    },
+    {
+      "id": "v20",
+      "es": "jugo",
+      "zh": "果汁",
+      "emoji": "🧃",
+      "example": {
+        "es": "Bebo jugo de naranja.",
+        "zh": "我喝橙汁。"
+      },
+      "audio": "audio/v20.m4a",
+      "exampleAudio": "audio/v20-ex.m4a"
+    },
+    {
+      "id": "v21",
+      "es": "hola",
+      "zh": "你好",
+      "emoji": "👋",
+      "example": {
+        "es": "¡Hola! ¿Cómo estás?",
+        "zh": "你好！你好吗？"
+      },
+      "audio": "audio/v21.m4a",
+      "exampleAudio": "audio/v21-ex.m4a"
+    },
+    {
+      "id": "v22",
+      "es": "kiwi",
+      "zh": "猕猴桃",
+      "emoji": "🥝",
+      "example": {
+        "es": "El kiwi es verde.",
+        "zh": "猕猴桃是绿色的。"
+      },
+      "audio": "audio/v22.m4a",
+      "exampleAudio": "audio/v22-ex.m4a"
+    },
+    {
+      "id": "v23",
+      "es": "taxi",
+      "zh": "出租车",
+      "emoji": "🚕",
+      "example": {
+        "es": "Llamo un taxi.",
+        "zh": "我叫一辆出租车。"
+      },
+      "audio": "audio/v23.m4a",
+      "exampleAudio": "audio/v23-ex.m4a"
+    },
+    {
+      "id": "v24",
+      "es": "rosa",
+      "zh": "玫瑰",
+      "emoji": "🌹",
+      "example": {
+        "es": "La rosa es roja.",
+        "zh": "玫瑰是红色的。"
+      },
+      "audio": "audio/v24.m4a",
+      "exampleAudio": "audio/v24-ex.m4a"
+    },
+    {
+      "id": "v25",
+      "es": "perro",
+      "zh": "狗",
+      "emoji": "🐶",
+      "example": {
+        "es": "Mi perro es grande.",
+        "zh": "我的狗很大。"
+      },
+      "audio": "audio/v25.m4a",
+      "exampleAudio": "audio/v25-ex.m4a"
+    },
+    {
+      "id": "v26",
+      "es": "llave",
+      "zh": "钥匙",
+      "emoji": "🔑",
+      "example": {
+        "es": "¿Dónde está la llave?",
+        "zh": "钥匙在哪？"
+      },
+      "audio": "audio/v26.m4a",
+      "exampleAudio": "audio/v26-ex.m4a"
+    },
+    {
+      "id": "v27",
+      "es": "niño",
+      "zh": "男孩",
+      "emoji": "👦",
+      "example": {
+        "es": "El niño juega.",
+        "zh": "男孩在玩。"
+      },
+      "audio": "audio/v27.m4a",
+      "exampleAudio": "audio/v27-ex.m4a"
+    },
+    {
+      "id": "v28",
+      "es": "yo",
+      "zh": "我",
+      "emoji": "🙋",
+      "example": {
+        "es": "Yo soy Ana.",
+        "zh": "我是安娜。"
+      },
+      "audio": "audio/v28.m4a",
+      "exampleAudio": "audio/v28-ex.m4a"
+    },
+    {
+      "id": "v29",
+      "es": "whisky",
+      "zh": "威士忌",
+      "emoji": "🥃",
+      "audio": "audio/v29.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "元音",
+      "pair": [
+        "mesa",
+        "misa"
+      ],
+      "zh": "桌子 / 弥撒",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "元音",
+      "pair": [
+        "palo",
+        "pelo"
+      ],
+      "zh": "棍子 / 头发",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "元音",
+      "pair": [
+        "luna",
+        "lana"
+      ],
+      "zh": "月亮 / 羊毛",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "p/b",
+      "pair": [
+        "poca",
+        "boca"
+      ],
+      "zh": "少 / 嘴",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "p/b",
+      "pair": [
+        "peso",
+        "beso"
+      ],
+      "zh": "重量 / 亲吻",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "t/d",
+      "pair": [
+        "tos",
+        "dos"
+      ],
+      "zh": "咳嗽 / 二",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "t/d",
+      "pair": [
+        "tía",
+        "día"
+      ],
+      "zh": "阿姨 / 天",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "b/v",
+      "pair": [
+        "baca",
+        "vaca"
+      ],
+      "zh": "车顶架 / 奶牛",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    },
+    {
+      "id": "l9",
+      "category": "l/r",
+      "pair": [
+        "lana",
+        "rana"
+      ],
+      "zh": "羊毛 / 青蛙",
+      "audio": [
+        "audio/l9-0.m4a",
+        "audio/l9-1.m4a"
+      ]
+    },
+    {
+      "id": "l10",
+      "category": "l/r",
+      "pair": [
+        "caro",
+        "calo"
+      ],
+      "zh": "贵 / 我装（calor 变位）",
+      "audio": [
+        "audio/l10-0.m4a",
+        "audio/l10-1.m4a"
+      ]
+    },
+    {
+      "id": "l11",
+      "category": "s/z",
+      "pair": [
+        "casa",
+        "caza"
+      ],
+      "zh": "房子 / 打猎",
+      "audio": [
+        "audio/l11-0.m4a",
+        "audio/l11-1.m4a"
+      ]
+    },
+    {
+      "id": "l12",
+      "category": "m/n",
+      "pair": [
+        "cama",
+        "cana"
+      ],
+      "zh": "床 / 白发",
+      "audio": [
+        "audio/l12-0.m4a",
+        "audio/l12-1.m4a"
+      ]
+    }
+  ],
+  "letters": [
+    {
+      "id": "x1",
+      "letter": "a",
+      "tts": "a",
+      "group": "元音",
+      "tip": "嘴张大、舌放平，一个音到底，绝不滑动；别读成「啊乌」",
+      "rep": "amigo",
+      "letterAudio": "audio/x1.m4a",
+      "repAudio": "audio/v1.m4a"
+    },
+    {
+      "id": "x2",
+      "letter": "e",
+      "tts": "e",
+      "group": "元音",
+      "tip": "嘴角向两边咧开像微笑；不要滑成「诶伊」",
+      "rep": "elefante",
+      "letterAudio": "audio/x2.m4a",
+      "repAudio": "audio/v2.m4a"
+    },
+    {
+      "id": "x3",
+      "letter": "i",
+      "tts": "i",
+      "group": "元音",
+      "tip": "短促清亮，嘴角拉到最开；不要拖长滑成「爱」",
+      "rep": "isla",
+      "letterAudio": "audio/x3.m4a",
+      "repAudio": "audio/v3.m4a"
+    },
+    {
+      "id": "x4",
+      "letter": "o",
+      "tts": "o",
+      "group": "元音",
+      "tip": "嘴拢成圆圈保持不动；不要滑成「欧乌」",
+      "rep": "oso",
+      "letterAudio": "audio/x4.m4a",
+      "repAudio": "audio/v4.m4a"
+    },
+    {
+      "id": "x5",
+      "letter": "u",
+      "tts": "u",
+      "group": "元音",
+      "tip": "双唇撮圆前突；不要滑成「欧」",
+      "rep": "uva",
+      "letterAudio": "audio/x5.m4a",
+      "repAudio": "audio/v5.m4a"
+    },
+    {
+      "id": "x6",
+      "letter": "b",
+      "tts": "be",
+      "group": "唇音",
+      "tip": "双唇闭合后气流冲开，声带振动（浊音）；和 v 完全同音",
+      "rep": "bebé",
+      "letterAudio": "audio/x6.m4a",
+      "repAudio": "audio/v6.m4a"
+    },
+    {
+      "id": "x7",
+      "letter": "v",
+      "tts": "uve",
+      "group": "唇音",
+      "tip": "发音与 b 完全相同！不咬嘴唇（区别于英语 v）",
+      "rep": "vaso",
+      "letterAudio": "audio/x7.m4a",
+      "repAudio": "audio/v7.m4a"
+    },
+    {
+      "id": "x8",
+      "letter": "p",
+      "tts": "pe",
+      "group": "唇音",
+      "tip": "双唇闭合突然打开送气，比中文「泼」更轻；p 送气、b 振动",
+      "rep": "papá",
+      "letterAudio": "audio/x8.m4a",
+      "repAudio": "audio/v8.m4a"
+    },
+    {
+      "id": "x9",
+      "letter": "f",
+      "tts": "efe",
+      "group": "唇音",
+      "tip": "上齿轻触下唇吹气，与英语 f 相同",
+      "rep": "foto",
+      "letterAudio": "audio/x9.m4a",
+      "repAudio": "audio/v9.m4a"
+    },
+    {
+      "id": "x10",
+      "letter": "m",
+      "tts": "eme",
+      "group": "唇音",
+      "tip": "双唇闭合气流从鼻出，同中文「摸」",
+      "rep": "mamá",
+      "letterAudio": "audio/x10.m4a",
+      "repAudio": "audio/v10.m4a"
+    },
+    {
+      "id": "x11",
+      "letter": "t",
+      "tts": "te",
+      "group": "齿舌",
+      "tip": "舌尖抵上齿背（比中文「特」更靠前），几乎不送气",
+      "rep": "tomate",
+      "letterAudio": "audio/x11.m4a",
+      "repAudio": "audio/v11.m4a"
+    },
+    {
+      "id": "x12",
+      "letter": "d",
+      "tts": "de",
+      "group": "齿舌",
+      "tip": "词首舌尖抵上齿背振动；词中词尾舌尖伸出弱化",
+      "rep": "dedo",
+      "letterAudio": "audio/x12.m4a",
+      "repAudio": "audio/v12.m4a"
+    },
+    {
+      "id": "x13",
+      "letter": "l",
+      "tts": "ele",
+      "group": "齿舌",
+      "tip": "舌尖抵上齿龈，比中文「勒」靠前；西语没有卷舌 l",
+      "rep": "luna",
+      "letterAudio": "audio/x13.m4a",
+      "repAudio": "audio/v13.m4a"
+    },
+    {
+      "id": "x14",
+      "letter": "n",
+      "tts": "ene",
+      "group": "齿舌",
+      "tip": "舌尖抵上齿龈走鼻腔，同中文「讷」",
+      "rep": "nube",
+      "letterAudio": "audio/x14.m4a",
+      "repAudio": "audio/v14.m4a"
+    },
+    {
+      "id": "x15",
+      "letter": "s",
+      "tts": "ese",
+      "group": "齿舌",
+      "tip": "舌尖靠近上齿龈吹气发 s；在 b/d/g/m/n/l 前要浊化",
+      "rep": "sol",
+      "letterAudio": "audio/x15.m4a",
+      "repAudio": "audio/v15.m4a"
+    },
+    {
+      "id": "x16",
+      "letter": "z",
+      "tts": "zeta",
+      "group": "齿舌",
+      "tip": "在西班牙舌尖伸出咬着发 [θ]（想想「思」但舌尖咬住）；拉美读 s",
+      "rep": "zapato",
+      "letterAudio": "audio/x16.m4a",
+      "repAudio": "audio/v16.m4a"
+    },
+    {
+      "id": "x17",
+      "letter": "c",
+      "tts": "ce",
+      "group": "软腭",
+      "tip": "在 a/o/u 前发 k（casa）；在 e/i 前同 z 发 [θ]",
+      "rep": "coco",
+      "letterAudio": "audio/x17.m4a",
+      "repAudio": "audio/v17.m4a"
+    },
+    {
+      "id": "x18",
+      "letter": "q",
+      "tts": "cu",
+      "group": "软腭",
+      "tip": "只出现在 que/qui 里发 k，中间的 u 永远不发音",
+      "rep": "queso",
+      "letterAudio": "audio/x18.m4a",
+      "repAudio": "audio/v18.m4a"
+    },
+    {
+      "id": "x19",
+      "letter": "g",
+      "tts": "ge",
+      "group": "软腭",
+      "tip": "在 a/o/u 前发浊 g（gato）；在 e/i 前发 j 的摩擦音",
+      "rep": "gato",
+      "letterAudio": "audio/x19.m4a",
+      "repAudio": "audio/v19.m4a"
+    },
+    {
+      "id": "x20",
+      "letter": "j",
+      "tts": "jota",
+      "group": "软腭",
+      "tip": "舌根贴近软腭用力摩擦 [x]，像汉语「喝」但摩擦更重",
+      "rep": "jugo",
+      "letterAudio": "audio/x20.m4a",
+      "repAudio": "audio/v20.m4a"
+    },
+    {
+      "id": "x21",
+      "letter": "h",
+      "tts": "hache",
+      "group": "软腭",
+      "tip": "不发音！完全静音，hola 读作「欧拉」",
+      "rep": "hola",
+      "letterAudio": "audio/x21.m4a",
+      "repAudio": "audio/v21.m4a"
+    },
+    {
+      "id": "x22",
+      "letter": "k",
+      "tts": "ka",
+      "group": "软腭",
+      "tip": "外来字母，发 k，只用于外来词（kiwi、kilo）",
+      "rep": "kiwi",
+      "letterAudio": "audio/x22.m4a",
+      "repAudio": "audio/v22.m4a"
+    },
+    {
+      "id": "x23",
+      "letter": "x",
+      "tts": "equis",
+      "group": "软腭",
+      "tip": "常读 ks（taxi）；词首读 s；墨西哥地名读 j（México）",
+      "rep": "taxi",
+      "letterAudio": "audio/x23.m4a",
+      "repAudio": "audio/v23.m4a"
+    },
+    {
+      "id": "x24",
+      "letter": "r",
+      "tts": "erre",
+      "group": "颤音",
+      "tip": "词首、n/l/s 之后发多颤（舌尖抖多下）；词中单颤一击",
+      "rep": "rosa",
+      "letterAudio": "audio/x24.m4a",
+      "repAudio": "audio/v24.m4a"
+    },
+    {
+      "id": "x25",
+      "letter": "rr",
+      "tts": "erre doble",
+      "group": "颤音",
+      "tip": "舌尖连续颤动好几下，像小马达；只出现在词中两个元音之间",
+      "rep": "perro",
+      "letterAudio": "audio/x25.m4a",
+      "repAudio": "audio/v25.m4a"
+    },
+    {
+      "id": "x26",
+      "letter": "ll",
+      "tts": "elle",
+      "group": "特殊",
+      "tip": "舌面贴住硬腭再放开，现在普遍读 [ʝ]（同 y）",
+      "rep": "llave",
+      "letterAudio": "audio/x26.m4a",
+      "repAudio": "audio/v26.m4a"
+    },
+    {
+      "id": "x27",
+      "letter": "ñ",
+      "tts": "eñe",
+      "group": "特殊",
+      "tip": "舌面抵硬腭发鼻音，同中文「捏」的声母",
+      "rep": "niño",
+      "letterAudio": "audio/x27.m4a",
+      "repAudio": "audio/v27.m4a"
+    },
+    {
+      "id": "x28",
+      "letter": "y",
+      "tts": "i griega",
+      "group": "特殊",
+      "tip": "在词首发 [ʝ]（yo）；在词尾或单独作元音时读 i",
+      "rep": "yo",
+      "letterAudio": "audio/x28.m4a",
+      "repAudio": "audio/v28.m4a"
+    },
+    {
+      "id": "x29",
+      "letter": "w",
+      "tts": "uve doble",
+      "group": "特殊",
+      "tip": "外来字母，按外来语读 wh（wifi），西语本族词几乎不用",
+      "rep": "whisky",
+      "letterAudio": "audio/x29.m4a",
+      "repAudio": "audio/v29.m4a"
+    }
+  ],
+  "sentences": []
+}

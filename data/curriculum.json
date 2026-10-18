@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "units": [
+    {
+      "id": "fonetica",
+      "title": "语音关",
+      "subtitle": "字母 · 音节 · 重音——学会见词能读、听音能写",
+      "lessons": [
+        { "id": "fon-1", "title": "字母与发音", "icon": "🔤", "pack": "a1-fonetica-1", "flow": "letters" },
+        { "id": "fon-2", "title": "音节与拼读", "icon": "🧩", "pack": "a1-fonetica-2", "flow": "syllables" },
+        { "id": "fon-3", "title": "重音与分音节", "icon": "🎵", "pack": "a1-fonetica-3", "flow": "rules" },
+        {
+          "id": "fon-quiz", "title": "拼读过关测", "icon": "🏆", "flow": "exam",
+          "packs": ["a1-fonetica-1", "a1-fonetica-2", "a1-fonetica-3"],
+          "passScore": 0.8, "questionCount": 15
+        }
+      ]
+    },
+    {
+      "id": "moderno-1",
+      "title": "现代西班牙语 · 第一册",
+      "subtitle": "过语音关后解锁，课程化改造进行中（M2）",
+      "requires": "fon-quiz",
+      "lessons": [
+        { "id": "l1", "title": "第 1 课：问候与自我介绍", "icon": "👋", "pack": "a1-moderno-1", "locked": true },
+        { "id": "l1t", "title": "第 1 课 课文：¿Quién es él?", "icon": "📖", "pack": "a1-moderno-1-texto", "locked": true },
+        { "id": "l23", "title": "第 2-3 课：国家国籍与职业", "icon": "🌍", "pack": "a1-moderno-23", "locked": true },
+        { "id": "l2t", "title": "第 2 课 课文：La familia de Paco", "icon": "📖", "pack": "a1-moderno-2-texto", "locked": true },
+        { "id": "l3t", "title": "第 3 课 课文：¿Dónde está la casa?", "icon": "📖", "pack": "a1-moderno-3-texto", "locked": true },
+        { "id": "l45", "title": "第 4-5 课：方位颜色与家庭", "icon": "🎨", "pack": "a1-moderno-45", "locked": true },
+        { "id": "l4t", "title": "第 4 课 课文：¿Cómo es la familia de Paco?", "icon": "📖", "pack": "a1-moderno-4-texto", "locked": true },
+        { "id": "l5t", "title": "第 5 课 课文：El armario de Paco", "icon": "📖", "pack": "a1-moderno-5-texto", "locked": true },
+        { "id": "l67", "title": "第 6-7 课：家庭与去向", "icon": "👨‍👩‍👧", "pack": "a1-moderno-67", "locked": true },
+        { "id": "l6t", "title": "第 6 课 课文", "icon": "📖", "pack": "a1-moderno-6-texto", "locked": true },
+        { "id": "l7t", "title": "第 7 课 课文：¿Adónde van?", "icon": "📖", "pack": "a1-moderno-7-texto", "locked": true }
+      ]
+    }
+  ]
+}

@@ -253,7 +253,7 @@ async function init() {
   renderStats();   // 打开页面即显示今日统计（无数据时显示占位提示）
   // v0.7 PWA：注册 Service Worker（离线缓存应用外壳；失败静默）
   try { if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {}); } catch { /* 忽略 */ }
-  // v0.5 云同步：后台初始化匿名身份 + 拉取云端 SRS 合并进本地（不阻塞页面，失败静默）
+  // v0.5 云同步：后台初始化匿名身份 + 拉取云端 SRS/课程进度合并进本地（不阻塞页面，失败静默）
   try {
     if (typeof CLOUD !== 'undefined' && CLOUD.init) {
       CLOUD.init().then(async (ok) => {
@@ -261,6 +261,13 @@ async function init() {
         const map = loadSRS();
         const changed = await CLOUD.pullSRS(map);
         if (changed) saveSRS(map);
+        // v0.8 课程进度合并（ls_course_v1，course.js 的事实源）
+        try {
+          const ckey = 'ls_course_v1';
+          const cmap = JSON.parse(localStorage.getItem(ckey) || '{}');
+          const cChanged = await CLOUD.pullCourse(cmap);
+          if (cChanged) localStorage.setItem(ckey, JSON.stringify(cmap));
+        } catch { /* 课程进度合并失败不影响本地 */ }
       });
     }
   } catch { /* 云不可用完全不影响本地使用 */ }
@@ -309,18 +316,14 @@ async function loadPack(id) {
   // 游乐场（v0.8：有图卡/字母数据的包才会显示页签）
   if (window.Playground) window.Playground.render();
 
-  // 没数据的 tab 隐藏
-  document.querySelectorAll('.tab[data-tab]').forEach((t) => {
-    if (t.dataset.tab === 'playground') {
-      const has = (state.pack.vocab || []).some((v) => v.emoji) || (state.pack.letters || []).length;
-      t.style.display = has ? '' : 'none';
-      return;
-    }
-    const key = { vocab: 'vocab', listening: 'listening', shadow: 'sentences', dictation: 'sentences' }[t.dataset.tab];
-    if (!key) return;
-    const empty = key === 'sentences' ? !state.pack.sentences.length : !state.pack[key].length;
-    t.style.display = empty ? 'none' : '';
+  // 练习场模块空数据时隐藏对应 chip（词汇卡恒显示：复习模式对任何包都有意义）
+  const hasPic = (state.pack.vocab || []).some((v) => v.emoji) || (state.pack.letters || []).length;
+  const visible = { playground: hasPic, vocab: true, listening: !!state.pack.listening.length, shadow: !!state.pack.sentences.length, dictation: !!state.pack.sentences.length };
+  document.querySelectorAll('#practiceSubnav .pg-chip').forEach((t) => {
+    t.style.display = visible[t.dataset.mod] ? '' : 'none';
   });
+  if (!visible[curSub]) curSub = 'vocab';   // 当前模块在这个包没有数据 → 回词汇卡
+  showSub(curSub);
 }
 
 /* ---------- 词汇卡 ---------- */
@@ -748,28 +751,48 @@ function calcStreak(byDay, today) {
   return streak;
 }
 
-/* ---------- 页签切换（支持 #hash 深链接） ---------- */
+/* ---------- 页签切换（3 顶级页签 + 练习场二级模块，支持 #hash 深链接） ---------- */
+const TOP_TABS = ['course', 'practice', 'report'];
+const SUB_MODS = ['playground', 'vocab', 'listening', 'shadow', 'dictation'];
+let curSub = localStorage.getItem('ls_submod') || 'vocab';
+
+function showSub(name) {
+  if (!SUB_MODS.includes(name)) name = 'vocab';
+  curSub = name;
+  try { localStorage.setItem('ls_submod', name); } catch { /* 忽略 */ }
+  document.querySelectorAll('#practiceSubnav .pg-chip').forEach((x) =>
+    x.classList.toggle('active', x.dataset.mod === name));
+  document.querySelectorAll('#tab-practice .submod').forEach((x) =>
+    x.classList.toggle('hidden', x.id !== `mod-${name}`));
+  if (name === 'playground' && window.Playground) window.Playground.render();
+}
+
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x.dataset.tab === name));
   document.querySelectorAll('.tab-panel').forEach((x) => x.classList.toggle('active', x.id === `tab-${name}`));
   history.replaceState(null, '', `#${name}`);
   if (name === 'report') renderReport();
-  // 游乐场：进入时重渲染（数据未加载完时跳过，loadPack 完成后会补渲染），离开时停掉自动播放
-  if (window.Playground) {
-    if (name === 'playground') { if (state.pack) window.Playground.render(); }
-    else window.Playground.stopAuto();
-  }
+  if (name === 'course' && window.Course) window.Course.render();
+  if (name === 'practice') showSub(curSub);
+  // 离开练习场时停掉游乐场自动播放
+  if (name !== 'practice' && window.Playground) window.Playground.stopAuto();
 }
 document.querySelectorAll('.tab').forEach((t) => {
   t.addEventListener('click', () => switchTab(t.dataset.tab));
 });
-// 浏览器前进/后退、深链接 hash 变化时同步页签
+document.querySelectorAll('#practiceSubnav .pg-chip').forEach((t) => {
+  t.addEventListener('click', () => showSub(t.dataset.mod));
+});
+// 浏览器前进/后退、深链接 hash 变化时同步页签；旧版 #vocab 等深链接映射到练习场对应模块
 window.addEventListener('hashchange', () => {
   const h = location.hash.replace('#', '');
-  if (['playground', 'vocab', 'listening', 'shadow', 'dictation', 'report'].includes(h)) switchTab(h);
+  if (TOP_TABS.includes(h)) switchTab(h);
+  else if (SUB_MODS.includes(h)) { switchTab('practice'); showSub(h); }
 });
 
 init().then(() => {
-  const hash = location.hash.replace('#', '');
-  if (hash && ['playground', 'vocab', 'listening', 'shadow', 'dictation', 'report'].includes(hash)) switchTab(hash);
+  const h = location.hash.replace('#', '');
+  if (TOP_TABS.includes(h)) switchTab(h);
+  else if (SUB_MODS.includes(h)) { switchTab('practice'); showSub(h); }
+  else switchTab('course');   // 默认落在课程页
 });

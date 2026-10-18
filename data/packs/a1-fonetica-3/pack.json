@@ -1,0 +1,476 @@
+{
+  "id": "a1-fonetica-3",
+  "title": "语音关·三：重音与分音节",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《西班牙语发音讲义》P10-P11（分音节五规则 + 重音四规则）+ P11-P12 练习词表",
+    "order": 102,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "mesa",
+      "zh": "桌子（ME-sa，倒二）",
+      "emoji": "🪑",
+      "audio": "audio/v1.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "amigo",
+      "zh": "朋友（a-MI-go，倒二）",
+      "emoji": "👫",
+      "audio": "audio/v2.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "chino",
+      "zh": "中国人（CHI-no，倒二）",
+      "emoji": "🇨🇳",
+      "audio": "audio/v3.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "sopa",
+      "zh": "汤（SO-pa，倒二）",
+      "emoji": "🍲",
+      "audio": "audio/v4.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "usted",
+      "zh": "您（us-TED，末音节）",
+      "emoji": "🙇",
+      "audio": "audio/v5.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "feliz",
+      "zh": "幸福的（fe-LIZ，末音节）",
+      "emoji": "😊",
+      "audio": "audio/v6.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "papel",
+      "zh": "纸（pa-PEL，末音节）",
+      "emoji": "📄",
+      "audio": "audio/v7.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "ciudad",
+      "zh": "城市（ciu-DAD，二重元音+末音节）",
+      "emoji": "🏙️",
+      "audio": "audio/v8.m4a"
+    },
+    {
+      "id": "v9",
+      "es": "papá",
+      "zh": "爸爸（pa-PÁ，符号强制末音节）",
+      "emoji": "👨",
+      "audio": "audio/v9.m4a"
+    },
+    {
+      "id": "v10",
+      "es": "café",
+      "zh": "咖啡（ca-FÉ，符号强制末音节）",
+      "emoji": "☕",
+      "audio": "audio/v10.m4a"
+    },
+    {
+      "id": "v11",
+      "es": "música",
+      "zh": "音乐（MÚ-si-ca，符号强制倒二）",
+      "emoji": "🎵",
+      "audio": "audio/v11.m4a"
+    },
+    {
+      "id": "v12",
+      "es": "geografía",
+      "zh": "地理（ge-o-GRA-fí-a，符号强制倒三）",
+      "emoji": "🌍",
+      "audio": "audio/v12.m4a"
+    },
+    {
+      "id": "v13",
+      "es": "también",
+      "zh": "也（tam-BIÉN，二重元音落强元音 ién→重音在 é）",
+      "emoji": "➕",
+      "audio": "audio/v13.m4a"
+    },
+    {
+      "id": "v14",
+      "es": "autobús",
+      "zh": "公交车（au-to-BÚS，末音节）",
+      "emoji": "🚌",
+      "audio": "audio/v14.m4a"
+    },
+    {
+      "id": "v15",
+      "es": "iglesia",
+      "zh": "教堂（i-GLE-sia，倒二）",
+      "emoji": "⛪",
+      "audio": "audio/v15.m4a"
+    },
+    {
+      "id": "v16",
+      "es": "habitación",
+      "zh": "房间（ha-bi-ta-CIÓN，末音节）",
+      "emoji": "🛏️",
+      "audio": "audio/v16.m4a"
+    },
+    {
+      "id": "v17",
+      "es": "fresco",
+      "zh": "新鲜的（FRES-co，倒二）",
+      "emoji": "🥬",
+      "audio": "audio/v17.m4a"
+    },
+    {
+      "id": "v18",
+      "es": "acción",
+      "zh": "行动（ac-CIÓN，末音节）",
+      "emoji": "⚡",
+      "audio": "audio/v18.m4a"
+    },
+    {
+      "id": "v19",
+      "es": "optimista",
+      "zh": "乐观的（o-pti-MIS-ta，倒二）",
+      "emoji": "🌞",
+      "audio": "audio/v19.m4a"
+    },
+    {
+      "id": "v20",
+      "es": "jirafa",
+      "zh": "长颈鹿（ji-RA-fa，倒二）",
+      "emoji": "🦒",
+      "audio": "audio/v20.m4a"
+    },
+    {
+      "id": "v21",
+      "es": "día",
+      "zh": "日子（DÍ-a，二重元音 ia，重音符号在 í）",
+      "emoji": "📆",
+      "audio": "audio/v21.m4a"
+    },
+    {
+      "id": "v22",
+      "es": "portugués",
+      "zh": "葡萄牙的（por-tu-GÉS，末音节）",
+      "emoji": "🇵🇹",
+      "audio": "audio/v22.m4a"
+    },
+    {
+      "id": "v23",
+      "es": "gimnasia",
+      "zh": "体操（gim-NA-sia，倒二）",
+      "emoji": "🤸",
+      "audio": "audio/v23.m4a"
+    },
+    {
+      "id": "v24",
+      "es": "escuela",
+      "zh": "学校（es-CUE-la，倒二，二重元音 ue）",
+      "emoji": "🏫",
+      "audio": "audio/v24.m4a"
+    },
+    {
+      "id": "v25",
+      "es": "obstáculo",
+      "zh": "障碍（obs-TÁ-cu-lo，符号强制倒二）",
+      "emoji": "🚧",
+      "audio": "audio/v25.m4a"
+    },
+    {
+      "id": "v26",
+      "es": "merienda",
+      "zh": "下午茶（me-RIEN-da，倒二）",
+      "emoji": "🫖",
+      "audio": "audio/v26.m4a"
+    },
+    {
+      "id": "v27",
+      "es": "estudiante",
+      "zh": "学生（es-tu-DIAN-te，倒二+连缀+二重元音）",
+      "emoji": "🎓",
+      "audio": "audio/v27.m4a"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l1",
+      "category": "重音",
+      "pair": [
+        "papa",
+        "papá"
+      ],
+      "zh": "土豆 / 爸爸（倒二 vs 末音节）",
+      "audio": [
+        "audio/l1-0.m4a",
+        "audio/l1-1.m4a"
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "重音",
+      "pair": [
+        "te",
+        "té"
+      ],
+      "zh": "你 / 茶（单音节但符号区分）",
+      "audio": [
+        "audio/l2-0.m4a",
+        "audio/l2-1.m4a"
+      ]
+    },
+    {
+      "id": "l3",
+      "category": "重音",
+      "pair": [
+        "si",
+        "sí"
+      ],
+      "zh": "如果 / 是（单音节符号）",
+      "audio": [
+        "audio/l3-0.m4a",
+        "audio/l3-1.m4a"
+      ]
+    },
+    {
+      "id": "l4",
+      "category": "重音",
+      "pair": [
+        "como",
+        "cómo"
+      ],
+      "zh": "如同 / 怎么（倒二 vs 符号末音节）",
+      "audio": [
+        "audio/l4-0.m4a",
+        "audio/l4-1.m4a"
+      ]
+    },
+    {
+      "id": "l5",
+      "category": "重音",
+      "pair": [
+        "donde",
+        "dónde"
+      ],
+      "zh": "哪里（关系副词 vs 疑问副词）",
+      "audio": [
+        "audio/l5-0.m4a",
+        "audio/l5-1.m4a"
+      ]
+    },
+    {
+      "id": "l6",
+      "category": "重音",
+      "pair": [
+        "mas",
+        "más"
+      ],
+      "zh": "但是 / 更多（倒二 vs 末音节）",
+      "audio": [
+        "audio/l6-0.m4a",
+        "audio/l6-1.m4a"
+      ]
+    },
+    {
+      "id": "l7",
+      "category": "重音",
+      "pair": [
+        "bebe",
+        "bebé"
+      ],
+      "zh": "他喝 / 婴儿（倒二 vs 末音节）",
+      "audio": [
+        "audio/l7-0.m4a",
+        "audio/l7-1.m4a"
+      ]
+    },
+    {
+      "id": "l8",
+      "category": "重音",
+      "pair": [
+        "sabana",
+        "sábana"
+      ],
+      "zh": "稀树草原 / 床单（倒二 vs 符号倒二）",
+      "audio": [
+        "audio/l8-0.m4a",
+        "audio/l8-1.m4a"
+      ]
+    },
+    {
+      "id": "l9",
+      "category": "重音",
+      "pair": [
+        "numero",
+        "número"
+      ],
+      "zh": "我编号 / 数字（词形变化重音移位）",
+      "audio": [
+        "audio/l9-0.m4a",
+        "audio/l9-1.m4a"
+      ]
+    },
+    {
+      "id": "l10",
+      "category": "重音",
+      "pair": [
+        "publico",
+        "público"
+      ],
+      "zh": "我公布 / 公共的（词形变化重音移位）",
+      "audio": [
+        "audio/l10-0.m4a",
+        "audio/l10-1.m4a"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "y1",
+      "step": 1,
+      "type": "规则",
+      "title": "分音节①：辅音跟元音走",
+      "tip": "元音可以自成音节；一个辅音跟后面的元音合成音节。me-sa、mi-ma、a-é-re-o",
+      "mat": [
+        "mesa",
+        "aéreo"
+      ],
+      "matAudio": [
+        "audio/y1-1.m4a",
+        "audio/y1-2.m4a"
+      ]
+    },
+    {
+      "id": "y2",
+      "step": 2,
+      "type": "规则",
+      "title": "分音节②：辅音在两个元音之间",
+      "tip": "跟后面的元音走。a-mi-go、e-sa、to-ma",
+      "mat": [
+        "amigo",
+        "esa"
+      ],
+      "matAudio": [
+        "audio/y2-1.m4a",
+        "audio/y2-2.m4a"
+      ]
+    },
+    {
+      "id": "y3",
+      "step": 3,
+      "type": "规则",
+      "title": "分音节③：两个辅音分开走",
+      "tip": "相邻两个辅音（词首除外）分属前后音节；但辅音连缀（pl/br/tr…）不可拆，跟后面元音走。es-tu-dian-te、gus-to",
+      "mat": [
+        "estudiante",
+        "gusto"
+      ],
+      "matAudio": [
+        "audio/y3-1.m4a",
+        "audio/y3-2.m4a"
+      ]
+    },
+    {
+      "id": "y4",
+      "step": 4,
+      "type": "规则",
+      "title": "分音节④：二重元音不拆",
+      "tip": "二重元音（ai/ei/oi/au…和 ia/ie/ue…）和前面辅音构成一个音节。bue-no、tam-bién、es-tu-dia",
+      "mat": [
+        "bueno",
+        "estudia"
+      ],
+      "matAudio": [
+        "audio/y4-1.m4a",
+        "audio/y4-2.m4a"
+      ]
+    },
+    {
+      "id": "y5",
+      "step": 5,
+      "type": "规则",
+      "title": "重音①：词尾是元音、n 或 s",
+      "tip": "重音落在倒数第二个音节。me-sa、a-mi-go、so-pa、chi-nos",
+      "mat": [
+        "mesa",
+        "chino"
+      ],
+      "matAudio": [
+        "audio/y5-1.m4a",
+        "audio/y5-2.m4a"
+      ]
+    },
+    {
+      "id": "y6",
+      "step": 6,
+      "type": "规则",
+      "title": "重音②：词尾是其他辅音",
+      "tip": "重音落在最后一个音节。us-ted、fe-liz、pa-pel、ciu-dad、co-mer",
+      "mat": [
+        "usted",
+        "feliz",
+        "papel"
+      ],
+      "matAudio": [
+        "audio/y6-1.m4a",
+        "audio/y6-2.m4a",
+        "audio/y6-3.m4a"
+      ]
+    },
+    {
+      "id": "y7",
+      "step": 7,
+      "type": "规则",
+      "title": "重音③：重音符号说了算",
+      "tip": "打破上面两条的词必须标重音符号：papá（变末音节）、música（倒二）、geografía（倒三）",
+      "mat": [
+        "papá",
+        "música",
+        "geografía"
+      ],
+      "matAudio": [
+        "audio/y7-1.m4a",
+        "audio/y7-2.m4a",
+        "audio/y7-3.m4a"
+      ]
+    },
+    {
+      "id": "y8",
+      "step": 8,
+      "type": "规则",
+      "title": "重音④：二重元音里重音落强元音",
+      "tip": "强元音 a/e/o，弱元音 i/u。重音在二重元音上时落在强元音：es-TU-dia、tam-BIÉN",
+      "mat": [
+        "estudia",
+        "también"
+      ],
+      "matAudio": [
+        "audio/y8-1.m4a",
+        "audio/y8-2.m4a"
+      ]
+    },
+    {
+      "id": "y9",
+      "step": 9,
+      "type": "规则",
+      "title": "总结：拆音节三步法",
+      "tip": "①二重元音先圈住不拆 ②辅音连缀圈住不拆 ③剩下的辅音跟右边元音走。拆完音节，重音按三条规则落位",
+      "mat": [
+        "estudiante"
+      ],
+      "matAudio": [
+        "audio/y9-1.m4a"
+      ]
+    }
+  ],
+  "sentences": []
+}

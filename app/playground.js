@@ -145,6 +145,11 @@ window.Playground = (() => {
     return '';
   }
 
+  /** 按「字母 + 组名」查口型图（课程引擎 course.js 复用） */
+  function mouthSVGFor(letter, group) {
+    return mouthSVG(mouthKey({ letter, group }));
+  }
+
   /* ---------- 顶层渲染 ---------- */
   function render() {
     if (!state.pack) return;   // 课程数据尚未加载完成（如 #playground 深链接直达时）
@@ -473,5 +478,5 @@ window.Playground = (() => {
       <p class="hint">点口型图 = 听代表词、看嘴型动画；点字母名听字母怎么念。</p>`;
   }
 
-  return { render, stopAuto };
+  return { render, stopAuto, mouthSVG: mouthSVGFor, confetti };
 })();

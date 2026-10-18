@@ -1,0 +1,931 @@
+{
+  "id": "a1-fonetica-2",
+  "title": "语音关·二：音节与拼读",
+  "meta": {
+    "level": "A1",
+    "source": "BLCU《西班牙语发音讲义》P1-P9（逐辅音音节表 + 辅音连缀词表）",
+    "order": 101,
+    "audio": {
+      "engine": "edge-tts",
+      "voice": "es-ES-ElviraNeural"
+    }
+  },
+  "vocab": [
+    {
+      "id": "v1",
+      "es": "casa",
+      "zh": "房子",
+      "emoji": "🏠",
+      "example": {
+        "es": "La casa es grande.",
+        "zh": "房子很大。"
+      },
+      "audio": "audio/v1.m4a",
+      "exampleAudio": "audio/v1-ex.m4a"
+    },
+    {
+      "id": "v2",
+      "es": "mesa",
+      "zh": "桌子",
+      "emoji": "🪑",
+      "example": {
+        "es": "La mesa es baja.",
+        "zh": "桌子很矮。"
+      },
+      "audio": "audio/v2.m4a",
+      "exampleAudio": "audio/v2-ex.m4a"
+    },
+    {
+      "id": "v3",
+      "es": "silla",
+      "zh": "椅子",
+      "emoji": "🪑",
+      "example": {
+        "es": "La silla es nueva.",
+        "zh": "椅子是新的。"
+      },
+      "audio": "audio/v3.m4a",
+      "exampleAudio": "audio/v3-ex.m4a"
+    },
+    {
+      "id": "v4",
+      "es": "mapa",
+      "zh": "地图",
+      "emoji": "🗺️",
+      "example": {
+        "es": "Miro el mapa.",
+        "zh": "我看地图。"
+      },
+      "audio": "audio/v4.m4a",
+      "exampleAudio": "audio/v4-ex.m4a"
+    },
+    {
+      "id": "v5",
+      "es": "mono",
+      "zh": "猴子",
+      "emoji": "🐵",
+      "example": {
+        "es": "El mono come plátano.",
+        "zh": "猴子吃香蕉。"
+      },
+      "audio": "audio/v5.m4a",
+      "exampleAudio": "audio/v5-ex.m4a"
+    },
+    {
+      "id": "v6",
+      "es": "dado",
+      "zh": "骰子",
+      "emoji": "🎲",
+      "audio": "audio/v6.m4a"
+    },
+    {
+      "id": "v7",
+      "es": "goma",
+      "zh": "橡皮",
+      "emoji": "🧽",
+      "example": {
+        "es": "Tengo una goma.",
+        "zh": "我有一块橡皮。"
+      },
+      "audio": "audio/v7.m4a",
+      "exampleAudio": "audio/v7-ex.m4a"
+    },
+    {
+      "id": "v8",
+      "es": "foca",
+      "zh": "海豹",
+      "emoji": "🦭",
+      "example": {
+        "es": "La foca nada.",
+        "zh": "海豹游泳。"
+      },
+      "audio": "audio/v8.m4a",
+      "exampleAudio": "audio/v8-ex.m4a"
+    },
+    {
+      "id": "v9",
+      "es": "vino",
+      "zh": "葡萄酒",
+      "emoji": "🍷",
+      "audio": "audio/v9.m4a"
+    },
+    {
+      "id": "v10",
+      "es": "tomate",
+      "zh": "西红柿",
+      "emoji": "🍅",
+      "audio": "audio/v10.m4a"
+    },
+    {
+      "id": "v11",
+      "es": "sol",
+      "zh": "太阳（单音节词）",
+      "emoji": "☀️",
+      "audio": "audio/v11.m4a"
+    },
+    {
+      "id": "v12",
+      "es": "mar",
+      "zh": "海（单音节词）",
+      "emoji": "🌊",
+      "audio": "audio/v12.m4a"
+    },
+    {
+      "id": "v13",
+      "es": "pan",
+      "zh": "面包（单音节词）",
+      "emoji": "🍞",
+      "audio": "audio/v13.m4a"
+    },
+    {
+      "id": "v14",
+      "es": "dos",
+      "zh": "二（单音节词）",
+      "emoji": "2️⃣",
+      "audio": "audio/v14.m4a"
+    },
+    {
+      "id": "v15",
+      "es": "amigo",
+      "zh": "朋友（a-mi-go 三音节）",
+      "emoji": "👫",
+      "audio": "audio/v15.m4a"
+    },
+    {
+      "id": "v16",
+      "es": "camisa",
+      "zh": "衬衫（ca-mi-sa）",
+      "emoji": "👔",
+      "audio": "audio/v16.m4a"
+    },
+    {
+      "id": "v17",
+      "es": "semana",
+      "zh": "星期（se-ma-na）",
+      "emoji": "📅",
+      "audio": "audio/v17.m4a"
+    },
+    {
+      "id": "v18",
+      "es": "familia",
+      "zh": "家庭（fa-mi-lia，二重元音）",
+      "emoji": "👨‍👩‍👦",
+      "audio": "audio/v18.m4a"
+    },
+    {
+      "id": "v19",
+      "es": "escuela",
+      "zh": "学校（es-cue-la，二重元音）",
+      "emoji": "🏫",
+      "audio": "audio/v19.m4a"
+    },
+    {
+      "id": "v20",
+      "es": "plato",
+      "zh": "盘子（pl- 连缀）",
+      "emoji": "🍽️",
+      "example": {
+        "es": "El plato es blanco.",
+        "zh": "盘子是白色的。"
+      },
+      "audio": "audio/v20.m4a",
+      "exampleAudio": "audio/v20-ex.m4a"
+    },
+    {
+      "id": "v21",
+      "es": "precio",
+      "zh": "价格（pr- 连缀）",
+      "emoji": "💰",
+      "audio": "audio/v21.m4a"
+    },
+    {
+      "id": "v22",
+      "es": "blanco",
+      "zh": "白色（bl- 连缀）",
+      "emoji": "⚪",
+      "example": {
+        "es": "El papel es blanco.",
+        "zh": "纸是白色的。"
+      },
+      "audio": "audio/v22.m4a",
+      "exampleAudio": "audio/v22-ex.m4a"
+    },
+    {
+      "id": "v23",
+      "es": "brazo",
+      "zh": "手臂（br- 连缀）",
+      "emoji": "💪",
+      "audio": "audio/v23.m4a"
+    },
+    {
+      "id": "v24",
+      "es": "tres",
+      "zh": "三（tr- 连缀）",
+      "emoji": "3️⃣",
+      "audio": "audio/v24.m4a"
+    },
+    {
+      "id": "v25",
+      "es": "trece",
+      "zh": "十三（tre-ce 拆音节）",
+      "emoji": "🔢",
+      "audio": "audio/v25.m4a"
+    },
+    {
+      "id": "v26",
+      "es": "clase",
+      "zh": "班级（cl- 连缀）",
+      "emoji": "🧑‍🏫",
+      "audio": "audio/v26.m4a"
+    },
+    {
+      "id": "v27",
+      "es": "cruz",
+      "zh": "十字（cr- 连缀，词尾 z）",
+      "emoji": "✝️",
+      "audio": "audio/v27.m4a"
+    },
+    {
+      "id": "v28",
+      "es": "flaco",
+      "zh": "瘦的（fl- 连缀）",
+      "emoji": "🧍",
+      "audio": "audio/v28.m4a"
+    },
+    {
+      "id": "v29",
+      "es": "fresa",
+      "zh": "草莓（fr- 连缀）",
+      "emoji": "🍓",
+      "example": {
+        "es": "Como fresas.",
+        "zh": "我吃草莓。"
+      },
+      "audio": "audio/v29.m4a",
+      "exampleAudio": "audio/v29-ex.m4a"
+    },
+    {
+      "id": "v30",
+      "es": "globo",
+      "zh": "气球（gl- 连缀）",
+      "emoji": "🎈",
+      "audio": "audio/v30.m4a"
+    },
+    {
+      "id": "v31",
+      "es": "grande",
+      "zh": "大的（gr- 连缀）",
+      "emoji": "🐘",
+      "example": {
+        "es": "El café es grande.",
+        "zh": "咖啡是大杯的。"
+      },
+      "audio": "audio/v31.m4a",
+      "exampleAudio": "audio/v31-ex.m4a"
+    }
+  ],
+  "listening": [],
+  "syllables": [
+    {
+      "id": "g1",
+      "cons": "p",
+      "note": "基础",
+      "items": [
+        "pa",
+        "pe",
+        "pi",
+        "po",
+        "pu"
+      ],
+      "audio": [
+        "audio/g1-1.m4a",
+        "audio/g1-2.m4a",
+        "audio/g1-3.m4a",
+        "audio/g1-4.m4a",
+        "audio/g1-5.m4a"
+      ]
+    },
+    {
+      "id": "g2",
+      "cons": "b",
+      "note": "基础",
+      "items": [
+        "ba",
+        "be",
+        "bi",
+        "bo",
+        "bu"
+      ],
+      "audio": [
+        "audio/g2-1.m4a",
+        "audio/g2-2.m4a",
+        "audio/g2-3.m4a",
+        "audio/g2-4.m4a",
+        "audio/g2-5.m4a"
+      ]
+    },
+    {
+      "id": "g3",
+      "cons": "v",
+      "note": "基础",
+      "items": [
+        "va",
+        "ve",
+        "vi",
+        "vo",
+        "vu"
+      ],
+      "audio": [
+        "audio/g3-1.m4a",
+        "audio/g3-2.m4a",
+        "audio/g3-3.m4a",
+        "audio/g3-4.m4a",
+        "audio/g3-5.m4a"
+      ]
+    },
+    {
+      "id": "g4",
+      "cons": "f",
+      "note": "基础",
+      "items": [
+        "fa",
+        "fe",
+        "fi",
+        "fo",
+        "fu"
+      ],
+      "audio": [
+        "audio/g4-1.m4a",
+        "audio/g4-2.m4a",
+        "audio/g4-3.m4a",
+        "audio/g4-4.m4a",
+        "audio/g4-5.m4a"
+      ]
+    },
+    {
+      "id": "g5",
+      "cons": "m",
+      "note": "基础",
+      "items": [
+        "ma",
+        "me",
+        "mi",
+        "mo",
+        "mu"
+      ],
+      "audio": [
+        "audio/g5-1.m4a",
+        "audio/g5-2.m4a",
+        "audio/g5-3.m4a",
+        "audio/g5-4.m4a",
+        "audio/g5-5.m4a"
+      ]
+    },
+    {
+      "id": "g6",
+      "cons": "t",
+      "note": "基础",
+      "items": [
+        "ta",
+        "te",
+        "ti",
+        "to",
+        "tu"
+      ],
+      "audio": [
+        "audio/g6-1.m4a",
+        "audio/g6-2.m4a",
+        "audio/g6-3.m4a",
+        "audio/g6-4.m4a",
+        "audio/g6-5.m4a"
+      ]
+    },
+    {
+      "id": "g7",
+      "cons": "d",
+      "note": "基础",
+      "items": [
+        "da",
+        "de",
+        "di",
+        "do",
+        "du"
+      ],
+      "audio": [
+        "audio/g7-1.m4a",
+        "audio/g7-2.m4a",
+        "audio/g7-3.m4a",
+        "audio/g7-4.m4a",
+        "audio/g7-5.m4a"
+      ]
+    },
+    {
+      "id": "g8",
+      "cons": "l",
+      "note": "基础",
+      "items": [
+        "la",
+        "le",
+        "li",
+        "lo",
+        "lu"
+      ],
+      "audio": [
+        "audio/g8-1.m4a",
+        "audio/g8-2.m4a",
+        "audio/g8-3.m4a",
+        "audio/g8-4.m4a",
+        "audio/g8-5.m4a"
+      ]
+    },
+    {
+      "id": "g9",
+      "cons": "n",
+      "note": "基础",
+      "items": [
+        "na",
+        "ne",
+        "ni",
+        "no",
+        "nu"
+      ],
+      "audio": [
+        "audio/g9-1.m4a",
+        "audio/g9-2.m4a",
+        "audio/g9-3.m4a",
+        "audio/g9-4.m4a",
+        "audio/g9-5.m4a"
+      ]
+    },
+    {
+      "id": "g10",
+      "cons": "s",
+      "note": "基础",
+      "items": [
+        "sa",
+        "se",
+        "si",
+        "so",
+        "su"
+      ],
+      "audio": [
+        "audio/g10-1.m4a",
+        "audio/g10-2.m4a",
+        "audio/g10-3.m4a",
+        "audio/g10-4.m4a",
+        "audio/g10-5.m4a"
+      ]
+    },
+    {
+      "id": "g11",
+      "cons": "z",
+      "note": "拼写规则：z+e/i 同 c",
+      "items": [
+        "za",
+        "ce",
+        "ci",
+        "zo",
+        "zu"
+      ],
+      "audio": [
+        "audio/g11-1.m4a",
+        "audio/g11-2.m4a",
+        "audio/g11-3.m4a",
+        "audio/g11-4.m4a",
+        "audio/g11-5.m4a"
+      ]
+    },
+    {
+      "id": "g12",
+      "cons": "c",
+      "note": "拼写规则：u 不发音",
+      "items": [
+        "ca",
+        "que",
+        "qui",
+        "co",
+        "cu"
+      ],
+      "audio": [
+        "audio/g12-1.m4a",
+        "audio/g12-2.m4a",
+        "audio/g12-3.m4a",
+        "audio/g12-4.m4a",
+        "audio/g12-5.m4a"
+      ]
+    },
+    {
+      "id": "g13",
+      "cons": "q",
+      "note": "拼写规则：只跟 e/i",
+      "items": [
+        "que",
+        "qui"
+      ],
+      "audio": [
+        "audio/g13-1.m4a",
+        "audio/g13-2.m4a"
+      ]
+    },
+    {
+      "id": "g14",
+      "cons": "g",
+      "note": "拼写规则：u 不发音",
+      "items": [
+        "ga",
+        "gue",
+        "gui",
+        "go",
+        "gu"
+      ],
+      "audio": [
+        "audio/g14-1.m4a",
+        "audio/g14-2.m4a",
+        "audio/g14-3.m4a",
+        "audio/g14-4.m4a",
+        "audio/g14-5.m4a"
+      ]
+    },
+    {
+      "id": "g15",
+      "cons": "j",
+      "note": "基础",
+      "items": [
+        "ja",
+        "je",
+        "ji",
+        "jo",
+        "ju"
+      ],
+      "audio": [
+        "audio/g15-1.m4a",
+        "audio/g15-2.m4a",
+        "audio/g15-3.m4a",
+        "audio/g15-4.m4a",
+        "audio/g15-5.m4a"
+      ]
+    },
+    {
+      "id": "g16",
+      "cons": "r",
+      "note": "颤音：词首多颤",
+      "items": [
+        "ra",
+        "re",
+        "ri",
+        "ro",
+        "ru"
+      ],
+      "audio": [
+        "audio/g16-1.m4a",
+        "audio/g16-2.m4a",
+        "audio/g16-3.m4a",
+        "audio/g16-4.m4a",
+        "audio/g16-5.m4a"
+      ]
+    },
+    {
+      "id": "g17",
+      "cons": "rr",
+      "note": "颤音：永远多颤",
+      "items": [
+        "rra",
+        "rre",
+        "rri",
+        "rro",
+        "rru"
+      ],
+      "audio": [
+        "audio/g17-1.m4a",
+        "audio/g17-2.m4a",
+        "audio/g17-3.m4a",
+        "audio/g17-4.m4a",
+        "audio/g17-5.m4a"
+      ]
+    },
+    {
+      "id": "g18",
+      "cons": "ll",
+      "note": "基础",
+      "items": [
+        "lla",
+        "lle",
+        "lli",
+        "llo",
+        "llu"
+      ],
+      "audio": [
+        "audio/g18-1.m4a",
+        "audio/g18-2.m4a",
+        "audio/g18-3.m4a",
+        "audio/g18-4.m4a",
+        "audio/g18-5.m4a"
+      ]
+    },
+    {
+      "id": "g19",
+      "cons": "ch",
+      "note": "基础",
+      "items": [
+        "cha",
+        "che",
+        "chi",
+        "cho",
+        "chu"
+      ],
+      "audio": [
+        "audio/g19-1.m4a",
+        "audio/g19-2.m4a",
+        "audio/g19-3.m4a",
+        "audio/g19-4.m4a",
+        "audio/g19-5.m4a"
+      ]
+    },
+    {
+      "id": "g20",
+      "cons": "ñ",
+      "note": "基础",
+      "items": [
+        "ña",
+        "ñe",
+        "ñi",
+        "ño",
+        "ñu"
+      ],
+      "audio": [
+        "audio/g20-1.m4a",
+        "audio/g20-2.m4a",
+        "audio/g20-3.m4a",
+        "audio/g20-4.m4a",
+        "audio/g20-5.m4a"
+      ]
+    },
+    {
+      "id": "g21",
+      "cons": "h",
+      "note": "拼写规则：h 静音",
+      "items": [
+        "ha",
+        "he",
+        "hi",
+        "ho",
+        "hu"
+      ],
+      "audio": [
+        "audio/g21-1.m4a",
+        "audio/g21-2.m4a",
+        "audio/g21-3.m4a",
+        "audio/g21-4.m4a",
+        "audio/g21-5.m4a"
+      ]
+    },
+    {
+      "id": "g22",
+      "cons": "y",
+      "note": "基础",
+      "items": [
+        "ya",
+        "ye",
+        "yi",
+        "yo",
+        "yu"
+      ],
+      "audio": [
+        "audio/g22-1.m4a",
+        "audio/g22-2.m4a",
+        "audio/g22-3.m4a",
+        "audio/g22-4.m4a",
+        "audio/g22-5.m4a"
+      ]
+    },
+    {
+      "id": "g23",
+      "cons": "pl",
+      "note": "连缀",
+      "items": [
+        "pla",
+        "ple",
+        "pli",
+        "plo",
+        "plu"
+      ],
+      "audio": [
+        "audio/g23-1.m4a",
+        "audio/g23-2.m4a",
+        "audio/g23-3.m4a",
+        "audio/g23-4.m4a",
+        "audio/g23-5.m4a"
+      ]
+    },
+    {
+      "id": "g24",
+      "cons": "pr",
+      "note": "连缀",
+      "items": [
+        "pra",
+        "pre",
+        "pri",
+        "pro",
+        "pru"
+      ],
+      "audio": [
+        "audio/g24-1.m4a",
+        "audio/g24-2.m4a",
+        "audio/g24-3.m4a",
+        "audio/g24-4.m4a",
+        "audio/g24-5.m4a"
+      ]
+    },
+    {
+      "id": "g25",
+      "cons": "bl",
+      "note": "连缀",
+      "items": [
+        "bla",
+        "ble",
+        "bli",
+        "blo",
+        "blu"
+      ],
+      "audio": [
+        "audio/g25-1.m4a",
+        "audio/g25-2.m4a",
+        "audio/g25-3.m4a",
+        "audio/g25-4.m4a",
+        "audio/g25-5.m4a"
+      ]
+    },
+    {
+      "id": "g26",
+      "cons": "br",
+      "note": "连缀",
+      "items": [
+        "bra",
+        "bre",
+        "bri",
+        "bro",
+        "bru"
+      ],
+      "audio": [
+        "audio/g26-1.m4a",
+        "audio/g26-2.m4a",
+        "audio/g26-3.m4a",
+        "audio/g26-4.m4a",
+        "audio/g26-5.m4a"
+      ]
+    },
+    {
+      "id": "g27",
+      "cons": "tr",
+      "note": "连缀",
+      "items": [
+        "tra",
+        "tre",
+        "tri",
+        "tro",
+        "tru"
+      ],
+      "audio": [
+        "audio/g27-1.m4a",
+        "audio/g27-2.m4a",
+        "audio/g27-3.m4a",
+        "audio/g27-4.m4a",
+        "audio/g27-5.m4a"
+      ]
+    },
+    {
+      "id": "g28",
+      "cons": "dr",
+      "note": "连缀",
+      "items": [
+        "dra",
+        "dre",
+        "dri",
+        "dro",
+        "dru"
+      ],
+      "audio": [
+        "audio/g28-1.m4a",
+        "audio/g28-2.m4a",
+        "audio/g28-3.m4a",
+        "audio/g28-4.m4a",
+        "audio/g28-5.m4a"
+      ]
+    },
+    {
+      "id": "g29",
+      "cons": "cl",
+      "note": "连缀",
+      "items": [
+        "cla",
+        "cle",
+        "cli",
+        "clo",
+        "clu"
+      ],
+      "audio": [
+        "audio/g29-1.m4a",
+        "audio/g29-2.m4a",
+        "audio/g29-3.m4a",
+        "audio/g29-4.m4a",
+        "audio/g29-5.m4a"
+      ]
+    },
+    {
+      "id": "g30",
+      "cons": "cr",
+      "note": "连缀",
+      "items": [
+        "cra",
+        "cre",
+        "cri",
+        "cro",
+        "cru"
+      ],
+      "audio": [
+        "audio/g30-1.m4a",
+        "audio/g30-2.m4a",
+        "audio/g30-3.m4a",
+        "audio/g30-4.m4a",
+        "audio/g30-5.m4a"
+      ]
+    },
+    {
+      "id": "g31",
+      "cons": "fl",
+      "note": "连缀",
+      "items": [
+        "fla",
+        "fle",
+        "fli",
+        "flo",
+        "flu"
+      ],
+      "audio": [
+        "audio/g31-1.m4a",
+        "audio/g31-2.m4a",
+        "audio/g31-3.m4a",
+        "audio/g31-4.m4a",
+        "audio/g31-5.m4a"
+      ]
+    },
+    {
+      "id": "g32",
+      "cons": "fr",
+      "note": "连缀",
+      "items": [
+        "fra",
+        "fre",
+        "fri",
+        "fro",
+        "fru"
+      ],
+      "audio": [
+        "audio/g32-1.m4a",
+        "audio/g32-2.m4a",
+        "audio/g32-3.m4a",
+        "audio/g32-4.m4a",
+        "audio/g32-5.m4a"
+      ]
+    },
+    {
+      "id": "g33",
+      "cons": "gl",
+      "note": "连缀",
+      "items": [
+        "gla",
+        "gle",
+        "gli",
+        "glo",
+        "glu"
+      ],
+      "audio": [
+        "audio/g33-1.m4a",
+        "audio/g33-2.m4a",
+        "audio/g33-3.m4a",
+        "audio/g33-4.m4a",
+        "audio/g33-5.m4a"
+      ]
+    },
+    {
+      "id": "g34",
+      "cons": "gr",
+      "note": "连缀",
+      "items": [
+        "gra",
+        "gre",
+        "gri",
+        "gro",
+        "gru"
+      ],
+      "audio": [
+        "audio/g34-1.m4a",
+        "audio/g34-2.m4a",
+        "audio/g34-3.m4a",
+        "audio/g34-4.m4a",
+        "audio/g34-5.m4a"
+      ]
+    }
+  ],
+  "sentences": []
+}

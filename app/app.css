@@ -63,6 +63,17 @@ body {
   color: var(--ink);
   max-width: 46vw;
 }
+/* 练习场头部：课程下拉（M1 从顶栏移入练习场） */
+.practice-head { margin-bottom: 10px; }
+.practice-head select {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--ink);
+}
 
 .tabs {
   display: flex;

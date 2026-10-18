@@ -118,5 +118,23 @@
     "title": "A1 第 5 课：食物与饮料",
     "level": "A1",
     "order": 19
+  },
+  {
+    "id": "a1-fonetica-1",
+    "title": "语音关·一：字母与发音",
+    "level": "A1",
+    "order": 100
+  },
+  {
+    "id": "a1-fonetica-2",
+    "title": "语音关·二：音节与拼读",
+    "level": "A1",
+    "order": 101
+  },
+  {
+    "id": "a1-fonetica-3",
+    "title": "语音关·三：重音与分音节",
+    "level": "A1",
+    "order": 102
   }
 ]
