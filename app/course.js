@@ -213,15 +213,18 @@ window.Course = (() => {
   }
 
   /* ---------- 步骤渲染器 ---------- */
-  /** 字母组：字母大字 + 口型图 + 要领 + 字母名/代表词发音 */
+  /** 字母组：字母大字 + 可点口型小脸（点脸=听字母名+说话动画）+ 要领 + 发音按钮 */
   function renderLettersStep(body, step) {
     body.innerHTML = step.items.map((l) => {
       const mouth = Playground.mouthSVG(l.letter, l.group);
+      const face = mouth
+        ? `<button class="pg-mouth" data-course="letter" data-audio="${purl(step.pid, l.letterAudio)}" title="点小脸听字母名">${mouth}</button>`
+        : '';
       return `
       <div class="card pg-letter-card">
         <div class="pg-letter-row">
           <div class="pg-letter">${l.letter}</div>
-          ${mouth ? `<div class="pg-mouth">${mouth}</div>` : ''}
+          ${face}
         </div>
         ${l.tip ? `<div class="pg-tip">💡 ${l.tip}</div>` : ''}
         <div class="pg-ctrls">
@@ -522,7 +525,16 @@ window.Course = (() => {
     else if (act === 'finish') finishLesson();
     else if (act === 'retake') openExam(cur.lesson);
     else if (act === 'claim') finishLesson();
-    else if (act === 'letter') playAudio(el.dataset.audio);
+    else if (act === 'letter') {
+      playAudio(el.dataset.audio);
+      // 点口型小脸时触发"说话"动画
+      if (el.classList.contains('pg-mouth')) {
+        el.classList.remove('playing');
+        void el.offsetWidth;
+        el.classList.add('playing');
+        setTimeout(() => el.classList.remove('playing'), 950);
+      }
+    }
     else if (act === 'listenOpt') answerListen(Number(el.dataset.i));
     else if (act === 'sylOpt') { cur && cur.isExam ? answerExam('syl', Number(el.dataset.i)) : answerSyl(Number(el.dataset.i)); }
     else if (act === 'wordOpt' || act === 'stressOpt') answerExam(act === 'wordOpt' ? 'word' : 'stress', Number(el.dataset.i));

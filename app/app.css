@@ -542,9 +542,9 @@ body {
 .pg-mouth {
   border: 1px solid var(--line);
   background: var(--bg);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 6px;
-  width: 128px;
+  width: 136px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }

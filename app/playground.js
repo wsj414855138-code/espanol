@@ -80,59 +80,73 @@ window.Playground = (() => {
     setTimeout(() => box.remove(), 3200);
   }
 
-  /* ---------- SVG 口型图（正面示意，点击配合代表词发音演示） ---------- */
-  const LIP = '#e2604c', LIP_D = '#b23f30', CAV = '#4a1f1f', TON = '#f08c7d', TON_D = '#d4695c';
+  /* ---------- SVG 口型图（卡通小脸版：嘴型随发音变化，标记 = 声带振动/送气/颤音） ---------- */
+  const LIP = '#C96A5A', CAV = '#7E322A', TON = '#F58F7F', MARK = '#E8590C', AIR = '#6FB1E8';
 
   function mouthSVG(kind) {
     const M = {
-      bv: { closed: true, vibr: true },
-      p:  { closed: true, air: true },
-      g:  { rx: 21, ry: 13, tongue: [72, 52, 20, 11], vibr: true },
-      d:  { rx: 21, ry: 13, tongue: [50, 47, 20, 10], vibr: true },
-      a:  { rx: 27, ry: 20, tongue: [60, 54, 26, 10] },
-      e:  { rx: 32, ry: 12, tongue: [60, 49, 24, 8] },
-      i:  { rx: 28, ry: 6,  tongue: [60, 46, 22, 6] },
-      o:  { rx: 15, ry: 15, round: true },
-      u:  { rx: 8,  ry: 8,  round: true },
-      r:  { rx: 20, ry: 12, tongue: [54, 46, 20, 9], taps: 1 },
-      rr: { rx: 20, ry: 12, tongue: [54, 46, 20, 9], taps: 3 },
-      ll: { rx: 22, ry: 14, tongue: [60, 45, 24, 9] },
-      ch: { rx: 20, ry: 11, tongue: [54, 47, 20, 8], air: true },
+      bv: { mouth: 'closed', marks: 'vibr' },
+      p:  { mouth: 'closed', marks: 'air' },
+      g:  { mouth: 'open', rx: 13, ry: 9, tongue: 'mid', marks: 'vibr' },
+      d:  { mouth: 'open', rx: 13, ry: 9, tongue: 'up', marks: 'vibr' },
+      a:  { mouth: 'open', rx: 17, ry: 15, tongue: 'low' },
+      e:  { mouth: 'open', rx: 21, ry: 10, tongue: 'low' },
+      i:  { mouth: 'open', rx: 18, ry: 5 },
+      o:  { mouth: 'round', r: 11 },
+      u:  { mouth: 'round', r: 6 },
+      r:  { mouth: 'open', rx: 12, ry: 9, tongue: 'up', marks: 'tap1' },
+      rr: { mouth: 'open', rx: 12, ry: 9, tongue: 'up', marks: 'tap3' },
+      ll: { mouth: 'open', rx: 15, ry: 11, tongue: 'wide' },
+      ch: { mouth: 'open', rx: 13, ry: 8, tongue: 'mid', marks: 'air' },
     };
     const m = M[kind];
     if (!m) return '';
-    const cx = 60, cy = 42;
-    let inner;
-    if (m.closed) {
-      inner =
-        `<path d="M16 ${cy} Q60 ${cy - 20} 104 ${cy} Q60 ${cy - 6} 16 ${cy} Z" fill="${LIP}" stroke="${LIP_D}" stroke-width="1.5"/>` +
-        `<path d="M16 ${cy} Q60 ${cy + 20} 104 ${cy} Q60 ${cy + 6} 16 ${cy} Z" fill="${LIP}" stroke="${LIP_D}" stroke-width="1.5"/>`;
+    const cx = 60, my = 79;
+    let mouth;
+    if (m.mouth === 'closed') {
+      mouth = `<path d="M${cx - 17} ${my} Q${cx} ${my + 11} ${cx + 17} ${my}" stroke="${LIP}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
+    } else if (m.mouth === 'round') {
+      mouth =
+        `<circle cx="${cx}" cy="${my}" r="${m.r + 3.5}" fill="${LIP}"/>` +
+        `<circle cx="${cx}" cy="${my}" r="${m.r}" fill="${CAV}"/>`;
     } else {
-      const topO = cy - m.ry - 14, topI = cy - m.ry - 3;
-      const botO = cy + m.ry + (m.round ? 18 : 14), botI = cy + m.ry + 3;
-      inner =
-        `<ellipse cx="${cx}" cy="${cy}" rx="${m.rx}" ry="${m.ry}" fill="${CAV}"/>` +
-        (m.tongue
-          ? `<ellipse cx="${m.tongue[0]}" cy="${m.tongue[1]}" rx="${m.tongue[2]}" ry="${m.tongue[3]}" fill="${TON}" stroke="${TON_D}" stroke-width="1.5"/>`
-          : '') +
-        `<path d="M16 ${cy} Q60 ${topO} 104 ${cy} Q60 ${topI} 16 ${cy} Z" fill="${LIP}" stroke="${LIP_D}" stroke-width="1.5"/>` +
-        `<path d="M16 ${cy} Q60 ${botO} 104 ${cy} Q60 ${botI} 16 ${cy} Z" fill="${LIP}" stroke="${LIP_D}" stroke-width="1.5"/>`;
+      // open：唇圈 + 暗腔 + 舌头（位置按发音变化）
+      const { rx, ry } = m;
+      mouth = `<ellipse cx="${cx}" cy="${my}" rx="${rx}" ry="${ry}" fill="${CAV}" stroke="${LIP}" stroke-width="4"/>`;
+      if (m.tongue === 'low') {
+        mouth += `<path d="M${cx - rx + 5} ${my} Q${cx} ${my + ry + 6} ${cx + rx - 5} ${my} Z" fill="${TON}"/>`;
+      } else if (m.tongue === 'mid') {
+        mouth += `<ellipse cx="${cx}" cy="${my + ry * 0.42}" rx="${rx * 0.72}" ry="${ry * 0.62}" fill="${TON}"/>`;
+      } else if (m.tongue === 'up' || m.tongue === 'tap1' || m.tongue === 'tap3') {
+        // 舌尖抬起抵上齿龈（r/rr/d）
+        mouth += `<ellipse cx="${cx}" cy="${my - ry + 5.5}" rx="${rx * 0.62}" ry="${ry * 0.5}" fill="${TON}"/>`;
+      } else if (m.tongue === 'wide') {
+        // 舌面大面积贴住硬腭（ll）
+        mouth += `<ellipse cx="${cx}" cy="${my + ry * 0.18}" rx="${rx * 0.85}" ry="${ry * 0.72}" fill="${TON}"/>`;
+      }
     }
     let marks = '';
-    if (m.vibr) {
-      marks += `<g class="pg-vibr" stroke="#e8590c" stroke-width="2" fill="none" stroke-linecap="round">` +
-        `<path d="M108 24 q4 4 0 8"/><path d="M112 34 q4 4 0 8"/><path d="M108 44 q4 4 0 8"/></g>`;
+    if (m.marks === 'vibr') {
+      // 声带振动：嘴右侧三道小波纹
+      marks = `<g stroke="${MARK}" stroke-width="2.4" fill="none" stroke-linecap="round">` +
+        `<path d="M90 66 q5 5.5 0 11"/><path d="M96 62 q7 8 0 16"/><path d="M102 58 q9 10.5 0 21"/></g>`;
+    } else if (m.marks === 'air') {
+      // 送气：嘴角两缕气流
+      marks = `<g stroke="${AIR}" stroke-width="2.6" fill="none" stroke-linecap="round">` +
+        `<path d="M34 70 L26 62"/><path d="M31 78 L21 76"/><path d="M86 70 L94 62"/><path d="M89 78 L99 76"/></g>`;
+    } else if (m.marks === 'tap1' || m.marks === 'tap3') {
+      const ys = m.marks === 'tap1' ? [66] : [58, 66, 74];
+      marks = `<g stroke="${MARK}" stroke-width="2.6" stroke-linecap="round">` +
+        ys.map((y) => `<line x1="${cx + 26}" y1="${y}" x2="${cx + 26}" y2="${y + 7}"/>`).join('') + `</g>`;
     }
-    if (m.air) {
-      marks += `<g class="pg-air" stroke="#7ab8f5" stroke-width="2" fill="none" stroke-linecap="round">` +
-        `<path d="M46 18 L42 8"/><path d="M60 16 L60 6"/><path d="M74 18 L78 8"/></g>`;
-    }
-    if (m.taps) {
-      const ys = m.taps === 1 ? [30] : [27, 33, 39];
-      marks += `<g class="pg-tap" stroke="#ffd8a8" stroke-width="2.5" stroke-linecap="round">` +
-        ys.map((y) => `<line x1="54" y1="${y}" x2="54" y2="${y + 5}"/>`).join('') + `</g>`;
-    }
-    return `<svg viewBox="0 0 120 84" class="pg-mouth-svg" aria-hidden="true">${inner}${marks}</svg>`;
+    return `<svg viewBox="0 0 120 118" class="pg-mouth-svg" aria-hidden="true">
+      <circle cx="60" cy="59" r="52" fill="#FFF3E4" stroke="#F3CDA0" stroke-width="3"/>
+      <ellipse cx="32" cy="63" rx="7" ry="4.5" fill="#FFC4AC" opacity="0.75"/>
+      <ellipse cx="88" cy="63" rx="7" ry="4.5" fill="#FFC4AC" opacity="0.75"/>
+      <circle cx="41" cy="46" r="4.4" fill="#5B4237"/>
+      <circle cx="79" cy="46" r="4.4" fill="#5B4237"/>
+      ${mouth}${marks}
+    </svg>`;
   }
 
   /** 字母卡 → 口型图 kind；不属于讲义难点的字母返回空 */
